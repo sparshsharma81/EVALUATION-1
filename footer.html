@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato App Section</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       /* Footer Styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.footer-column h4 {
+    border-bottom: 2px solid #df8d2f;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 18px; /* Adjusted font size */
+    line-height: 1.4;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    font-size: 14px; /* Adjusted font size */
+}
+
+.footer-column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+    .footer-column h4 {
+        font-size: 12px; /* Smaller font size */
+        padding-bottom:15px;
+    }
+
+    .footer-column ul li {
+        font-size: 10px; /* Smaller font size */
+    }
+
+    .footer-bottom {
+        font-size: 10px; /* Smaller font size */
+    }
+}
+
+/* Small Devices (Phones) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .footer-column h4 {
+        font-size: 16px; /* Adjusted font size */
+    }
+
+    .footer-column ul li {
+        font-size: 13px; /* Adjusted font size */
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .footer-column h4 {
+        font-size: 16px; /* Adjusted font size */
+    }
+
+    .footer-column ul li {
+        font-size: 13px; /* Adjusted font size */
+    }
+}
+
+/* Large Devices (Laptops/Desktops) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .footer-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .footer-column {
+        margin: 10px;
+        width: auto; /* Adjust width to fit layout */
+    }
+
+    .footer-column h4 {
+        font-size: 18px; /* Default font size */
+    }
+
+    .footer-column ul li {
+        font-size: 14px; /* Default font size */
+    }
+}
+
+/* Extra Large Devices (Large Screens) */
+@media (min-width: 1441px) {
+    .footer-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .footer-column {
+        margin: 10px;
+        width: auto; /* Adjust width to fit layout */
+    }
+
+    .footer-column h4 {
+        font-size: 20px; /* Larger font size */
+    }
+
+    .footer-column ul li {
+        font-size: 16px; /* Larger font size */
+    }
+
+    .footer-bottom {
+        font-size: 16px; /* Larger font size */
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Swiggy One</a></li>
+                    <li><a href="#">Swiggy Instamart</a></li>
+                    <li><a href="#">Swiggy Genie</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact us</h4>
+                <ul>
+                    <li><a href="#">Help & Support</a></li>
+                    <li><a href="#">Partner with us</a></li>
+                    <li><a href="#">Ride with us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>We deliver to:</h4>
+                <ul>
+                    <li><a href="#">Bangalore</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Hyderabad</a></li>
+                    <li><a href="#">Delhi</a></li>
+                    <li><a href="#">Mumbai</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li>589 cities</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Swiggy. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
