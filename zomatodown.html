@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato App Section</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* App Section Styles */
+.app-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+/* Container for Image and Content */
+.app-container {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Image Styles */
+.app-image {
+    width: 500px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 15px;
+}
+
+/* Content Styles */
+.app-content {
+    flex: 1;
+    padding-right: 150px;
+    padding-left: 160px;
+}
+
+.app-content h2 {
+    color: #df8d2f;
+    margin-bottom: 40px;
+    font-size: 50px;
+}
+
+.app-content p {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.app-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.app-form label {
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: #333;
+}
+
+.app-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.app-form button {
+    padding: 10px;
+    background-color: #c00808;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.app-form button:hover {
+    background-color: #d07b1e;
+}
+
+.download-links {
+    margin-top: 27px;
+}
+
+.download-links p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.app-link {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.app-link img {
+    width: 150px;
+    height: auto;
+    transition: opacity 0.3s ease;
+}
+
+.app-link img:hover {
+    opacity: 0.8;
+}
+
+.play {
+    transform: scale(1.3);
+    padding-right: 60px;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+/* Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+    .app-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .app-image {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .app-content {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .app-content h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .app-content p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .app-form label {
+        font-size: 18px;
+    }
+
+    .app-form input {
+        font-size: 16px;
+    }
+
+    .app-form button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .download-links {
+        margin-top: 20px;
+    }
+
+    .app-link img {
+        width: 120px;
+        height: auto;
+    }
+}
+
+/* Small Devices (Phones) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .app-image {
+        width: 80%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .app-content {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .app-content h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .app-content p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .app-form label {
+        font-size: 20px;
+    }
+
+    .app-form input {
+        font-size: 16px;
+    }
+
+    .app-form button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .download-links {
+        margin-top: 20px;
+    }
+
+    .app-link img {
+        width: 130px;
+        height: auto;
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .app-container {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .app-image {
+        width: 40%;
+        margin-right: 20px;
+    }
+
+    .app-content {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    .app-content h2 {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+
+    .app-content p {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .app-form label {
+        font-size: 22px;
+    }
+
+    .app-form input {
+        font-size: 18px;
+    }
+
+    .app-form button {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .download-links {
+        margin-top: 25px;
+    }
+
+    .app-link img {
+        width: 140px;
+        height: auto;
+    }
+}
+
+/* Large Devices (Laptops/Desktops) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .app-container {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .app-image {
+        width: 45%;
+        margin-right: 20px;
+    }
+
+    .app-content {
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+
+    .app-content h2 {
+        font-size: 50px;
+        margin-bottom: 40px;
+    }
+
+    .app-content p {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .app-form label {
+        font-size: 24px;
+    }
+
+    .app-form input {
+        font-size: 18px;
+    }
+
+    .app-form button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .download-links {
+        margin-top: 30px;
+    }
+
+    .app-link img {
+        width: 150px;
+        height: auto;
+    }
+}
+
+/* Extra Large Devices (Large Screens) */
+@media (min-width: 1441px) {
+    .app-container {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .app-image {
+        width: 50%;
+        margin-right: 30px;
+    }
+
+    .app-content {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+
+    .app-content h2 {
+        font-size: 60px;
+        margin-bottom: 50px;
+    }
+
+    .app-content p {
+        font-size: 22px;
+        margin-bottom: 40px;
+    }
+
+    .app-form label {
+        font-size: 26px;
+    }
+
+    .app-form input {
+        font-size: 20px;
+    }
+
+    .app-form button {
+        font-size: 18px;
+        padding: 14px;
+    }
+
+    .download-links {
+        margin-top: 35px;
+    }
+
+    .app-link img {
+        width: 160px;
+        height: auto;
+    }
+}
+
+</style>
+<body>
+    <div class="app-section">
+        <div class="app-container">
+            <img src="app.avif" alt="FOODHUB App" class="app-image">
+            <div class="app-content">
+                <h2>Get the Foodhub App</h2>
+                <p>We will send you a link, open it on your phone to download the app.</p>
+                <form class="app-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    
+                   
+                    
+                    <button type="submit">Share App Link</button>
+                </form>
+                <div class="download-links">
+                    <p>Download the app from:</p>
+                    <a href="https://play.google.com/store/apps" target="_blank" class="app-link">
+                        <img src="play.webp" alt="Google Play" class="play">
+                    </a>
+                    <a href="https://apps.apple.com" target="_blank" class="app-link">
+                        <img src="ap.webp" alt="App Store" class="play">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

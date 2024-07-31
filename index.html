@@ -1,0 +1,2624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            width: 100%;
+            color: #fff;
+            background-color: #df8d2f;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(249, 105, 2, 0.1);
+            position: relative;
+            justify-content: space-between;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .logo {
+            height: 60px;
+            width: 60px;
+            transform: scale(1.4);
+            clip-path: circle(50% at 50% 50%);
+            object-fit: cover;
+        }
+        .logo:hover{
+            transform:scale(1.6);
+            z-index:1;
+            animation: glow 1s linear;
+            
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .header-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .header-nav a:hover {
+            text-decoration: underline;
+        }
+
+        .search-container {
+            display: flex;
+            position: absolute;
+            top: 500px;
+            left: 30%;
+            transform: scale(1.7);
+            align-items: center;
+        }
+
+        .search-container input[type="text"] {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-container button {
+            padding: 5px 10px;
+            background-color: #d07b1e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .search-container button:hover {
+            background-color: #b0651b;
+        }
+
+
+        /* Header Styles */
+        .header {
+            width: 100%;
+            color: #fff;
+            background-color: #df8d2f;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(249, 105, 2, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 100px;
+            width: 100px;
+            clip-path: circle(40% at 50% 50%);
+            object-fit: cover;
+            margin-right: 20px;
+            position: relative;
+            left: -90px;
+        }
+
+        .slogan {
+            font-size: 34px;
+            color: #fff;
+            margin: 0;
+            position: absolute;
+            left: 40px;
+            text-align: left;
+        }
+
+        /* Carousel Styles */
+        .carousel-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 550px;
+            box-shadow: 0 4px 8px rgba(197, 235, 8, 0.1);
+        }
+
+        .carousel-inner {
+            display: flex;
+            width: 500%;
+            animation: slide 30s infinite linear;
+        }
+
+        .carousel-item {
+            flex: 0 0 28%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .carousel-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .carousel-text h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .carousel-text p {
+            font-size: 36px;
+            margin: 10px 0 0;
+        }
+
+        /* Search Box Styles */
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        .search-box {
+            display: flex;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .search-box select,
+        .search-box input[type="text"] {
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-box select {
+            flex: 1;
+        }
+
+        .search-box input[type="text"] {
+            flex: 3;
+        }
+
+        .search-box button {
+            padding: 10px;
+            background-color: #df8d2f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-box button:hover {
+            background-color: #d07b1e;
+        }
+
+        /* FoodHub Section Styles */
+        .foodhub {
+            text-align: center;
+            position: absolute;
+            top: 170px;
+            left: 40%;
+            padding: 40px 20px;
+            transform: scale(2);
+        }
+
+        .foodhub h1 {
+            font-size: 40px;
+            color: #df8d2f;
+            margin-bottom: 10px;
+        }
+
+        .foodhub h2 {
+            font-size: 24px;
+            color: #00ff80;
+            margin: 0;
+        }
+
+        /*css for mind section start*/
+        .unique-carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: #f4f4f4;
+            padding: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .unique-carousel-track {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .unique-carousel-track a {
+            flex: 0 0 25%;
+            max-width: 25%;
+            text-align: center;
+        }
+
+        .unique-carousel-track img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .unique-carousel-track img:hover {
+            transform: scale(1.05);
+        }
+
+        .unique-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+            border-radius: 50%;
+        }
+
+        .unique-carousel-arrow-left {
+            left: 0;
+            transform: scale(1.2);
+        }
+
+        .unique-carousel-arrow-right {
+            right: 0;
+            transform: scale(1.2);
+        }
+
+        .what {
+            font-size: 70px;
+            font-style: unset;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #5c3434;
+        }
+
+        @media(max-width:1400px) {
+            .logo {}
+        }
+
+        /* Large screens (Desktops, etc.) */
+        @media (max-width: 1440px) {
+            .unique-carousel-track a {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+
+            .unique-carousel-arrow {
+                padding: 10px;
+            }
+
+            .header-content {
+                padding-left: 10px;
+            }
+        }
+
+        /* Medium-Large screens (Laptops, etc.) */
+        @media (max-width: 1280px) {
+            .unique-carousel-track a {
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+            }
+
+            .logo {
+                left: -25px;
+            }
+
+            .unique-carousel-arrow {
+                padding: 9px;
+            }
+        }
+
+        /* Medium screens (Tablets, etc.) */
+        @media (max-width: 1024px) {
+            .unique-carousel-track a {
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+            }
+
+            .unique-carousel-arrow {
+                padding: 8px;
+            }
+        }
+
+        /* Medium-Small screens */
+        @media (max-width: 900px) {
+            .unique-carousel-track a {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .unique-carousel-arrow {
+                padding: 7px;
+            }
+        }
+
+        /* Small screens (Mobile phones, etc.) */
+        @media (max-width: 768px) {
+            .unique-carousel-track a {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .unique-carousel-arrow {
+                padding: 6px;
+            }
+        }
+
+        @media(min-width:)
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            .unique-carousel-track a {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .unique-carousel-arrow {
+                padding: 5px;
+            }
+        }
+
+        .foodhub {
+            padding-right: 5px;
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            .unique-carousel-track a {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .unique-carousel-arrow {
+                padding: 4px;
+            }
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-80%);
+            }
+        }
+
+        .top {
+            position: absolute;
+            font-size: 70px;
+            left: 170px;
+            text-decoration: wavy;
+            font-style: oblique;
+            color: red;
+            top: -50px;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .locality-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .locality-box {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33% - 30px);
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .locality-box:hover {
+            background-color: #f9f9f9;
+            transform: scale(1.1);
+
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .more-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .more-content .locality-box {
+            flex: 1 1 calc(25% - 30px);
+        }
+
+        #toggle-checkbox {
+            display: none;
+        }
+
+        #toggle-checkbox:checked~.more-content {
+            display: flex;
+        }
+
+        #toggle-checkbox:checked~.toggle-container label::after {
+            content: " See Less";
+        }
+
+        .toggle-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .toggle-container label {
+            background-color: #df8d2f;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-container label:hover {
+            background-color: #d07b1e;
+        }
+
+        #toggle-checkbox:not(:checked)~.toggle-container label::before {
+            content: "See More";
+        }
+
+        #toggle-checkbox:checked~.toggle-container label::after {
+            content: "See Less";
+        }
+
+
+        .app-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            margin: 20px auto;
+        }
+
+        /* Container for Image and Content */
+        .app-container {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        /* Image Styles */
+        .app-image {
+            width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+
+        /* Content Styles */
+        .app-content {
+            flex: 1;
+
+            padding-right: 150px;
+            padding-left: 160px;
+        }
+
+        .app-content h2 {
+            color: #df8d2f;
+            margin-bottom: 40px;
+            font-size: 50px;
+
+        }
+
+        .app-content p {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .app-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .app-form label {
+            font-size: 24px;
+            letter-spacing: 3px;
+            color: #333;
+        }
+
+        .app-form input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .app-form button {
+            padding: 10px;
+            background-color: #c00808;
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .app-form button:hover {
+            background-color: #d07b1e;
+        }
+
+        .download-links {
+            margin-top: 27px;
+        }
+
+        .download-links p {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .app-link {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .app-link img {
+            width: 150px;
+            height: au to;
+            transition: opacity 0.3s ease;
+        }
+
+        .app-link img:hover {
+            opacity: 0.8;
+        }
+
+        .play {
+            transform: scale(1.3);
+            padding-right: 60px;
+            padding-top: 20px;
+            padding-left: 10px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px 20px;
+        }
+
+        .footer-column h4 {
+            border-bottom: 2px solid #df8d2f;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #444;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 700;
+            font-size: 32px;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-section div {
+            margin: 5px 10px;
+            padding: 10px;
+        }
+
+        .search-bar {
+            height: 38px;
+            margin-bottom: 20px;
+        }
+
+        .filter-section div a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .filter-section div a:hover {
+            background-color: #df8d2f;
+            color: #fff;
+            border-color: #df8d2f;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: #df8d2f;
+        }
+
+        .search-bar button {
+            padding: 12px 20px;
+            border: 1px solid #df8d2f;
+            background-color: #df8d2f;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .search-bar button:hover {
+            background-color: #c97720;
+        }
+
+        /* Restaurant List */
+        .restaurant-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .restaurant-card {
+            width: 22%;
+            url("delivery.html;") margin-bottom: 1px;
+            border-radius: 8px;
+
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .restaurant-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .restaurant-info {
+            padding: 20px;
+        }
+
+        .restaurant-info h3 {
+            margin: 0;
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .restaurant-info p {
+            margin: 10px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .restaurant-info .rating,
+        .restaurant-info .delivery-time,
+        .restaurant-info .offer {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .restaurant-info .rating {
+            color: #fff;
+            background-color: #4caf50;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .restaurant-info .delivery-time {
+            color: #888;
+        }
+
+        .restaurant-info .offer {
+            color: #df8d2f;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .restaurant-card {
+                width: 100%;
+                box-shadow: #333;
+            }
+
+            .filter-section {
+                flex-direction: column;
+            }
+
+            .filter-section div {
+                width: 100%;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+        }
+
+        /* Media Queries */
+
+        /* For tablets and small desktops */
+        @media (max-width: 1200px) {
+            .carousel-item {
+                flex: 0 0 50%;
+            }
+
+            .logo {
+                left: 20px;
+
+            }
+
+            .carousel-wrapper {
+                height: 700px;
+            }
+
+            .search-box {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .search-box input[type="text"] {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .search-box select {
+                margin-bottom: 10px;
+            }
+        }
+
+        /* For medium-sized screens like small tablets */
+        @media (max-width: 992px) {
+            .carousel-item {
+                flex: 0 0 100%;
+            }
+
+            .header {
+                height: 200px;
+            }
+
+            .carousel-wrapper {
+                height: 800px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .slogan {
+                font-size: 28px;
+                left: 20px;
+            }
+
+            .search-box {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .search-box input[type="text"] {
+                margin-right: 0;
+            }
+        }
+
+        /* For mobile devices in landscape mode */
+        @media (max-width: 768px) {
+            .foodhub h1 {
+                font-size: 30px;
+            }
+
+            .header {}
+
+            .foodhub h2 {
+                font-size: 18px;
+            }
+
+            .search-bar input {
+                width: 60%;
+            }
+
+            .search-bar button {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .restaurant-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .carousel-text h1 {
+                font-size: 36px;
+            }
+
+            .carousel-text p {
+                font-size: 24px;
+            }
+        }
+
+        /* For mobile devices in portrait mode */
+        @media (max-width: 576px) {
+            .header {
+                height: auto;
+                padding: 10px;
+            }
+
+            .header-content {
+                flex-direction: column;
+            }
+
+
+            .logo {
+                height: 80px;
+                width: 80px;
+            }
+
+            .slogan {
+                font-size: 22px;
+                left: 10px;
+            }
+
+            .carousel-text h1 {
+                font-size: 28px;
+            }
+
+            .carousel-text p {
+                font-size: 18px;
+            }
+
+            .foodhub h1 {
+                font-size: 40px;
+                padding-right: 70px;
+            }
+
+            .foodhub h2 {
+                font-size: 16px;
+                padding-right: 60px;
+            }
+
+            .search-bar input {
+                width: 80%;
+            }
+
+            .search-bar button {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+
+
+
+        /*responsive media querey for footer only*/
+        @media (min-width: 481px) and (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-column {
+                text-align: center;
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .footer-column h4 {
+                font-size: 16px;
+                /* Adjusted font size */
+            }
+
+            .footer-column ul li {
+                font-size: 13px;
+                /* Adjusted font size */
+            }
+        }
+
+        /* Medium Devices (Tablets) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-column {
+                text-align: center;
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .footer-column h4 {
+                font-size: 16px;
+                /* Adjusted font size */
+            }
+
+            .footer-column ul li {
+                font-size: 13px;
+                /* Adjusted font size */
+            }
+        }
+
+        /* Large Devices (Laptops/Desktops) */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .footer-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .header-nav {
+                padding-left: 20px;
+
+            }
+
+            .footer-column {
+                margin: 10px;
+                width: auto;
+                /* Adjust width to fit layout */
+            }
+
+            .footer-column h4 {
+                font-size: 18px;
+                /* Default font size */
+            }
+
+            .footer-column ul li {
+                font-size: 14px;
+                /* Default font size */
+            }
+        }
+
+        /* Extra Large Devices (Large Screens) */
+        @media (min-width: 1441px) {
+            .footer-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .logo {
+                left: 10px;
+            }
+
+            .footer-column {
+                margin: 10px;
+                width: auto;
+                /* Adjust width to fit layout */
+            }
+
+            .footer-column h4 {
+                font-size: 20px;
+                /* Larger font size */
+            }
+
+            .footer-column ul li {
+                font-size: 16px;
+                /* Larger font size */
+            }
+
+            .footer-bottom {
+                font-size: 16px;
+                /* Larger font size */
+            }
+        }
+
+
+
+
+        /*responsive media query for app section of the website*/
+        @media (max-width: 480px) {
+            .app-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .app-image {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .app-content {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .app-content h2 {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            .app-content p {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .app-form label {
+                font-size: 18px;
+            }
+
+            .app-form input {
+                font-size: 16px;
+            }
+
+            .app-form button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .download-links {
+                margin-top: 20px;
+            }
+
+            .app-link img {
+                width: 120px;
+                height: auto;
+            }
+
+            .header-nav {
+                transform: translateY(20px);
+
+                z-index: 1;
+                gap: 50px;
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 20px;
+            }
+
+            .header {
+                padding-bottom: 200px;
+            }
+
+            .carousel-wrapper {
+                position: absolute;
+                top: 200px;
+            }
+        }
+
+        /* Small Devices (Phones) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header {}
+
+            .header-nav {
+                padding-left: 50px;
+                padding-top: 30px;
+                padding-right: 10px;
+                word-spacing: 0px;
+                gap: 30px;
+                column-gap: 70px;
+                line-height: 4px;
+
+                display: flex;
+                flex-wrap: wrap;
+
+            }
+
+            .top {
+                position: absolute;
+                top: px;
+                left: 170px;
+                font-size: 60px;
+
+
+            }
+
+            .app-image {
+                width: 80%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .app-content {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+
+            .app-content h2 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .app-content p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .app-form label {
+                font-size: 20px;
+            }
+
+            .app-form input {
+                font-size: 16px;
+            }
+
+            .app-form button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .download-links {
+                margin-top: 20px;
+            }
+
+            .app-link img {
+                width: 130px;
+                height: auto;
+            }
+        }
+
+        /* Medium Devices (Tablets) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .app-container {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .header {
+                height: 150px;
+            }
+
+            .app-image {
+                width: 40%;
+                margin-right: 20px;
+            }
+
+            .app-content {
+                padding-right: 40px;
+                padding-left: 40px;
+            }
+
+            .app-content h2 {
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+
+            .app-content p {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+            .app-form label {
+                font-size: 22px;
+            }
+
+            .app-form input {
+                font-size: 18px;
+            }
+
+            .app-form button {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .download-links {
+                margin-top: 25px;
+            }
+
+            .app-link img {
+                width: 140px;
+                height: auto;
+            }
+        }
+
+        /* Large Devices (Laptops/Desktops) */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .app-container {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .app-image {
+                width: 45%;
+                margin-right: 20px;
+            }
+
+            .app-content {
+                padding-right: 50px;
+                padding-left: 50px;
+            }
+
+            .app-content h2 {
+                font-size: 50px;
+                margin-bottom: 40px;
+            }
+
+            .app-content p {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            .app-form label {
+                font-size: 24px;
+            }
+
+            .app-form input {
+                font-size: 18px;
+            }
+
+            .app-form button {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            .download-links {
+                margin-top: 30px;
+            }
+
+            .app-link img {
+                width: 150px;
+                height: auto;
+            }
+
+            .logo {}
+        }
+
+        /* Extra Large Devices (Large Screens) */
+        @media (min-width: 1441px) {
+
+            .app-container {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .app-image {
+                width: 50%;
+                margin-right: 30px;
+            }
+
+            .app-content {
+                padding-right: 60px;
+                padding-left: 60px;
+            }
+
+            .app-content h2 {
+                font-size: 60px;
+                margin-bottom: 50px;
+            }
+
+            .app-content p {
+                font-size: 22px;
+                margin-bottom: 40px;
+            }
+
+            .app-form label {
+                font-size: 26px;
+            }
+
+            .app-form input {
+                font-size: 20px;
+            }
+
+            .app-form button {
+                font-size: 18px;
+                padding: 14px;
+            }
+
+            .download-links {
+                margin-top: 35px;
+            }
+
+            .app-link img {
+                width: 160px;
+                height: auto;
+            }
+        }
+
+        /*responsive design for mind*/
+        /* Media queries for responsiveness */
+        @media (max-width: 1200px) {
+            .what {
+                font-size: 45px;
+                margin-left: 60px;
+            }
+
+            .food-box {
+                flex-wrap: wrap;
+            }
+
+            .food-pic {
+                flex: 1 1 33.33%;
+                width: 33.33%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .what {
+                font-size: 40px;
+                margin-left: 40px;
+            }
+
+            .food-pic {
+                flex: 0 0 50%;
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .what {
+                font-size: 35px;
+                margin-left: 20px;
+            }
+
+            .food-pic {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+
+            .arrow-left,
+            .arrow-right {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .what {
+                font-size: 30px;
+                margin-left: 10px;
+            }
+
+            .header {}
+
+            .food-box {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .food-pic {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+
+            .arrow-left,
+            .arrow-right {
+                padding: 5px;
+            }
+        }
+
+
+
+        /*rest class css styling*/
+        .rest-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .rest-h1,
+        .rest-h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .rest-h2 {
+            margin-top: 40px;
+            font-size: 24px;
+            color: #080808;
+        }
+
+        .rest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .rest-box {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .rest-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .rest-box p {
+            color: #333;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .rest-hidden {
+            display: none;
+        }
+
+        .rest-toggle-input {
+            display: none;
+        }
+
+        .rest-toggle-label {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            width: 200px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .rest-toggle-label:hover {
+            background-color: #004999;
+        }
+
+        .rest-toggle-input:checked~.rest-grid .rest-hidden {
+            display: block;
+        }
+
+        .rest-toggle-input:checked~.rest-toggle-label::after {
+            content: 'See Less';
+        }
+
+        .rest-toggle-label::after {
+            content: 'See More';
+        }
+
+        @media (max-width: 768px) {
+
+            .rest-h1,
+            .rest-h2 {
+                font-size: 18px;
+            }
+
+            .rest-box p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .rest-h1,
+            .rest-h2 {
+                font-size: 16px;
+            }
+
+            .rest-box p {
+                font-size: 12px;
+            }
+
+            .rest-container {
+                padding: 10px;
+            }
+        }
+
+        .locality-box,
+        .rest-box a {
+            text-decoration: none;
+            /* Remove underline from links */
+            color: inherit;
+            /* Inherit the color from the parent element */
+            display: block;
+            /* Make the entire div clickable */
+        }
+
+        .locality-container a {
+            text-decoration: none;
+            /* Remove underline from links */
+            color: inherit;
+            /* Inherit the color from the parent element */
+
+        }
+
+
+
+        /*final media queries*/
+    </style>
+</head>
+
+<body>
+    <P class="top">SPICYTASTE</P>
+    <div class="header">
+        <div class="header-content">
+
+           <a href="SpicytasteCorporate.html"><img src="download.jpeg" class="logo" alt="Logo"></a>
+            <div class="header-nav">
+                <a href="SpicytasteCorporate.html">Spicytaste Corporate</a>
+                <a href="search.html">Search</a>
+                <a href="offers.html">Offers</a>
+                <a href="help.html">Help</a>
+                <a href="signin.html">Sign In</a>
+                <a href="cart.html">Cart</a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="carousel-wrapper">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="FOOD1 (1).jpeg" alt="Food 1">
+
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (2).jpeg" alt="Food 2">
+
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (3).jpeg" alt="Food 3">
+
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (4).jpeg" alt="Food 4">
+
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (5).jpeg" alt="Food 5">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="search-container">
+        <div class="search-box">
+            <select id="location" name="location">
+                <option value="">Select a location...</option>
+                <option value="new_york">New York</option>
+                <option value="los_angeles">Los Angeles</option>
+                <option value="chicago">Chicago</option>
+                <option value="houston">Houston</option>
+                <option value="miami">Miami</option>
+            </select>
+            <input type="text" id="restaurant-search" placeholder="Search for a restaurant...">
+            <button type="button">Search</button>
+        </div>
+    </div>
+
+    <div class="foodhub">
+        <h1>Spicytaste</h1>
+        <h2>A Taste You'll Remember</h2>
+    </div>
+    <div class="mind">
+        <p class="what">WHAT'S on your mind?</p>
+        <div class="unique-carousel-container">
+            <div class="unique-carousel-track">
+                <a href="delivery.html"><img src="eat (1).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (2).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (3).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (4).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (5).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (6).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (7).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (8).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (9).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (10).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (11).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (12).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (13).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (14).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (15).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (16).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (17).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (18).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (19).avif" class="unique-carousel-item-pic"></a>
+            </div>
+            <button class="unique-carousel-arrow unique-carousel-arrow-left" disabled>&lt;</button>
+            <button class="unique-carousel-arrow unique-carousel-arrow-right">&gt;</button>
+        </div>
+    </div>
+
+    <!-- <div class="mind">
+        <p class="what">What's on Your Mind?</p>
+        <div class="food-box">
+            <img src="eat (1).avif" class="food-pic" alt="Food Image 1">
+            <img src="eat (2).avif" class="food-pic" alt="Food Image 2">
+            <img src="eat (3).avif" class="food-pic" alt="Food Image 3">
+            <img src="eat (4).avif" class="food-pic" alt="Food Image 4">
+            <img src="eat (5).avif" class="food-pic" alt="Food Image 5">
+            <img src="eat (6).avif" class="food-pic" alt="Food Image 6">
+            <img src="eat (7).avif" class="food-pic" alt="Food Image 7">
+            <img src="eat (8).avif" class="food-pic" alt="Food Image 8">
+            <img src="eat (9).avif" class="food-pic" alt="Food Image 9">
+            <img src="eat (10).avif" class="food-pic" alt="Food Image 10">
+            <img src="eat (11).avif" class="food-pic" alt="Food Image 11">
+            <img src="eat (12).avif" class="food-pic" alt="Food Image 12">
+            <img src="eat (13).avif" class="food-pic" alt="Food Image 13">
+            <img src="eat (14).avif" class="food-pic" alt="Food Image 14">
+            <img src="eat (15).avif" class="food-pic" alt="Food Image 15">
+            <img src="eat (16).avif" class="food-pic" alt="Food Image 11">
+            <img src="eat (17).avif" class="food-pic" alt="Food Image 12">
+            <img src="eat (18).avif" class="food-pic" alt="Food Image 13">
+            <img src="eat (19).avif" class="food-pic" alt="Food Image 14">
+            <img src="eat (20).avif" class="food-pic" alt="Food Image 15">
+        </div>
+    </div> -->
+    <div class="container">
+        <h1>Popular Localities in and around Chandigarh</h1>
+        <div class="locality-container">
+            <div class="locality-box"><a href="rest.html">Kharar Road<br>653 places</a></div>
+            <div class="locality-box"><a href="rest.html">Phase 3, Mohali<br>115 places</a></div>
+            <div class="locality-box"><a href="rest.html">Sector 17, Chandigarh<br>44 places</a></div>
+            <div class="locality-box"><a href="rest.html">Sector 34, Chandigarh<br>50 places</a></div>
+            <div class="locality-box"><a href="rest.html">Phase 10, Mohali<br>84 places</a></div>
+
+        </div>
+
+        <input type="checkbox" id="toggle-checkbox">
+        <div class="more-content">
+            <div class="locality-container">
+                <div class="locality-box"><a href="rest.html">Kharar Road<br>653 places</a></div>
+                <div class="locality-box"><a href="rest.html">Phase 3, Mohali<br>115 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 17, Chandigarh<br>44 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 34, Chandigarh<br>50 places</a></div>
+                <div class="locality-box"><a href="rest.html">Phase 10, Mohali<br>84 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 10, Chandigarh<br>32 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 22, Chandigarh<br>81 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 5, Panchkula<br>78 places</a></div>
+                <div class="locality-box"><a href="rest.html">Phase 7, Mohali<br>85 places</a></div>
+                <div class="locality-box"><a href="rest.html">Ambala Road<br>219 places</a></div>
+                <div class="locality-box"><a href="rest.html">VIP Road<br>410 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 70, Mohali<br>209 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 2, Panchkula<br>31 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 20, Panchkula<br>107 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 15, Chandigarh<br>50 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 32, Chandigarh<br>43 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 16, Panchkula<br>29 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 67, Mohali<br>188 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 11, Panchkula<br>33 places</a></div>
+                <div class="locality-box"><a href="rest.html">Sector 46, Chandigarh<br>68 places</a></div>
+                <div class="locality-box"><a href="rest.html">IT Park<br>22 places</a></div>
+
+            </div>
+        </div>
+
+        <div class="toggle-container">
+            <label for="toggle-checkbox"></label>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="app-section">
+        <div class="app-container">
+            <img src="app.avif" alt="FOODHUB App" class="app-image">
+            <div class="app-content">
+                <h2>Get the Spicytaste App</h2>
+                <p>We will send you a link, open it on your phone to download the app.</p>
+                <form class="app-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+
+
+                    <button type="submit">Share App Link</button>
+                </form>
+                <div class="download-links">
+                    <p>Download the app from:</p>
+                    <a href="https://play.google.com/store/apps" target="_blank" class="app-link">
+                        <img src="play.webp" alt="Google Play" class="play">
+                    </a>
+                    <a href="https://apps.apple.com" target="_blank" class="app-link">
+                        <img src="ap.webp" alt="App Store" class="play">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Restaurants with Online Food Delivery in Chandigarh</h1>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div><a href="#">Fast Delivery</a></div>
+            <div><a href="#">Ratings 4.0+</a></div>
+            <div><a href="#">Pure Veg</a></div>
+            <div><a href="#">Offers</a></div>
+            <div><a href="#">Rs. 300-Rs. 600</a></div>
+            <div><a href="#">Less than Rs. 300</a></div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search for restaurant and food">
+            <a href="rest.html"><button type="button">Search</button></a>
+        </div>
+
+        <!-- Restaurant List -->
+        <div class="restaurant-list">
+            <!-- Restaurant Card 1 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest1.avif" alt="Shree Naivedyam" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Shree Naivedyam</h3>
+                    <p class="offer">10% OFF UPTO ₹40</p>
+                    <p class="rating">4.3</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: North Indian, Chinese, South Indian, Pizzas, Beverages</p>
+                    <p>Location: Chandigarh City</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 2 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest2.avif" alt="The Fusion Lounge" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>The Fusion Lounge</h3>
+                    <p class="offer">10% OFF UPTO ₹40</p>
+                    <p class="rating">4.2</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: North Indian, South Indian, Chinese, Beverages, Fast Food, Desserts</p>
+                    <p>Location: Railway Station</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 3 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest3.avif" alt="Mr. Gurung Momo & Chinese Corner" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Mr. Gurung Momo & Chinese Corner</h3>
+                    <p class="offer">20% OFF UPTO ₹50</p>
+                    <p class="rating">4.1</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: Momos, Chinese, Fast Food</p>
+                    <p>Location: Mohan Nagar</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 4 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest4.avif" alt="Magic Momo" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Magic Momo</h3>
+                    <p class="rating">4.1</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: Momos, Chinese</p>
+                    <p>Location: Prasia Road</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 5 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest5.avif" alt="Rangla Panjab" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Rangla Panjab</h3>
+                    <p class="rating">4.2</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: North Indian, South Indian, Chinese, Beverages, Fast Food, Desserts</p>
+                    <p>Location: Prasia Road</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 6 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest6.avif" alt="28 Spice Club" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>28 Spice Club</h3>
+                    <p class="rating">4.3</p>
+                    <p class="delivery-time">Delivery in 55-60 mins</p>
+                    <p>Cuisine: North Indian, South Indian, Chinese, Beverages, Fast Food, Desserts</p>
+                    <p>Location: Chandigarh City</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 7 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest7.avif" alt="Apni Chopati" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Apni Chopati</h3>
+                    <p class="rating">4.5</p>
+                    <p class="delivery-time">Delivery in 50-55 mins</p>
+                    <p>Cuisine: Snacks, Burgers, Pizzas, Fast Food</p>
+                    <p>Location: Rautha Wada</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 8 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest8.avif" alt="Sanju Ka Dhaba" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Sanju Ka Dhaba</h3>
+                    <p class="rating">4.3</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: North Indian, South Indian, Chinese</p>
+                    <p>Location: Prasia Road</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 9 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest9.avif" alt="Raimens Cafe 79" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Raimens Cafe 79</h3>
+                    <p class="rating">4.4</p>
+                    <p class="delivery-time">Delivery in 50-55 mins</p>
+                    <p>Cuisine: Bakery, Pizzas, Snacks, Beverages</p>
+                    <p>Location: VIP Road</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 10 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest10.avif" alt="Chaska Cafe" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Chaska Cafe</h3>
+                    <p class="rating">3.6</p>
+                    <p class="delivery-time">Delivery in 50-55 mins</p>
+                    <p>Cuisine: Cafe, Italian, Chinese</p>
+                    <p>Location: Chandigarh Locality</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 11 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest11.avif" alt="The Veg Legacy" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>The Veg Legacy</h3>
+                    <p class="rating">4.0</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: North Indian</p>
+                    <p>Location: Chandigarh City</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 12 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest12.avif" alt="Bharat Mewad Ice Cream" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Bharat Mewad Ice Cream</h3>
+                    <p class="offer">15% OFF UPTO ₹45</p>
+                    <p class="rating">4.5</p>
+                    <p class="delivery-time">Delivery in 40-45 mins</p>
+                    <p>Cuisine: Ice Cream, Desserts, Beverages</p>
+                    <p>Location: Chandigarh Locality</p>
+                </div>
+            </div>
+        </div>
+        <div class="restaurant-list">
+            <!-- Restaurant Card 1 -->
+            <!-- Restaurant Card 1 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest13.avif" alt="Shree Naivedyam" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Shree Naivedyam</h3>
+                    <p class="offer">10% OFF UPTO ₹40</p>
+                    <p class="rating">4.3</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: North Indian, Chinese, South Indian, Pizzas, Beverages</p>
+                    <p>Location: Chandigarh City</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 2 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest14.avif" alt="The Fusion Lounge" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>The Fusion Lounge</h3>
+                    <p class="offer">10% OFF UPTO ₹40</p>
+                    <p class="rating">4.2</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: North Indian, South Indian, Chinese, Beverages, Fast Food, Desserts</p>
+                    <p>Location: Railway Station</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 3 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest15.avif" alt="Mr. Gurung Momo & Chinese Corner" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Mr. Gurung Momo & Chinese Corner</h3>
+                    <p class="offer">20% OFF UPTO ₹50</p>
+                    <p class="rating">4.1</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: Momos, Chinese, Fast Food</p>
+                    <p>Location: Mohan Nagar</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 4 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest16.avif" alt="Magic Momo" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Magic Momo</h3>
+                    <p class="rating">4.1</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: Momos, Chinese</p>
+                    <p>Location: Prasia Road</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 5 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest29.avif" alt="Rangla Panjab" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Rangla Panjab</h3>
+                    <p class="rating">4.2</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: North Indian, South Indian, Chinese, Beverages, Fast Food, Desserts</p>
+                    <p>Location: Prasia Road</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 6 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest30.avif" alt="28 Spice Club" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>28 Spice Club</h3>
+                    <p class="rating">4.3</p>
+                    <p class="delivery-time">Delivery in 55-60 mins</p>
+                    <p>Cuisine: North Indian, South Indian, Chinese, Beverages, Fast Food, Desserts</p>
+                    <p>Location: Chandigarh City</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 7 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest31.avif" alt="Apni Chopati" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Apni Chopati</h3>
+                    <p class="rating">4.5</p>
+                    <p class="delivery-time">Delivery in 50-55 mins</p>
+                    <p>Cuisine: Snacks, Burgers, Pizzas, Fast Food</p>
+                    <p>Location: Rautha Wada</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 8 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest32.avif" alt="Sanju Ka Dhaba" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Sanju Ka Dhaba</h3>
+                    <p class="rating">4.3</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: North Indian, South Indian, Chinese</p>
+                    <p>Location: Prasia Road</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 9 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest21.avif" alt="Raimens Cafe 79" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Raimens Cafe 79</h3>
+                    <p class="rating">4.4</p>
+                    <p class="delivery-time">Delivery in 50-55 mins</p>
+                    <p>Cuisine: Bakery, Pizzas, Snacks, Beverages</p>
+                    <p>Location: VIP Road</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 10 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest22.avif" alt="Chaska Cafe" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Chaska Cafe</h3>
+                    <p class="rating">3.6</p>
+                    <p class="delivery-time">Delivery in 50-55 mins</p>
+                    <p>Cuisine: Cafe, Italian, Chinese</p>
+                    <p>Location: Chandigarh Locality</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 11 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest23.avif" alt="The Veg Legacy" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>The Veg Legacy</h3>
+                    <p class="rating">4.0</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: North Indian</p>
+                    <p>Location: Chandigarh City</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 12 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest24.avif" alt="Bharat Mewad Ice Cream" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Bharat Mewad Ice Cream</h3>
+                    <p class="offer">15% OFF UPTO ₹45</p>
+                    <p class="rating">4.5</p>
+                    <p class="delivery-time">Delivery in 40-45 mins</p>
+                    <p>Cuisine: Ice Cream, Desserts, Beverages</p>
+                    <p>Location: Chandigarh Locality</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 13 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest25.avif" alt="Annu's Kitchen's Queen Of Paratha" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Annu's Kitchen's Queen Of Paratha</h3>
+                    <p class="rating">4.6</p>
+                    <p class="delivery-time">Delivery in 50-55 mins</p>
+                    <p>Cuisine: North Indian, South Indian, Chinese, Beverages, Fast Food, Desserts</p>
+                    <p>Location: Chandigarh City</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 14 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest26.avif" alt="Urban Cafe" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Urban Cafe</h3>
+                    <p class="rating">4.2</p>
+                    <p class="delivery-time">Delivery in 50-55 mins</p>
+                    <p>Cuisine: Snacks, Pizzas, Pastas, Fast Food, Burgers, Cafe</p>
+                    <p>Location: Chandigarh City</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 15 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest27.avif" alt="The Party Hub" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>The Party Hub</h3>
+                    <p class="rating">4.2</p>
+                    <p class="delivery-time">Delivery in 55-60 mins</p>
+                    <p>Cuisine: North Indian, South Indian, Chinese, Beverages, Fast Food</p>
+                    <p>Location: Chandigarh City</p>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 16 -->
+            <div class="restaurant-card">
+                <a href="delivery.html">
+                    <img src="rest28.avif" alt="India Gate Restaurant" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>India Gate Restaurant</h3>
+                    <p class="rating">4.3</p>
+                    <p class="delivery-time">Delivery in 45-50 mins</p>
+                    <p>Cuisine: North Indian, South Indian, Chinese, Beverages, Fast Food</p>
+                    <p>Location: Chandigarh City</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <!-- Add more restaurant cards here -->
+    </div>
+    </div>
+
+
+
+    <div class="rest-container">
+        <h1 class="rest-h1">Best Places to Eat Across Cities</h1>
+        <input type="checkbox" id="rest-toggle" class="rest-toggle-input">
+        <div class="rest-grid">
+            <div class="rest-box"><a href="rest.html">
+                    <p>Best Restaurants in Bangalore</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Best Restaurants in Pune</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Best Restaurants in Mumbai</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Best Restaurants in Delhi</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Best Restaurants in Hyderabad</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Best Restaurants in Kolkata</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Best Restaurants in Chennai</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Best Restaurants in Chandigarh</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Best Restaurants in Ahmedabad</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Best Restaurants in Jaipur</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Nagpur</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Bhubaneswar</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Kochi</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Surat</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Dehradun</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Ludhiana</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Patna</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Mangaluru</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Bhopal</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Gurgaon</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Coimbatore</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Agra</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Noida</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Vijayawada</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Guwahati</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Mysore</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Pondicherry</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Thiruvananthapuram</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Ranchi</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Vizag</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Udaipur</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Best Restaurants in Vadodara</p>
+                </a></div>
+        </div>
+
+        <label for="rest-toggle" class="rest-toggle-label"></label>
+
+        <h2 class="rest-h2">Explore Restaurants Near Me</h2>
+        <input type="checkbox" id="rest-toggle2" class="rest-toggle-input">
+        <div class="rest-grid">
+            <div class="rest-box"><a href="rest.html">
+                    <p>Chinese Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>South Indian Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Indian Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Kerala Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Korean Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>North Indian Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Seafood Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Bengali Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Punjabi Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box"><a href="rest.html">
+                    <p>Italian Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Andhra Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Biryani Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Japanese Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Arabian Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Fast Food Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Jain Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Gujarati Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Thai Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Pizzas Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Asian Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Cafe Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Continental Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Mexican Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Mughlai Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Sushi Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>French Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>European Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Lebanese Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Turkish Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>American Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Malaysian Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Iranian Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Sri Lankan Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>Spanish Restaurant Near Me</p>
+                </a></div>
+            <div class="rest-box rest-hidden"><a href="rest.html">
+                    <p>German Restaurant Near Me</p>
+                </a></div>
+        </div>
+
+        <label for="rest-toggle2" class="rest-toggle-label"></label>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Spicytaste One</a></li>
+                    <li><a href="#">Spicytaste Instamart</a></li>
+                    <li><a href="#">Spicytaste Genie</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact us</h4>
+                <ul>
+                    <li><a href="#">Help & Support</a></li>
+                    <li><a href="#">Partner with us</a></li>
+                    <li><a href="#">Ride with us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>We deliver to:</h4>
+                <ul>
+                    <li><a href="#">Bangalore</a></li>
+                    <li><a href="#">Gurgaon</a></li>
+                    <li><a href="#">Hyderabad</a></li>
+                    <li><a href="#">Delhi</a></li>
+                    <li><a href="#">Mumbai</a></li>
+                    <li><a href="#">Pune</a></li>
+                    <li>589 cities</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 Spicytaste. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.querySelector('.unique-carousel-track');
+            const slides = document.querySelectorAll('.unique-carousel-item-pic');
+            const totalImages = slides.length;
+            let visibleImages = getVisibleImages();
+            let index = 0;
+
+            function getVisibleImages() {
+                if (window.innerWidth <= 480) {
+                    return 2;
+                } else if (window.innerWidth <= 768) {
+                    return 3;
+                } else {
+                    return 4;
+                }
+            }
+
+            function updateArrows() {
+                document.querySelector('.unique-carousel-arrow-left').disabled = index === 0;
+                document.querySelector('.unique-carousel-arrow-right').disabled = index >= totalImages - visibleImages;
+            }
+
+            function moveSlide(step) {
+                index = (index + step + totalImages) % totalImages;
+                if (index >= totalImages - visibleImages) {
+                    index = totalImages - visibleImages;
+                }
+                if (index < 0) {
+                    index = 0;
+                }
+                slider.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
+                updateArrows();
+                console.log('Current Index:', index);
+            }
+
+            document.querySelector('.unique-carousel-arrow-right').onclick = () => moveSlide(1);
+            document.querySelector('.unique-carousel-arrow-left').onclick = () => moveSlide(-1);
+
+            updateArrows();
+
+            // Recalculate visible images on window resize
+            window.addEventListener('resize', () => {
+                visibleImages = getVisibleImages();
+                slider.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
+                updateArrows();
+            });
+        });
+    </script>
+</body>
+
+</html>

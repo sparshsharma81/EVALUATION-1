@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spicytaste Corporate - FoodHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            margin-left: 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .corporate {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .corporate h2 {
+            color: #ff6347;
+            margin-bottom: 1rem;
+        }
+        .corporate p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .contact-info {
+            margin-top: 2rem;
+        }
+        .contact-info h3 {
+            color: #ff6347;
+        }
+        .contact-info p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+        .corporate-form {
+            margin-top: 2rem;
+        }
+        .corporate-form input,
+        .corporate-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .corporate-form button {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .corporate-form button:hover {
+            background-color: #e5533d;
+        }
+        footer {
+            background-color: #ff6347;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FoodHub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="offers.html">Offers</a>
+            <a href="help.html">Help</a>
+            <a href="signin.html">Sign In</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+    <main>
+        <section class="corporate">
+            <h2>Spicytaste Corporate</h2>
+            <p>Welcome to Spicytaste Corporate! We provide catering services for corporate events, business meetings, and office parties. Our team is dedicated to offering the best dining experience with a variety of spicy and delicious dishes that are sure to impress your guests and colleagues.</p>
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Email: corporate@spicytaste.com</p>
+                <p>Phone: +123-456-7890</p>
+                <p>Address: 123 Spicy St., Flavor Town, TX</p>
+            </div>
+            <div class="corporate-form">
+                <h3>Request a Quote</h3>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input
+                     type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="company" placeholder="Company Name" required>
+                    <textarea name="details" placeholder="Event Details" rows="5" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 FoodHub. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

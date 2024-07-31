@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            font-size: 24px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="slider-container">
+    <div class="slider">
+        <div class="slide"><img src="FOOD1 (2).jpeg" alt="Image 1"></div>
+        <div class="slide"><img src="FOOD1 (3).jpeg" alt="Image 2"></div>
+        <div class="slide"><img src="FOOD1 (4).jpg" alt="Image 3"></div>
+        <div class="slide"><img src="FOOD1 (5).jpeg" alt="Image 4"></div>
+        <div class="slide"><img src="FOOD1 (5).jpg" alt="Image 5"></div>
+    </div>
+    <button class="arrow arrow-left">&lt;</button>
+    <button class="arrow arrow-right">&gt;</button>
+</div>
+
+<script>
+    alert('welcome');
+    const slider = document.querySelector('.slider');
+    const slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    function showSlide(i) {
+        if (i >= slides.length) index = slide.length;
+        else if (i < 0) index = 0;
+        else index = i;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    document.querySelector('.arrow-right').addEventListener('click', () => showSlide(index + 1));
+    document.querySelector('.arrow-left').addEventListener('click', () => showSlide(index - 1));
+</script>
+
+</body>
+</html>

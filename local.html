@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popular Localities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .locality-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .locality-box {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33% - 30px);
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .locality-box:hover {
+            background-color: #f9f9f9;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .more-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .more-content .locality-box {
+            flex: 1 1 calc(25% - 30px);
+        }
+
+        #toggle-checkbox {
+            display: none;
+        }
+
+        #toggle-checkbox:checked ~ .more-content {
+            display: flex;
+        }
+
+        #toggle-checkbox:checked ~ .toggle-container label::after {
+            content: " See Less";
+        }
+
+        .toggle-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .toggle-container label {
+            background-color: #df8d2f;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-container label:hover {
+            background-color: #d07b1e;
+        }
+
+        #toggle-checkbox:not(:checked) ~ .toggle-container label::before {
+            content: "See More";
+        }
+
+        #toggle-checkbox:checked ~ .toggle-container label::before {
+            content: "See Less";
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Popular Localities in and around Chandigarh</h1>
+        <div class="locality-container">
+            <div class="locality-box">Chandigarh Industrial Area<br>187 places</div>
+            <div class="locality-box">Sector 26, Chandigarh<br>62 places</div>
+            <div class="locality-box">Sector 7, Chandigarh<br>67 places</div>
+            <div class="locality-box">Sector 35, Chandigarh<br>92 places</div>
+            <div class="locality-box">Sector 8, Chandigarh<br>72 places</div>
+            <div class="locality-box">Sector 9, Panchkula<br>58 places</div>
+            <div class="locality-box">Phase 5, Mohali<br>118 places</div>
+            <div class="locality-box">Sector 9, Chandigarh<br>52 places</div>
+        </div>
+
+        <input type="checkbox" id="toggle-checkbox">
+        <div class="more-content">
+            <div class="locality-container">
+                <div class="locality-box">Kharar Road<br>653 places</div>
+                <div class="locality-box">Phase 3, Mohali<br>115 places</div>
+                <div class="locality-box">Sector 17, Chandigarh<br>44 places</div>
+                <div class="locality-box">Sector 34, Chandigarh<br>50 places</div>
+                <div class="locality-box">Phase 10, Mohali<br>84 places</div>
+                <div class="locality-box">Sector 10, Chandigarh<br>32 places</div>
+                <div class="locality-box">Sector 22, Chandigarh<br>81 places</div>
+                <div class="locality-box">Sector 5, Panchkula<br>78 places</div>
+                <div class="locality-box">Phase 7, Mohali<br>85 places</div>
+                <div class="locality-box">Ambala Road<br>219 places</div>
+                <div class="locality-box">VIP Road<br>410 places</div>
+                <div class="locality-box">Sector 70, Mohali<br>209 places</div>
+                <div class="locality-box">Sector 2, Panchkula<br>31 places</div>
+                <div class="locality-box">Sector 20, Panchkula<br>107 places</div>
+                <div class="locality-box">Sector 15, Chandigarh<br>50 places</div>
+                <div class="locality-box">Sector 32, Chandigarh<br>43 places</div>
+                <div class="locality-box">Sector 16, Panchkula<br>29 places</div>
+                <div class="locality-box">Sector 67, Mohali<br>188 places</div>
+                <div class="locality-box">Sector 11, Panchkula<br>33 places</div>
+                <div class="locality-box">Sector 46, Chandigarh<br>68 places</div>
+                <div class="locality-box">IT Park<br>22 places</div>
+            </div>
+        </div>
+
+        <div class="toggle-container">
+            <label for="toggle-checkbox"></label>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Image Carousel</title>
+    <style>
+        /* Base styles */
+.unique-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+    padding: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.unique-carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.unique-carousel-track a {
+    flex: 0 0 25%;
+    max-width: 25%;
+    text-align: center;
+}
+
+.unique-carousel-track img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.unique-carousel-track img:hover {
+    transform: scale(1.05);
+}
+
+.unique-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 50%;
+}
+
+.unique-carousel-arrow-left {
+    left: 0;
+}
+
+.unique-carousel-arrow-right {
+    right: 0;
+}
+
+/* Large screens (Desktops, etc.) */
+@media (max-width: 1440px) {
+    .unique-carousel-track a {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+
+    .unique-carousel-arrow {
+        padding: 10px;
+    }
+}
+
+/* Medium-Large screens (Laptops, etc.) */
+@media (max-width: 1280px) {
+    .unique-carousel-track a {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+
+    .unique-carousel-arrow {
+        padding: 9px;
+    }
+}
+
+/* Medium screens (Tablets, etc.) */
+@media (max-width: 1024px) {
+    .unique-carousel-track a {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+
+    .unique-carousel-arrow {
+        padding: 8px;
+    }
+}
+
+/* Medium-Small screens */
+@media (max-width: 900px) {
+    .unique-carousel-track a {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .unique-carousel-arrow {
+        padding: 7px;
+    }
+}
+
+/* Small screens (Mobile phones, etc.) */
+@media (max-width: 768px) {
+    .unique-carousel-track a {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .unique-carousel-arrow {
+        padding: 6px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .unique-carousel-track a {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .unique-carousel-arrow {
+        padding: 5px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    .unique-carousel-track a {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .unique-carousel-arrow {
+        padding: 4px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="mind">
+        <p class="what-in-mind">WHAT'S on your mind?</p>
+        <div class="unique-carousel-container">
+            <div class="unique-carousel-track">
+                <a href="delivery.html"><img src="eat (1).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (2).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (3).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (4).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (5).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (6).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (7).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (8).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (9).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (10).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (11).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (12).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (13).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (14).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (15).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (16).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (17).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (18).avif" class="unique-carousel-item-pic"></a>
+                <a href="delivery.html"><img src="eat (19).avif" class="unique-carousel-item-pic"></a>
+            </div>
+            <button class="unique-carousel-arrow unique-carousel-arrow-left" disabled>&lt;</button>
+            <button class="unique-carousel-arrow unique-carousel-arrow-right">&gt;</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.querySelector('.unique-carousel-track');
+            const slides = document.querySelectorAll('.unique-carousel-item-pic');
+            const totalImages = slides.length;
+            let visibleImages = getVisibleImages();
+            let index = 0;
+
+            function getVisibleImages() {
+                if (window.innerWidth <= 480) {
+                    return 2;
+                } else if (window.innerWidth <= 768) {
+                    return 3;
+                } else {
+                    return 4;
+                }
+            }
+
+            function updateArrows() {
+                document.querySelector('.unique-carousel-arrow-left').disabled = index === 0;
+                document.querySelector('.unique-carousel-arrow-right').disabled = index >= totalImages - visibleImages;
+            }
+
+            function moveSlide(step) {
+                index = (index + step + totalImages) % totalImages;
+                if (index >= totalImages - visibleImages) {
+                    index = totalImages - visibleImages;
+                }
+                if (index < 0) {
+                    index = 0;
+                }
+                slider.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
+                updateArrows();
+                console.log('Current Index:', index);
+            }
+
+            document.querySelector('.unique-carousel-arrow-right').onclick = () => moveSlide(1);
+            document.querySelector('.unique-carousel-arrow-left').onclick = () => moveSlide(-1);
+
+            updateArrows();
+
+            // Recalculate visible images on window resize
+            window.addEventListener('resize', () => {
+                visibleImages = getVisibleImages();
+                slider.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
+                updateArrows();
+            });
+        });
+    </script>
+</body>
+
+</html>

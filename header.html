@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spicytaste</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .header {
+            width: 100%;
+            color: #fff;
+            background-color: #df8d2f;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            justify-content: space-between;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+        }
+
+        .logo-and-name {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            height: 60px;
+            width: 60px;
+            clip-path: circle(50% at 50% 50%);
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .site-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            color: #ffd700;
+        }
+
+        .carousel-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 550px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-inner {
+            display: flex;
+            width: 500%;
+            animation: slide 30s infinite linear;
+        }
+
+        .carousel-item {
+            flex: 0 0 20%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(1.2);
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .overlay h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .overlay h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+
+        .search-container {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .search-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .search-box select,
+        .search-box input[type="text"],
+        .search-box button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+            flex: 1;
+            box-sizing: border-box;
+        }
+
+        .search-box button {
+            background-color: #df8d2f;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            flex: initial;
+        }
+
+        .search-box button:hover {
+            background-color: #d07b1e;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-wrapper {
+                height: 80vh;
+            }
+
+            .overlay {
+                padding: 20px;
+            }
+
+            .overlay h1 {
+                font-size: 32px;
+            }
+
+            .overlay h2 {
+                font-size: 18px;
+            }
+
+            .search-box {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .overlay h1 {
+                font-size: 24px;
+            }
+
+            .overlay h2 {
+                font-size: 16px;
+            }
+
+            .search-box select,
+            .search-box input[type="text"],
+            .search-box button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .search-box button {
+                flex: 1;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo-and-name">
+                <img src="download.jpeg" class="logo" alt="Logo">
+                <span class="site-name">Spicytaste</span>
+            </div>
+            <div class="header-nav">
+                <a href="#spicytaste-corporate">Spicytaste Corporate</a>
+                <a href="#search">Search</a>
+                <a href="#offers">Offers</a>
+                <a href="#help">Help</a>
+                <a href="#sign-in">Sign In</a>
+                <a href="#cart">Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="carousel-wrapper">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="FOOD1 (1).jpeg" alt="Food 1">
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (2).jpeg" alt="Food 2">
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (3).jpeg" alt="Food 3">
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (4).jpeg" alt="Food 4">
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (5).jpeg" alt="Food 5">
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (1).jpeg" alt="Food 1">
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (2).jpeg" alt="Food 2">
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (3).jpeg" alt="Food 3">
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (4).jpeg" alt="Food 4">
+            </div>
+            <div class="carousel-item">
+                <img src="FOOD1 (5).jpeg" alt="Food 5">
+            </div>
+        </div>
+        <div class="overlay">
+            <h1>Spicytaste</h1>
+            <h2>A Taste You'll Remember</h2>
+            <div class="search-container">
+                <div class="search-box">
+                    <select id="location" name="location">
+                        <option value="">Select a location...</option>
+                        <option value="new_york">New York</option>
+                        <option value="los_angeles">Los Angeles</option>
+                        <option value="chicago">Chicago</option>
+                        <option value="houston">Houston</option>
+                        <option value="miami">Miami</option>
+                    </select>
+                    <input type="text" id="restaurant-search" placeholder="Search for a restaurant...">
+                    <button type="button">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

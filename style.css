@@ -1,0 +1,136 @@
+.header {
+    width: 100%;
+    color: salmon;
+    background-color: whitesmoke;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    /* Vertically center items */
+    padding: 0 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    /* Vertically center items within this container */
+    width: 100%;
+    justify-content: center;
+    /* Center items horizontally within this container */
+    position: relative;
+    /* Position relative to help with centering */
+}
+
+.logo {
+    height: 120px;
+    width: 120px;
+    position: absolute;
+    /* Absolute positioning for the logo */
+    left: 2px;
+    /* Space from the left edge */
+    clip-path: circle(44% at 50% 50%);
+    /* clip-path: circle(radius at centerX centerY); this thing work like this*/
+}
+
+.slogan {
+    font-size: 35px;
+    line-height: 130px;
+    /* Match header height for vertical centering */
+    margin: 0;
+    position: absolute;
+    left: 200px;
+    animation: slideIn 1s ease-out, colorChange 2s linear infinite, typing 1s steps(40, end);
+}
+
+
+.carousel-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 600%;
+    /* Number of images * 100% */
+    animation: slide 15s infinite linear;
+}
+
+.carousel-item {
+    flex: 0 0 16.66%;
+    /* 100% / number of images */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+.carousel-item img {
+    max-width: 180%;
+    max-height: 550px;
+    object-fit: contain;
+    display: block;
+}
+.what{
+    font-size:50px;
+    font-weight: bold;
+    margin-left:80px;
+}
+@keyframes slide {
+
+    /*this is to make the images move on below the header*/
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-63.33%);
+    }
+}
+
+@keyframes slideIn {
+
+    /*this is also for the slogan text*/
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes colorChange {
+
+    /*this is for the slogan text*/
+    0% {
+        color: rgb(0, 0, 0);
+    }
+
+
+    50% {
+        color: red;
+    }
+
+    100% {
+        color: rgb(115, 201, 39);
+    }
+}
+
+@keyframes typing {  
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+.food-box{
+    height:380px;
+    width:1200px;
+    overflow:hidden;
+}
