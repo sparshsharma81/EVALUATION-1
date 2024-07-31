@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    
     <style>
         /* General Styles */
         body {
@@ -249,6 +249,7 @@
             position: absolute;
             top: 170px;
             left: 40%;
+            
             padding: 40px 20px;
             transform: scale(2);
         }
@@ -401,7 +402,6 @@
             }
         }
 
-        @media(min-width:)
         /* Extra small screens */
         @media (max-width: 480px) {
             .unique-carousel-track a {
@@ -423,6 +423,9 @@
             .unique-carousel-track a {
                 flex: 0 0 100%;
                 max-width: 100%;
+            }
+            .top{
+                color:blue;
             }
 
             .unique-carousel-arrow {
@@ -1034,6 +1037,9 @@
 
             .foodhub h2 {
                 font-size: 16px;
+                position:absolute;
+                top:160px;
+                transform:scale(1.8);
                 padding-right: 60px;
             }
 
@@ -1218,18 +1224,20 @@
 
                 z-index: 1;
                 gap: 50px;
+                row-gap:20px;
+                padding-bottom:20px;
                 display: flex;
                 flex-wrap: wrap;
-                padding-left: 20px;
+                padding-left: 10px;
             }
 
             .header {
-                padding-bottom: 200px;
+                padding-bottom: 20px;
             }
 
             .carousel-wrapper {
-                position: absolute;
-                top: 200px;
+                position: relative;
+                top: 0px;
             }
         }
 
@@ -1657,6 +1665,43 @@
 
             .rest-container {
                 padding: 10px;
+            }
+            .top{
+                font-size:45px;
+                top:-30px;
+                left:120px;
+                       }
+            .logo{
+                left:0px;
+            }
+            .foodhub h1{
+                font-size:35px;
+                padding-top:10px;
+                max-width:20px;
+                left:-70px;
+                top:-0px;
+                position:relative;
+            
+            }
+            .foodhub h2{
+            }
+            
+            .foodhub{
+                max-width:10px;
+            }
+            .search-box{
+                position:relative;
+                top:120px;
+                transform:scale(0.9);
+                left:-20px;
+            }
+            .carousel-item{
+                transform: scaleY(1.2);
+            }
+        }
+        @media (min-width:480px) and (max-width:581px){
+            .header-nav{
+                
             }
         }
 
