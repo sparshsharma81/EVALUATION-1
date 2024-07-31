@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spicytaste Restaurant</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #ff6600;
+            color: white;
+            padding: 15px 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: #ff5400;
+            border-radius: 4px;
+            color: #fff;
+        }
+
+        main {
+            padding-top: 80px; /* To prevent content from being hidden behind the fixed header */
+        }
+
+        #restaurant-info {
+            background: linear-gradient(135deg, #ff6600, #ff8c00);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        #restaurant-info h1 {
+            font-size: 3em;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        #restaurant-info p {
+            font-size: 1.25em;
+            color: #f9f9f9;
+            margin: 10px 0;
+        }
+
+        #menu {
+            padding: 40px 20px;
+        }
+
+        #menu h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #ff6600;
+            border-bottom: 2px solid #ff6600;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .menu-section {
+            margin-bottom: 60px;
+        }
+
+        .menu-section h3 {
+            font-size: 2.2em;
+            border-bottom: 3px solid #ff6600;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            color: #ff6600;
+            text-align: center;
+        }
+
+        .menu-grid, .extra-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item, .extra-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .menu-item img, .extra-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .item-info, .extra-info {
+            padding: 15px;
+        }
+
+        .item-info h4, .extra-info h4 {
+            margin: 0;
+            font-size: 1.6em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .item-info p, .extra-info p {
+            margin: 5px 0;
+            color: #666;
+            font-size: 1em;
+        }
+
+        .menu-item:hover, .extra-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        footer a {
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .extra-section h2{
+            font-size: 2.2em;
+            border-bottom: 3px solid #ff6600;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            color: #ff6600;
+            text-align: center;
+
+        }
+        a {
+            text-decoration: none; /* Removes the underline */
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Swiggy Corporate</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Offers</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="restaurant-info">
+            <h1>Welcome to Spicytaste</h1>
+            <p><strong>Slogan:</strong> A TASTE YOU'LL REMEMBER</p>
+        </section>
+
+        <section id="menu">
+            <h2>Menu</h2>
+        
+            <!-- Starters Section -->
+            <div class="menu-section">
+                <h3>Starters</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="starter1.jpeg" alt="Starter 1">
+                        </a>
+                        <div class="item-info">
+                            <h4>Bruschetta</h4>
+                            <p>Crispy toasted bread topped with tomatoes, basil, and garlic.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="starter2.jpeg" alt="Starter 2">
+                        </a>
+                        <div class="item-info">
+                            <h4>Garlic Knots</h4>
+                            <p>Soft, buttery knots with a hint of garlic and parsley.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="starter3.jpeg" alt="Starter 3">
+                        </a>
+                        <div class="item-info">
+                            <h4>Stuffed Mushrooms</h4>
+                            <p>Mushrooms filled with a savory mixture of cheese and herbs.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="starter4.jpeg" alt="Starter 4">
+                        </a>
+                        <div class="item-info">
+                            <h4>Spring Rolls</h4>
+                            <p>Crispy rolls filled with a mix of vegetables and spices.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="starter5.jpeg" alt="Starter 5">
+                        </a>
+                        <div class="item-info">
+                            <h4>Chicken Wings</h4>
+                            <p>Spicy wings served with a tangy dipping sauce.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="starter6.jpeg" alt="Starter 6">
+                        </a>
+                        <div class="item-info">
+                            <h4>Onion Rings</h4>
+                            <p>Crispy and golden-brown onion rings served with dipping sauce.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="starter7.jpeg" alt="Starter 7">
+                        </a>
+                        <div class="item-info">
+                            <h4>Quesadillas</h4>
+                            <p>Cheese-filled tortillas with a side of salsa and guacamole.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Main Courses Section -->
+            <div class="menu-section">
+                <h3>Main Courses</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="main1.webp" alt="Main 1">
+                        </a>
+                        <div class="item-info">
+                            <h4>Grilled Salmon</h4>
+                            <p>Salmon fillet grilled to perfection with a side of vegetables.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="main2.webp" alt="Main 2">
+                        </a>
+                        <div class="item-info">
+                            <h4>Spaghetti Carbonara</h4>
+                            <p>Classic Italian pasta dish with creamy sauce and pancetta.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="main3.webp" alt="Main 3">
+                        </a>
+                        <div class="item-info">
+                            <h4>Beef Stroganoff</h4>
+                            <p>Tender beef strips in a rich and creamy mushroom sauce.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="main4.webp" alt="Main 4">
+                        </a>
+                        <div class="item-info">
+                            <h4>Chicken Alfredo</h4>
+                            <p>Pasta tossed in a creamy Alfredo sauce with grilled chicken.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="main5.webp" alt="Main 5">
+                        </a>
+                        <div class="item-info">
+                            <h4>Vegetarian Pizza</h4>
+                            <p>Pizza topped with a variety of fresh vegetables.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="main6.webp" alt="Main 6">
+                        </a>
+                        <div class="item-info">
+                            <h4>BBQ Ribs</h4>
+                            <p>Slow-cooked ribs slathered in tangy barbecue sauce.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="main7.webp" alt="Main 7">
+                        </a>
+                        <div class="item-info">
+                            <h4>Chicken Curry</h4>
+                            <p>Spicy chicken curry served with steamed rice.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Desserts Section -->
+            <div class="menu-section">
+                <h3>Desserts</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="dessert3.jpeg" alt="Dessert 1">
+                        </a>
+                        <div class="item-info">
+                            <h4>Chocolate Lava Cake</h4>
+                            <p>Warm chocolate cake with a gooey molten center.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="dessert4.jpeg" alt="Dessert 2">
+                        </a>
+                        <div class="item-info">
+                            <h4>Tiramisu</h4>
+                            <p>Layers of coffee-soaked ladyfingers and mascarpone cheese.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="dessert5.jpeg" alt="Dessert 3">
+                        </a>
+                        <div class="item-info">
+                            <h4>Cheesecake</h4>
+                            <p>Rich and creamy cheesecake with a graham cracker crust.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="dessert6.jpeg" alt="Dessert 4">
+                        </a>
+                        <div class="item-info">
+                            <h4>Apple Pie</h4>
+                            <p>Classic apple pie with a flaky, buttery crust.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="dessert7.jpeg" alt="Dessert 5">
+                        </a>
+                        <div class="item-info">
+                            <h4>Brownies</h4>
+                            <p>Decadent chocolate brownies with nuts.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="dessert8.jpeg" alt="Dessert 6">
+                        </a>
+                        <div class="item-info">
+                            <h4>Fruit Tart</h4>
+                            <p>Crispy tart filled with custard and topped with fresh fruit.</p>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a href="thank.html">
+                            <img src="dessert9.jpeg" alt="Dessert 7">
+                        </a>
+                        <div class="item-info">
+                            <h4>Panna Cotta</h4>
+                            <p>Italian cream dessert with a silky texture and berry sauce.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Specials Section -->
+        <section id="specials" class="extra-section">
+            <h2>Specials</h2>
+            <div class="extra-grid">
+                <div class="extra-item">
+                    <a href="thank.html">
+                        <img src="img1.jpeg" alt="Spicy Tuna Tartare">
+                    </a>
+                    <div class="extra-info">
+                        <h4>Spicy Tuna Tartare</h4>
+                        <p>Fresh tuna tartare mixed with avocado, spicy mayo, and served with crispy wonton chips.</p>
+                    </div>
+                </div>
+                <div class="extra-item">
+                    <a href="thank.html">
+                        <img src="img2.jpeg" alt="Lobster Mac and Cheese">
+                    </a>
+                    <div class="extra-info">
+                        <h4>Lobster Mac and Cheese</h4>
+                        <p>Luxurious mac and cheese with succulent lobster meat, topped with a crispy breadcrumb crust.</p>
+                    </div>
+                </div>
+                <div class="extra-item">
+                    <a href="thank.html">
+                        <img src="img3.jpeg" alt="Braised Short Ribs">
+                    </a>
+                    <div class="extra-info">
+                        <h4>Braised Short Ribs</h4>
+                        <p>Tender short ribs braised in red wine and herbs, served with creamy polenta.</p>
+                    </div>
+                </div>
+                <div class="extra-item">
+                    <a href="thank.html">
+                        <img src="img4.jpeg" alt="Truffle Risotto">
+                    </a>
+                    <div class="extra-info">
+                        <h4>Truffle Risotto</h4>
+                        <p>Rich and creamy risotto infused with truffle oil and topped with shaved Parmesan cheese.</p>
+                    </div>
+                </div>
+                <div class="extra-item">
+                    <a href="thank.html">
+                        <img src="img5.jpeg" alt="Duck Confit">
+                    </a>
+                    <div class="extra-info">
+                        <h4>Duck Confit</h4>
+                        <p>Slow-cooked duck leg with crispy skin, served with a side of roasted root vegetables.</p>
+                    </div>
+                </div>
+                <div class="extra-item">
+                    <a href="thank.html">
+                        <img src="img6.jpeg" alt="Mango Sorbet">
+                    </a>
+                    <div class="extra-info">
+                        <h4>Mango Sorbet</h4>
+                        <p>Refreshing mango sorbet with a hint of lime and mint.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Chef Recommendations Section -->
+        <!-- Chef Recommendations Section -->
+<section id="chef-recommendations" class="extra-section">
+    <h2>Chef Recommendations</h2>
+    <div class="extra-grid">
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo13.jpeg" alt="Spaghetti Carbonara">
+                <div class="extra-info">
+                    <h4>Spaghetti Carbonara</h4>
+                    <p>Creamy pasta with pancetta, eggs, and Parmesan cheese.</p>
+                </div>
+            </a>
+        </div>
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo12.jpeg" alt="Shrimp Cocktail">
+                <div class="extra-info">
+                    <h4>Shrimp Cocktail</h4>
+                    <p>Chilled shrimp served with a tangy cocktail sauce.</p>
+                </div>
+            </a>
+        </div>
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo11.jpeg" alt="Chicken Alfredo">
+                <div class="extra-info">
+                    <h4>Chicken Alfredo</h4>
+                    <p>Grilled chicken served over fettuccine pasta with a creamy Alfredo sauce.</p>
+                </div>
+            </a>
+        </div>
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo10.jpeg" alt="Beef Wellington">
+                <div class="extra-info">
+                    <h4>Beef Wellington</h4>
+                    <p>Beef tenderloin wrapped in puff pastry with mushroom duxelles.</p>
+                </div>
+            </a>
+        </div>
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo9.jpeg" alt="Crème Brûlée">
+                <div class="extra-info">
+                    <h4>Crème Brûlée</h4>
+                    <p>Vanilla custard with a caramelized sugar crust.</p>
+                </div>
+            </a>
+        </div>
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo8.jpeg" alt="Caprese Salad">
+                <div class="extra-info">
+                    <h4>Caprese Salad</h4>
+                    <p>Fresh tomatoes, mozzarella, and basil drizzled with balsamic glaze.</p>
+                </div>
+            </a>
+        </div>
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo7.jpeg" alt="Lamb Chops">
+                <div class="extra-info">
+                    <h4>Lamb Chops</h4>
+                    <p>Grilled lamb chops with rosemary and garlic, served with couscous.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Customer Favorites Section -->
+<section id="customer-favorites" class="extra-section">
+    <h2>Customer Favorites</h2>
+    <div class="extra-grid">
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo1.jpeg" alt="BBQ Ribs">
+                <div class="extra-info">
+                    <h4>BBQ Ribs</h4>
+                    <p>Fall-off-the-bone ribs slathered in barbecue sauce, served with coleslaw.</p>
+                </div>
+            </a>
+        </div>
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo2.jpeg" alt="Apple Pie">
+                <div class="extra-info">
+                    <h4>Apple Pie</h4>
+                    <p>Classic apple pie with a buttery crust and cinnamon-spiced filling.</p>
+                </div>
+            </a>
+        </div>
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo3.avif" alt="Quesadillas">
+                <div class="extra-info">
+                    <h4>Quesadillas</h4>
+                    <p>Grilled tortillas filled with cheese and your choice of chicken or beef.</p>
+                </div>
+            </a>
+        </div>
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo4.jpeg" alt="Onion Rings">
+                <div class="extra-info">
+                    <h4>Onion Rings</h4>
+                    <p>Crispy onion rings served with a side of ranch dipping sauce.</p>
+                </div>
+            </a>
+        </div>
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo5.jpeg" alt="Fish Tacos">
+                <div class="extra-info">
+                    <h4>Fish Tacos</h4>
+                    <p>Crispy fish tacos with cabbage slaw and a zesty lime crema.</p>
+                </div>
+            </a>
+        </div>
+        <div class="extra-item">
+            <a href="thank.html">
+                <img src="fo6.jpeg" alt="Panna Cotta">
+                <div class="extra-info">
+                    <h4>Panna Cotta</h4>
+                    <p>Smooth and creamy vanilla panna cotta with a berry coulis.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Spicytaste. All rights reserved.</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+</body>
+</html>

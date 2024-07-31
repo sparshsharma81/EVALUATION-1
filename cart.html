@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - FoodHub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        header {
+            background-color: #ff6347;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: white;
+            margin-left: 1rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .cart {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .cart-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cart-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .cart-item img {
+            width: 100px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .cart-item-details {
+            flex-grow: 1;
+            margin-left: 1rem;
+        }
+        .cart-item-details h3 {
+            margin: 0;
+            color: #ff6347;
+        }
+        .cart-item-details p {
+            margin: 0.5rem 0;
+            color: #666;
+        }
+        .cart-item-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .cart-item-actions input {
+            width: 50px;
+            text-align: center;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .cart-item-actions button {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cart-item-actions button:hover {
+            background-color: #e5533d;
+        }
+        .total {
+            text-align: right;
+            font-size: 1.5rem;
+            color: #ff6347;
+            margin-top: 2rem;
+        }
+        footer {
+            background-color: #ff6347;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FoodHub</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="offers.html">Offers</a>
+            <a href="help.html">Help</a>
+            <a href="signin.html">Sign In</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+    <main>
+        <section class="cart">
+            <h2>Your Cart</h2>
+            <div class="cart-item">
+                <img src="food-image1.jpg" alt="Food Item 1">
+                <div class="cart-item-details">
+                    <h3>Food Item 1</h3>
+                    <p>$10.00</p>
+                </div>
+                <div class="cart-item-actions">
+                    <input type="number" value="1" min="1">
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="food-image2.jpg" alt="Food Item 2">
+                <div class="cart-item-details">
+                    <h3>Food Item 2</h3>
+                    <p>$15.00</p>
+                </div>
+                <div class="cart-item-actions">
+                    <input type="number" value="1" min="1">
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="food-image3.jpg" alt="Food Item 3">
+                <div class="cart-item-details">
+                    <h3>Food Item 3</h3>
+                    <p>$20.00</p>
+                </div>
+                <div class="cart-item-actions">
+                    <input type="number" value="1" min="1">
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="total">
+                <p>Total: $45.00</p>
+                <button style="background-color: #ff6347; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; transition: background-color 0.3s;">Checkout</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 FoodHub. All rights reserved.</p>
+    </footer>
+</body>
+</html>
