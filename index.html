@@ -12,9 +12,9 @@
             font-family: 'Arial', sans-serif;
             color: #333;
             background-color: #f9f9f9;
-            /* overflow: hidden; */
             overflow-x:hidden;
         }
+
 
         .header {
             width: 100%;
@@ -23,7 +23,7 @@
             height: 80px;
             display: flex;
             align-items: center;
-            /* padding: 0 20px; */
+            padding: 0 20px;
             box-shadow: 0 4px 8px rgba(249, 105, 2, 0.1);
             position: relative;
             justify-content: space-between;
@@ -107,7 +107,7 @@
             height: 120px;
             display: flex;
             align-items: center;
-            /* padding: 0 20px; */
+            padding: 0 20px;
             box-shadow: 0 4px 8px rgba(249, 105, 2, 0.1);
         }
 
@@ -251,7 +251,6 @@
             position: absolute;
             top: 170px;
             left: 40%;
-            
             padding: 40px 20px;
             transform: scale(2);
         }
@@ -410,6 +409,7 @@
                 flex: 0 0 100%;
                 max-width: 100%;
             }
+           
 
             .unique-carousel-arrow {
                 padding: 5px;
@@ -425,9 +425,6 @@
             .unique-carousel-track a {
                 flex: 0 0 100%;
                 max-width: 100%;
-            }
-            .top{
-                color:blue;
             }
 
             .unique-carousel-arrow {
@@ -659,7 +656,7 @@
         .footer {
             background-color: #333;
             color: #fff;
-            /* padding: 20px; */
+            padding: 20px;
             width: 100%;
         }
 
@@ -1039,9 +1036,6 @@
 
             .foodhub h2 {
                 font-size: 16px;
-                position:absolute;
-                top:160px;
-                transform:scale(1.8);
                 padding-right: 60px;
             }
 
@@ -1226,20 +1220,18 @@
 
                 z-index: 1;
                 gap: 50px;
-                row-gap:20px;
-                padding-bottom:20px;
                 display: flex;
                 flex-wrap: wrap;
-                padding-left: 10px;
+                padding-left: 20px;
             }
 
             .header {
-                padding-bottom: 20px;
+                padding-bottom: 200px;
             }
 
             .carousel-wrapper {
-                position: relative;
-                top: 0px;
+                position: absolute;
+                top: 200px;
             }
         }
 
@@ -1668,43 +1660,6 @@
             .rest-container {
                 padding: 10px;
             }
-            .top{
-                font-size:45px;
-                top:-30px;
-                left:120px;
-                       }
-            .logo{
-                left:0px;
-            }
-            .foodhub h1{
-                font-size:35px;
-                padding-top:10px;
-                max-width:20px;
-                left:-70px;
-                top:-0px;
-                position:relative;
-            
-            }
-            .foodhub h2{
-            }
-            
-            .foodhub{
-                max-width:10px;
-            }
-            .search-box{
-                position:relative;
-                top:120px;
-                transform:scale(0.9);
-                left:-20px;
-            }
-            .carousel-item{
-                transform: scaleY(1.2);
-            }
-        }
-        @media (min-width:480px) and (max-width:581px){
-            .header-nav{
-                
-            }
         }
 
         .locality-box,
@@ -1786,7 +1741,7 @@
                 <option value="miami">Miami</option>
             </select>
             <input type="text" id="restaurant-search" placeholder="Search for a restaurant...">
-            <button type="button" class="search-button-11">Search</button>
+            <button type="button">Search</button>
         </div>
     </div>
 
@@ -2665,9 +2620,6 @@
                 updateArrows();
             });
         });
-
-    
-
     </script>
 </body>
 
