@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
+        * {
+            outline: 1px solid red; /* Outline around the element */
+            outline-offset: -5px;   /* Adjust this to visualize the margin */
+        }
        
         
         
@@ -410,6 +414,7 @@
 
         /* Extra small screens */
         @media (max-width: 480px) {
+            
             .header{
                 width:98%;
             }
@@ -426,6 +431,9 @@
 
         .foodhub {
             padding-right: 25px;
+        }
+        @media(max-width:400px){
+
         }
 
         /* Very small screens */
@@ -1076,8 +1084,8 @@
                 max-width: 100%; /* Ensure the width doesn't exceed the viewport */
                 box-sizing: border-box;  /*this styling is use to prevent the horizontal scroll*/
                 padding-right: 60px;
-                left:-37px;
-                max-width:189px;
+                left:-39px;
+                max-width:167px;
                 
             }
 
@@ -1594,7 +1602,7 @@
 
         @media (max-width: 576px) {
             .header{
-                width:97%;
+                width:96%;
             }
             .what {
                 font-size: 30px;
@@ -1728,7 +1736,7 @@
 
         @media (max-width: 480px) {
             .search-container{
-                max-width:215px;
+                max-width:194px;
             }
 
             .rest-h1,
@@ -1752,11 +1760,11 @@
                 left:0px;
             }
             .foodhub h1{
-                font-size:42px;
+                font-size:36px;
                 padding-top:10px;
                 max-width:20px;
-                left:-77px;
-                top:-42px;
+                left:-67px;
+                top:-39px;
                 position:relative;
             
             }
