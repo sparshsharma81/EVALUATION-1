@@ -4,13 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-    
-       
-        
-        
-       
         /* General Styles */
         body {
             margin: 0;
@@ -48,17 +43,18 @@
             clip-path: circle(50% at 50% 50%);
             object-fit: cover;
         }
-        .logo:hover{
-            transform:scale(1.6);
-            z-index:1;
+
+        .logo:hover {
+            transform: scale(1.6);
+            z-index: 1;
             animation: glow 1s linear;
-            
+
         }
 
         .header-nav {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
         }
 
         .header-nav a {
@@ -256,7 +252,7 @@
             position: absolute;
             top: 170px;
             left: 35%;
-            
+
             padding: 40px 20px;
             transform: scale(2);
         }
@@ -411,11 +407,11 @@
 
         /* Extra small screens */
         @media (max-width: 480px) {
-            
-            .header{
-                width:98%;
+
+            .header {
+                width: 99%;
             }
-            
+
             .unique-carousel-track a {
                 flex: 0 0 100%;
                 max-width: 100%;
@@ -429,9 +425,8 @@
         .foodhub {
             padding-right: 25px;
         }
-        @media(max-width:400px){
 
-        }
+        @media(max-width:400px) {}
 
         /* Very small screens */
         @media (max-width: 360px) {
@@ -439,8 +434,9 @@
                 flex: 0 0 100%;
                 max-width: 100%;
             }
-            .top{
-                color:blue;
+
+            .top {
+                color: blue;
             }
 
             .unique-carousel-arrow {
@@ -465,7 +461,7 @@
             text-decoration: wavy;
             font-style: oblique;
             color: red;
-            top: -50px;
+            top: 8px;
             z-index: 1;
         }
 
@@ -732,13 +728,14 @@
                 align-items: center;
             }
         }
-        .foodhub{
-            top:220px;
-            
+
+        .foodhub {
+            top: 220px;
+
         }
-        
-        .search-container{
-            top:525px;
+
+        .search-container {
+            top: 525px;
         }
 
         body {
@@ -746,7 +743,7 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
-            overflow-x:hidden;
+            overflow-x: hidden;
         }
 
         .container {
@@ -842,6 +839,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            transition: opacity 0.5s ease;
         }
 
         .restaurant-card {
@@ -857,6 +855,11 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
+        .visible:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
 
         .restaurant-image {
             width: 100%;
@@ -907,10 +910,13 @@
         }
 
         @media (max-width: 768px) {
-            .search-container{
-                
-            }
+            .search-container {}
+
             .restaurant-card {
+                width: 100%;
+                box-shadow: #333;
+            }
+            .visible {
                 width: 100%;
                 box-shadow: #333;
             }
@@ -985,20 +991,23 @@
             .search-box {
                 flex-direction: column;
                 width: 100%;
-                padding-top:100px;
+                padding-top: 100px;
             }
 
             .search-box input[type="text"] {
                 margin-right: 0;
             }
-            .foodhub{
-                padding-right:3px;
+
+            .foodhub {
+                padding-right: 3px;
             }
         }
 
         /* For mobile devices in landscape mode */
         @media (max-width: 768px) {
+            
             .foodhub h1 {
+                margin-top:50px;
                 font-size: 50px;
             }
 
@@ -1006,7 +1015,7 @@
 
             .foodhub h2 {
                 font-size: 32px;
-                max-width:200px;
+                max-width: 200px;
             }
 
             .search-bar input {
@@ -1019,6 +1028,10 @@
             }
 
             .restaurant-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .visible {
                 width: 100%;
                 margin-bottom: 20px;
             }
@@ -1037,10 +1050,11 @@
             .header {
                 height: auto;
                 padding: 10px;
-                padding-right:4px;
+                padding-right: 4px;
             }
-            .foodhub{
-                padding-right:0px;
+
+            .foodhub {
+                padding-right: 0px;
             }
 
             .header-content {
@@ -1069,21 +1083,24 @@
             .foodhub h1 {
                 font-size: 40px;
                 padding-right: 45px;
-                max-width: 100%; /* Ensure the width doesn't exceed the viewport */
+                max-width: 100%;
+                /* Ensure the width doesn't exceed the viewport */
                 box-sizing: border-box;
             }
 
             .foodhub h2 {
                 font-size: 30px;
-                position:absolute;
-                top:121px;
+                position: absolute;
+                top: 121px;
                 /*transform:scale(1.8);*/
-                max-width: 100%; /* Ensure the width doesn't exceed the viewport */
-                box-sizing: border-box;  /*this styling is use to prevent the horizontal scroll*/
+                max-width: 100%;
+                /* Ensure the width doesn't exceed the viewport */
+                box-sizing: border-box;
+                /*this styling is use to prevent the horizontal scroll*/
                 padding-right: 60px;
-                left:-39px;
-                max-width:167px;
-                
+                left: -39px;
+                max-width: 161px;
+
             }
 
             .search-bar input {
@@ -1095,26 +1112,30 @@
                 font-size: 12px;
             }
         }
-        @media (min-width: 481px) and (max-width:577px){
-            .foodhub h1{
-                font-size:42px;
-                position:absolute;
-                top:-17px;
-                left:-52px;
+
+        @media (min-width: 481px) and (max-width:577px) {
+            .foodhub h1 {
+                font-size: 42px;
+                position: absolute;
+                top: -26px;
+                left: -52px;
 
 
             }
-            .header{
-                height:180px;   
+
+            .header {
+                height: 180px;
             }
-            .foodhub h2{
-                font-size:32px;
-                position:absolute;
-                top:80px;
-                left:-25px;
+
+            .foodhub h2 {
+                font-size: 32px;
+                position: absolute;
+                top: 80px;
+                left: -25px;
             }
-            .search-container{
-                padding-top:48px;
+
+            .search-container {
+                padding-top: 48px;
             }
         }
 
@@ -1142,8 +1163,9 @@
                 font-size: 13px;
                 /* Adjusted font size */
             }
-            .foodhub h1{
-                padding-right:4px;
+
+            .foodhub h1 {
+                padding-right: 4px;
             }
         }
 
@@ -1153,11 +1175,12 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .foodhub h2{
-                font-size:25px;
+
+            .foodhub h2 {
+                font-size: 25px;
             }
 
-            
+
             .footer-column {
                 text-align: center;
                 margin: 10px 0;
@@ -1296,8 +1319,8 @@
 
                 z-index: 1;
                 gap: 50px;
-                row-gap:20px;
-                padding-bottom:20px;
+                row-gap: 20px;
+                padding-bottom: 20px;
                 display: flex;
                 flex-wrap: wrap;
                 padding-left: 10px;
@@ -1598,16 +1621,18 @@
         }
 
         @media (max-width: 576px) {
-            .header{
-                width:96%;
+            .header {
+                width: 96%;
             }
+
             .what {
                 font-size: 30px;
                 margin-left: 10px;
             }
-            .search-box{
-                padding-top:60px;
-                
+
+            .search-box {
+                padding-top: 60px;
+
             }
 
             .header {}
@@ -1732,8 +1757,8 @@
         }
 
         @media (max-width: 480px) {
-            .search-container{
-                max-width:194px;
+            .search-container {
+                max-width: 182px;
             }
 
             .rest-h1,
@@ -1748,43 +1773,50 @@
             .rest-container {
                 padding: 10px;
             }
-            .top{
-                font-size:45px;
-                top:-30px;
-                left:120px;
-                       }
-            .logo{
-                left:0px;
+
+            .top {
+                font-size: 42px;
+                top: 10px;
+                left: 115px;
             }
-            .foodhub h1{
-                font-size:36px;
-                padding-top:10px;
-                max-width:20px;
-                left:-67px;
-                top:-39px;
-                position:relative;
-            
+            .header{
+                width:100%;
             }
-            .foodhub h2{
+
+            .logo {
+                left: 0px;
             }
-            
-            .foodhub{
-                max-width:10px;
+
+            .foodhub h1 {
+                font-size: 36px;
+                padding-top: 10px;
+                max-width: 20px;
+                left: -73px;
+                top: -42px;
+                position: relative;
+
             }
-            .search-box{
-                position:relative;
-                top:65px;
-                transform:scale(0.9);
-                left:-20px;
+
+            .foodhub h2 {}
+
+            .foodhub {
+                max-width: 10px;
             }
-            .carousel-item{
+
+            .search-box {
+                position: relative;
+                top: 65px;
+                transform: scale(0.9);
+                left: -20px;
+            }
+
+            .carousel-item {
                 transform: scaleY(1.2);
             }
         }
-        @media (min-width:480px) and (max-width:581px){
-            .header-nav{
-                
-            }
+
+        @media (min-width:480px) and (max-width:581px) {
+            .header-nav {}
         }
 
         .locality-box,
@@ -1805,9 +1837,56 @@
 
         }
 
+        .orange-button:hover {
+            background-color: #FF8C00;
+            color: white;
+            /* Darker orange on hover */
+            transform: scale(1.05);
+            cursor: pointer;
+            /* Slightly enlarge button on hover */
+        }
+
+        /* Active effect for the button */
+        .orange-button:active {
+            background-color: #FF7F50;
+            /* Even darker orange when clicked */
+            transform: scale(0.95);
+            /* Slightly shrink button when clicked */
+        }
+
+        .more-rest {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            width: 200px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .visible {
+            display: none;
+
+        }
+
+        .vi {
+            display: none
+        }
+
+
+
 
 
         /*final media queries*/
+        /* {
+            outline: 1px solid red; /* Outline around the element */
+           /*  outline-offset: -5px;   Adjust this to visualize the margin 
+        }*/
     </style>
 </head>
 
@@ -1816,7 +1895,7 @@
     <div class="header">
         <div class="header-content">
 
-           <a href="SpicytasteCorporate.html"><img src="download.jpeg" class="logo" alt="Logo"></a>
+            <a href="SpicytasteCorporate.html"><img src="download.jpeg" class="logo" alt="Logo"></a>
             <div class="header-nav">
                 <a href="SpicytasteCorporate.html">Spicytaste Corporate</a>
                 <a href="search.html">Search</a>
@@ -2005,12 +2084,12 @@
 
         <!-- Filter Section -->
         <div class="filter-section">
-            <div><a href="#">Fast Delivery</a></div>
-            <div><a href="#">Ratings 4.0+</a></div>
-            <div><a href="#">Pure Veg</a></div>
-            <div><a href="#">Offers</a></div>
-            <div><a href="#">Rs. 300-Rs. 600</a></div>
-            <div><a href="#">Less than Rs. 300</a></div>
+            <div onclick="filter(4)" class="orange-button">Fast Delivery</div>
+            <div onclick="filter(9)" class="orange-button">Ratings 4.0+</div>
+            <div onclick="filter(15)" class="orange-button">Pure Veg</div>
+            <div onclick="filter(12)" class="orange-button">Offers</div>
+            <div onclick="filter(3)" class="orange-button">Rs. 300-Rs. 600</div>
+            <div onclick="filter(2)" class="orange-button">Less than Rs. 300</div>
         </div>
 
         <!-- Search Bar -->
@@ -2022,7 +2101,7 @@
         <!-- Restaurant List -->
         <div class="restaurant-list">
             <!-- Restaurant Card 1 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="1">
                 <a href="delivery.html">
                     <img src="rest1.avif" alt="Shree Naivedyam" class="restaurant-image">
                 </a>
@@ -2030,6 +2109,7 @@
                     <h3>Shree Naivedyam</h3>
                     <p class="offer">10% OFF UPTO ₹40</p>
                     <p class="rating">4.3</p>
+
                     <p class="delivery-time">Delivery in 45-50 mins</p>
                     <p>Cuisine: North Indian, Chinese, South Indian, Pizzas, Beverages</p>
                     <p>Location: Chandigarh City</p>
@@ -2037,7 +2117,7 @@
             </div>
 
             <!-- Restaurant Card 2 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="2">
                 <a href="delivery.html">
                     <img src="rest2.avif" alt="The Fusion Lounge" class="restaurant-image">
                 </a>
@@ -2052,7 +2132,7 @@
             </div>
 
             <!-- Restaurant Card 3 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="3">
                 <a href="delivery.html">
                     <img src="rest3.avif" alt="Mr. Gurung Momo & Chinese Corner" class="restaurant-image">
                 </a>
@@ -2067,7 +2147,7 @@
             </div>
 
             <!-- Restaurant Card 4 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="4">
                 <a href="delivery.html">
                     <img src="rest4.avif" alt="Magic Momo" class="restaurant-image">
                 </a>
@@ -2081,7 +2161,7 @@
             </div>
 
             <!-- Restaurant Card 5 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="5">
                 <a href="delivery.html">
                     <img src="rest5.avif" alt="Rangla Panjab" class="restaurant-image">
                 </a>
@@ -2095,7 +2175,7 @@
             </div>
 
             <!-- Restaurant Card 6 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="6">
                 <a href="delivery.html">
                     <img src="rest6.avif" alt="28 Spice Club" class="restaurant-image">
                 </a>
@@ -2109,7 +2189,7 @@
             </div>
 
             <!-- Restaurant Card 7 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="7">
                 <a href="delivery.html">
                     <img src="rest7.avif" alt="Apni Chopati" class="restaurant-image">
                 </a>
@@ -2123,7 +2203,7 @@
             </div>
 
             <!-- Restaurant Card 8 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="8">
                 <a href="delivery.html">
                     <img src="rest8.avif" alt="Sanju Ka Dhaba" class="restaurant-image">
                 </a>
@@ -2137,7 +2217,7 @@
             </div>
 
             <!-- Restaurant Card 9 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="9">
                 <a href="delivery.html">
                     <img src="rest9.avif" alt="Raimens Cafe 79" class="restaurant-image">
                 </a>
@@ -2151,7 +2231,7 @@
             </div>
 
             <!-- Restaurant Card 10 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="10">
                 <a href="delivery.html">
                     <img src="rest10.avif" alt="Chaska Cafe" class="restaurant-image">
                 </a>
@@ -2165,7 +2245,7 @@
             </div>
 
             <!-- Restaurant Card 11 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="11">
                 <a href="delivery.html">
                     <img src="rest11.avif" alt="The Veg Legacy" class="restaurant-image">
                 </a>
@@ -2179,7 +2259,7 @@
             </div>
 
             <!-- Restaurant Card 12 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="12">
                 <a href="delivery.html">
                     <img src="rest12.avif" alt="Bharat Mewad Ice Cream" class="restaurant-image">
                 </a>
@@ -2192,11 +2272,11 @@
                     <p>Location: Chandigarh Locality</p>
                 </div>
             </div>
-        </div>
-        <div class="restaurant-list">
+
+
             <!-- Restaurant Card 1 -->
             <!-- Restaurant Card 1 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="13">
                 <a href="delivery.html">
                     <img src="rest13.avif" alt="Shree Naivedyam" class="restaurant-image">
                 </a>
@@ -2211,7 +2291,7 @@
             </div>
 
             <!-- Restaurant Card 2 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="14">
                 <a href="delivery.html">
                     <img src="rest14.avif" alt="The Fusion Lounge" class="restaurant-image">
                 </a>
@@ -2226,7 +2306,7 @@
             </div>
 
             <!-- Restaurant Card 3 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="15">
                 <a href="delivery.html">
                     <img src="rest15.avif" alt="Mr. Gurung Momo & Chinese Corner" class="restaurant-image">
                 </a>
@@ -2241,7 +2321,7 @@
             </div>
 
             <!-- Restaurant Card 4 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="16">
                 <a href="delivery.html">
                     <img src="rest16.avif" alt="Magic Momo" class="restaurant-image">
                 </a>
@@ -2255,7 +2335,7 @@
             </div>
 
             <!-- Restaurant Card 5 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="17">
                 <a href="delivery.html">
                     <img src="rest29.avif" alt="Rangla Panjab" class="restaurant-image">
                 </a>
@@ -2269,7 +2349,7 @@
             </div>
 
             <!-- Restaurant Card 6 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="18">
                 <a href="delivery.html">
                     <img src="rest30.avif" alt="28 Spice Club" class="restaurant-image">
                 </a>
@@ -2283,7 +2363,7 @@
             </div>
 
             <!-- Restaurant Card 7 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="19">
                 <a href="delivery.html">
                     <img src="rest31.avif" alt="Apni Chopati" class="restaurant-image">
                 </a>
@@ -2297,7 +2377,7 @@
             </div>
 
             <!-- Restaurant Card 8 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="20">
                 <a href="delivery.html">
                     <img src="rest32.avif" alt="Sanju Ka Dhaba" class="restaurant-image">
                 </a>
@@ -2311,12 +2391,13 @@
             </div>
 
             <!-- Restaurant Card 9 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="21">
                 <a href="delivery.html">
                     <img src="rest21.avif" alt="Raimens Cafe 79" class="restaurant-image">
                 </a>
                 <div class="restaurant-info">
                     <h3>Raimens Cafe 79</h3>
+
                     <p class="rating">4.4</p>
                     <p class="delivery-time">Delivery in 50-55 mins</p>
                     <p>Cuisine: Bakery, Pizzas, Snacks, Beverages</p>
@@ -2325,7 +2406,7 @@
             </div>
 
             <!-- Restaurant Card 10 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="22">
                 <a href="delivery.html">
                     <img src="rest22.avif" alt="Chaska Cafe" class="restaurant-image">
                 </a>
@@ -2339,7 +2420,7 @@
             </div>
 
             <!-- Restaurant Card 11 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="23">
                 <a href="delivery.html">
                     <img src="rest23.avif" alt="The Veg Legacy" class="restaurant-image">
                 </a>
@@ -2353,7 +2434,7 @@
             </div>
 
             <!-- Restaurant Card 12 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="24">
                 <a href="delivery.html">
                     <img src="rest24.avif" alt="Bharat Mewad Ice Cream" class="restaurant-image">
                 </a>
@@ -2368,7 +2449,7 @@
             </div>
 
             <!-- Restaurant Card 13 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="25">
                 <a href="delivery.html">
                     <img src="rest25.avif" alt="Annu's Kitchen's Queen Of Paratha" class="restaurant-image">
                 </a>
@@ -2382,7 +2463,7 @@
             </div>
 
             <!-- Restaurant Card 14 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="26">
                 <a href="delivery.html">
                     <img src="rest26.avif" alt="Urban Cafe" class="restaurant-image">
                 </a>
@@ -2396,7 +2477,7 @@
             </div>
 
             <!-- Restaurant Card 15 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="27">
                 <a href="delivery.html">
                     <img src="rest27.avif" alt="The Party Hub" class="restaurant-image">
                 </a>
@@ -2410,7 +2491,7 @@
             </div>
 
             <!-- Restaurant Card 16 -->
-            <div class="restaurant-card">
+            <div class="restaurant-card" data-index="28">
                 <a href="delivery.html">
                     <img src="rest28.avif" alt="India Gate Restaurant" class="restaurant-image">
                 </a>
@@ -2422,15 +2503,381 @@
                     <p>Location: Chandigarh City</p>
                 </div>
             </div>
+            <div class="restaurant-card visible" data-index="29">
+                <a href="delivery.html">
+                    <img src="rest29.avif" alt="The Gourmet Spot" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>The Gourmet Spot</h3>
+                    <p class="rating">4.6</p>
+                    <p class="delivery-time">Delivery in 30-40 mins</p>
+                    <p>Cuisine: European, Italian, Seafood</p>
+                    <p>Location: Chandigarh Central</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="30">
+                <a href="delivery.html">
+                    <img src="rest30.avif" alt="Royal Curry House" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Royal Curry House</h3>
+                    <p class="rating">4.4</p>
+                    <p class="delivery-time">Delivery in 40-50 mins</p>
+                    <p>Cuisine: Indian, Punjabi, Mughlai</p>
+                    <p>Location: Chandigarh East</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="31">
+                <a href="delivery.html">
+                    <img src="rest31.avif" alt="Sushi Haven" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Sushi Haven</h3>
+                    <p class="rating">4.7</p>
+                    <p class="delivery-time">Delivery in 25-35 mins</p>
+                    <p>Cuisine: Japanese, Sushi, Ramen</p>
+                    <p>Location: Chandigarh South</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="32">
+                <a href="delivery.html">
+                    <img src="rest32.avif" alt="Burger Junction" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Burger Junction</h3>
+                    <p class="rating">4.2</p>
+                    <p class="delivery-time">Delivery in 20-30 mins</p>
+                    <p>Cuisine: American, Burgers, Fries</p>
+                    <p>Location: Chandigarh West</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="33">
+                <a href="delivery.html">
+                    <img src="rest33.avif" alt="Veggie Delight" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Veggie Delight</h3>
+                    <p class="rating">4.5</p>
+                    <p class="delivery-time">Delivery in 30-40 mins</p>
+                    <p>Cuisine: Vegetarian, Vegan, Salads</p>
+                    <p>Location: Chandigarh North</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="34">
+                <a href="delivery.html">
+                    <img src="rest34.avif" alt="Pasta Paradise" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Pasta Paradise</h3>
+                    <p class="rating">4.8</p>
+                    <p class="delivery-time">Delivery in 35-45 mins</p>
+                    <p>Cuisine: Italian, Pasta, Pizza</p>
+                    <p>Location: Chandigarh West</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="35">
+                <a href="delivery.html">
+                    <img src="rest35.avif" alt="Sweet Treats Cafe" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Sweet Treats Cafe</h3>
+                    <p class="rating">4.6</p>
+                    <p class="delivery-time">Delivery in 25-35 mins</p>
+                    <p>Cuisine: Desserts, Cakes, Pastries</p>
+                    <p>Location: Chandigarh Central</p>
+                </div>
+            </div>
+            <div class="restaurant-card visible" data-index="36">
+                <a href="delivery.html">
+                    <img src="rest36.avif" alt="Spice Affair" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Spice Affair</h3>
+                    <p class="rating">4.1</p>
+                    <p class="delivery-time">Delivery in 40-50 mins</p>
+                    <p>Cuisine: Indian, Spicy, Tandoori</p>
+                    <p>Location: Chandigarh North</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="37">
+                <a href="delivery.html">
+                    <img src="rest37.avif" alt="The Vegan Bowl" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>The Vegan Bowl</h3>
+                    <p class="rating">4.5</p>
+                    <p class="delivery-time">Delivery in 30-40 mins</p>
+                    <p>Cuisine: Vegan, Vegetarian, Healthy</p>
+                    <p>Location: Chandigarh South</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="38">
+                <a href="delivery.html">
+                    <img src="rest38.avif" alt="Momo Mania" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Momo Mania</h3>
+                    <p class="rating">4.2</p>
+                    <p class="delivery-time">Delivery in 20-30 mins</p>
+                    <p>Cuisine: Chinese, Momos, Noodles</p>
+                    <p>Location: Chandigarh East</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="39">
+                <a href="delivery.html">
+                    <img src="rest39.avif" alt="Seafood Haven" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Seafood Haven</h3>
+                    <p class="rating">4.7</p>
+                    <p class="delivery-time">Delivery in 35-45 mins</p>
+                    <p>Cuisine: Seafood, Fish, Prawns</p>
+                    <p>Location: Chandigarh Central</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="40">
+                <a href="delivery.html">
+                    <img src="rest40.avif" alt="Burger Bonanza" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Burger Bonanza</h3>
+                    <p class="rating">4.3</p>
+                    <p class="delivery-time">Delivery in 25-35 mins</p>
+                    <p>Cuisine: American, Burgers, Fries</p>
+                    <p>Location: Chandigarh West</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="41">
+                <a href="delivery.html">
+                    <img src="rest41.avif" alt="Tandoori Nights" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Tandoori Nights</h3>
+                    <p class="rating">4.6</p>
+                    <p class="delivery-time">Delivery in 40-50 mins</p>
+                    <p>Cuisine: Indian, Tandoori, Grills</p>
+                    <p>Location: Chandigarh City</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="42">
+                <a href="delivery.html">
+                    <img src="rest42.avif" alt="Pizza Palace" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Pizza Palace</h3>
+                    <p class="rating">4.4</p>
+                    <p class="delivery-time">Delivery in 30-40 mins</p>
+                    <p>Cuisine: Italian, Pizza, Pasta</p>
+                    <p>Location: Chandigarh Central</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="43">
+                <a href="delivery.html">
+                    <img src="rest43.avif" alt="Healthy Eats" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Healthy Eats</h3>
+                    <p class="rating">4.3</p>
+                    <p class="delivery-time">Delivery in 25-35 mins</p>
+                    <p>Cuisine: Healthy, Organic, Salads</p>
+                    <p>Location: Chandigarh North</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="44">
+                <a href="delivery.html">
+                    <img src="rest44.avif" alt="Fusion Feast" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Fusion Feast</h3>
+                    <p class="rating">4.6</p>
+                    <p class="delivery-time">Delivery in 35-45 mins</p>
+                    <p>Cuisine: Fusion, International, Innovative</p>
+                    <p>Location: Chandigarh East</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="45">
+                <a href="delivery.html">
+                    <img src="rest45.avif" alt="Sweet Tooth" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Sweet Tooth</h3>
+                    <p class="rating">4.7</p>
+                    <p class="delivery-time">Delivery in 20-30 mins</p>
+                    <p>Cuisine: Desserts, Cakes, Pastries</p>
+                    <p>Location: Chandigarh South</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="46">
+                <a href="delivery.html">
+                    <img src="rest46.avif" alt="Barbecue Bliss" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Barbecue Bliss</h3>
+                    <p class="rating">4.5</p>
+                    <p class="delivery-time">Delivery in 40-50 mins</p>
+                    <p>Cuisine: Barbecue, Grills, American</p>
+                    <p>Location: Chandigarh West</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="47">
+                <a href="delivery.html">
+                    <img src="rest47.avif" alt="Dim Sum Delight" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Dim Sum Delight</h3>
+                    <p class="rating">4.4</p>
+                    <p class="delivery-time">Delivery in 30-40 mins</p>
+                    <p>Cuisine: Chinese, Dim Sum, Noodles</p>
+                    <p>Location: Chandigarh Central</p>
+                </div>
+            </div>
+            <div class="restaurant-card visible" data-index="48">
+                <a href="delivery.html">
+                    <img src="rest48.avif" alt="Cafe Delight" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Cafe Delight</h3>
+                    <p class="rating">4.2</p>
+                    <p class="delivery-time">Delivery in 30-40 mins</p>
+                    <p>Cuisine: Cafe, Coffee, Light Snacks</p>
+                    <p>Location: Chandigarh North</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="49">
+                <a href="delivery.html">
+                    <img src="rest49.avif" alt="Gourmet Garden" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Gourmet Garden</h3>
+                    <p class="rating">4.6</p>
+                    <p class="delivery-time">Delivery in 35-45 mins</p>
+                    <p>Cuisine: Gourmet, International, Organic</p>
+                    <p>Location: Chandigarh South</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="50">
+                <a href="delivery.html">
+                    <img src="rest50.avif" alt="Sushi Spot" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Sushi Spot</h3>
+                    <p class="rating">4.4</p>
+                    <p class="delivery-time">Delivery in 25-35 mins</p>
+                    <p>Cuisine: Japanese, Sushi, Asian</p>
+                    <p>Location: Chandigarh East</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="51">
+                <a href="delivery.html">
+                    <img src="rest51.avif" alt="Curry Junction" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Curry Junction</h3>
+                    <p class="rating">4.3</p>
+                    <p class="delivery-time">Delivery in 30-40 mins</p>
+                    <p>Cuisine: Indian, Curries, Vegetarian</p>
+                    <p>Location: Chandigarh Central</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="52">
+                <a href="delivery.html">
+                    <img src="rest52.avif" alt="Pasta Palace" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Pasta Palace</h3>
+                    <p class="rating">4.5</p>
+                    <p class="delivery-time">Delivery in 20-30 mins</p>
+                    <p>Cuisine: Italian, Pasta, Pizza</p>
+                    <p>Location: Chandigarh West</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="53">
+                <a href="delivery.html">
+                    <img src="rest53.avif" alt="Burger Bistro" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Burger Bistro</h3>
+                    <p class="rating">4.2</p>
+                    <p class="delivery-time">Delivery in 30-40 mins</p>
+                    <p>Cuisine: Burgers, Fast Food, American</p>
+                    <p>Location: Chandigarh South</p>
+                </div>
+            </div>
+
+            <div class="restaurant-card visible" data-index="54">
+                <a href="delivery.html">
+                    <img src="rest54.avif" alt="Noodle Nook" class="restaurant-image">
+                </a>
+                <div class="restaurant-info more-resturant">
+                    <h3>Noodle Nook</h3>
+                    <p class="rating">4.6</p>
+                    <p class="delivery-time">Delivery in 25-35 mins</p>
+                    <p>Cuisine: Chinese, Noodles, Asian</p>
+                    <p>Location: Chandigarh Central</p>
+                </div>
+            </div>
+            <div class="restaurant-card visible" data-index="55">
+                <a href="delivery.html">
+                    <img src="rest56.avif" alt="Royal Curry House" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Royal Curry House</h3>
+                    <p class="rating">4.4</p>
+                    <p class="delivery-time">Delivery in 40-50 mins</p>
+                    <p>Cuisine: Indian, Punjabi, Mughlai</p>
+                    <p>Location: Chandigarh East</p>
+                </div>
+            </div>
+            
+
+            <div class="restaurant-card visible" data-index="56">
+                <a href="delivery.html">
+                    <img src="rest55.avif" alt="Bakery Bliss" class="restaurant-image">
+                </a>
+                <div class="restaurant-info">
+                    <h3>Bakery Bliss</h3>
+                    <p class="rating">4.4</p>
+                    <p class="delivery-time">Delivery in 30-40 mins</p>
+                    <p>Cuisine: Bakery, Pastries, Desserts</p>
+                    <p>Location: Chandigarh North</p>
+                </div>
+            </div>
+
+
+
 
         </div>
+
+        <button class="more-rest">SHOW MORE</button>
 
 
 
 
         <!-- Add more restaurant cards here -->
     </div>
-    </div>
+
 
 
 
@@ -2655,41 +3102,41 @@
             <div class="footer-column">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Spicytaste One</a></li>
-                    <li><a href="#">Spicytaste Instamart</a></li>
-                    <li><a href="#">Spicytaste Genie</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="carrers.html">Careers</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="spicytaseonepage.html">Spicytaste One</a></li>
+                    <li><a href="instamart.html">Spicytaste Instamart</a></li>
+                    <li><a href="genie.html">Spicytaste Genie</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Contact us</h4>
                 <ul>
-                    <li><a href="#">Help & Support</a></li>
-                    <li><a href="#">Partner with us</a></li>
-                    <li><a href="#">Ride with us</a></li>
+                    <li><a href="help_support.html">Help & Support</a></li>
+                    <li><a href="partener..html">Partner with us</a></li>
+                    <li><a href="ride.html">Ride with us</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                    <li><a href="cookoiee.html">Cookie Policy</a></li>
+                    <li><a href="privatepolicy.html">Privacy Policy</a></li>
+                    <li><a href="investorrelation.html">Investor Relations</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>We deliver to:</h4>
                 <ul>
-                    <li><a href="#">Bangalore</a></li>
-                    <li><a href="#">Gurgaon</a></li>
-                    <li><a href="#">Hyderabad</a></li>
-                    <li><a href="#">Delhi</a></li>
-                    <li><a href="#">Mumbai</a></li>
-                    <li><a href="#">Pune</a></li>
-                    <li>589 cities</li>
+                    <li><a href="wedeliverto.html">Bangalore</a></li>
+                    <li><a href="wedeliverto.html">Gurgaon</a></li>
+                    <li><a href="wedeliverto.html">Hyderabad</a></li>
+                    <li><a href="wedeliverto.html">Delhi</a></li>
+                    <li><a href="wedeliverto.html">Mumbai</a></li>
+                    <li><a href="wedeliverto.html">Pune</a></li>
+                    <li><a href="wedeliverto.html">589 cities</a></li>
                 </ul>
             </div>
         </div>
@@ -2745,6 +3192,51 @@
                 updateArrows();
             });
         });
+        function filter(number) {
+            let card = document.getElementsByClassName("restaurant-card");
+
+
+            for (let i = 0; i < card.length; i++) {
+                let index = parseInt(card[i].getAttribute('data-index'));
+
+                if (index % number === 0) {
+
+                    card[i].style.display = ""; // Show the card
+                    card.style.display = "";
+
+
+
+                } else {
+                    card[i].style.display = "none"; // Hide the card
+
+                }
+
+
+            }
+
+        }
+        let flagi = 0;
+        const visible = document.querySelectorAll(".visible");
+        const morerest = document.querySelector(".more-rest");
+        
+        morerest.addEventListener('click', function () {
+            if (flagi == 0) {
+                visible.forEach(el => {
+                    el.style.display = "flex"; // Show the element
+                    el.style.flexWrap = "wrap";
+                });
+                morerest.innerHTML = "SHOW LESS";
+                flagi = 1;
+            } else {
+                visible.forEach(el => {
+                    el.style.display = "none"; // Hide the element
+                });
+                morerest.innerHTML = "SHOW MORE";
+                flagi = 0;
+            }
+        });
+        
+
 
     </script>
 </body>
