@@ -54,7 +54,7 @@
         .header-nav {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 80px;
         }
 
         .header-nav a {
@@ -122,13 +122,14 @@
         }
 
         .logo {
-            height: 100px;
-            width: 100px;
+            height: 70px;
+            width: 70px;
             clip-path: circle(40% at 50% 50%);
             object-fit: cover;
             margin-right: 20px;
             position: relative;
             left: -90px;
+            margin-left: 10px;
         }
 
         .slogan {
@@ -152,10 +153,11 @@
         .carousel-inner {
             display: flex;
             width: 500%;
-            animation: slide 30s infinite linear;
+            animation: slide 20s infinite linear;
         }
 
         .carousel-item {
+            margin-right: 0px;
             flex: 0 0 28%;
             width: 100%;
             height: 100%;
@@ -335,6 +337,21 @@
 
         @media(max-width:1400px) {
             .logo {}
+
+        }
+
+        @media(min-width:1441px) {
+            .logo {
+                height: 66px;
+                width: 66px;
+                left: 30px;
+                position: absolute;
+                top: 30px;
+            }
+
+            .header-nav {
+                gap: 82px;
+            }
         }
 
         /* Large screens (Desktops, etc.) */
@@ -350,6 +367,10 @@
 
             .header-content {
                 padding-left: 10px;
+            }
+
+            .top {
+                font-size: 2px;
             }
         }
 
@@ -446,7 +467,7 @@
 
         @keyframes slide {
             0% {
-                transform: translateX(0%);
+                transform: translateX(-30%);
             }
 
             100% {
@@ -456,12 +477,12 @@
 
         .top {
             position: absolute;
-            font-size: 70px;
-            left: 170px;
+            font-size: 50px;
+            left: 120px;
             text-decoration: wavy;
             font-style: oblique;
             color: red;
-            top: 8px;
+            top: 17px;
             z-index: 1;
         }
 
@@ -650,7 +671,7 @@
 
         .app-link img {
             width: 150px;
-            height: au to;
+            height: auto;
             transition: opacity 0.3s ease;
         }
 
@@ -659,13 +680,14 @@
         }
 
         .play {
-            transform: scale(1.3);
+            transform: scale(1.5);
             padding-right: 60px;
             padding-top: 20px;
             padding-left: 10px;
         }
 
         .footer {
+            padding-top: 30px;
             background-color: #333;
             color: #fff;
             /* padding: 20px; */
@@ -855,6 +877,7 @@
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
+
         .visible:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -916,6 +939,7 @@
                 width: 100%;
                 box-shadow: #333;
             }
+
             .visible {
                 width: 100%;
                 box-shadow: #333;
@@ -937,7 +961,8 @@
         /* For tablets and small desktops */
         @media (max-width: 1200px) {
             .carousel-item {
-                flex: 0 0 50%;
+                flex: 0 0 33%;
+                display:flex;
             }
 
             .logo {
@@ -967,7 +992,7 @@
         /* For medium-sized screens like small tablets */
         @media (max-width: 992px) {
             .carousel-item {
-                flex: 0 0 100%;
+                flex: 0 0 130%;
             }
 
             .header {
@@ -1005,9 +1030,9 @@
 
         /* For mobile devices in landscape mode */
         @media (max-width: 768px) {
-            
+
             .foodhub h1 {
-                margin-top:50px;
+                margin-top: 50px;
                 font-size: 50px;
             }
 
@@ -1031,6 +1056,7 @@
                 width: 100%;
                 margin-bottom: 20px;
             }
+
             .visible {
                 width: 100%;
                 margin-bottom: 20px;
@@ -1063,8 +1089,8 @@
 
 
             .logo {
-                height: 80px;
-                width: 80px;
+                height: 60px;
+                width: 62px;
             }
 
             .slogan {
@@ -1235,8 +1261,13 @@
             }
 
             .logo {
-                left: 10px;
+                left: 30px;
             }
+
+            .top {
+                font-size: 29px;
+            }
+
 
             .footer-column {
                 margin: 10px;
@@ -1362,8 +1393,8 @@
 
             .top {
                 position: absolute;
-                top: px;
-                left: 170px;
+                
+                left: 133px;
                 font-size: 60px;
 
 
@@ -1514,7 +1545,7 @@
             }
 
             .app-link img {
-                width: 150px;
+                width: 227px;
                 height: auto;
             }
 
@@ -1622,7 +1653,7 @@
 
         @media (max-width: 576px) {
             .header {
-                width: 96%;
+                width: 100%;
             }
 
             .what {
@@ -1779,8 +1810,9 @@
                 top: 10px;
                 left: 115px;
             }
-            .header{
-                width:100%;
+
+            .header {
+                width: 100%;
             }
 
             .logo {
@@ -1812,7 +1844,13 @@
 
             .carousel-item {
                 transform: scaleY(1.2);
+                flex-direction: column;
+                flex: 0 0 10%;
+                width: 500%;
+                margin-right: -10px;
+                box-sizing:border-box;
             }
+
         }
 
         @media (min-width:480px) and (max-width:581px) {
@@ -1885,8 +1923,297 @@
         /*final media queries*/
         /* {
             outline: 1px solid red; /* Outline around the element */
-           /*  outline-offset: -5px;   Adjust this to visualize the margin 
+        /*  outline-offset: -5px;   Adjust this to visualize the margin 
         }*/
+        .top-1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            margin-bottom: 10px;
+        }
+
+        .head-top-1 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+
+            animation: pulseOutline 1s infinite;
+        }
+
+        .boxes-3 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 80%;
+            width: 100%;
+            padding-bottom: 100px;
+        }
+
+        .box-3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 29%;
+            padding: 20px;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #fdfdfd;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .box-3 img {
+            width: 90%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .top1-1,
+        .top-2-2,
+        .top3-3 {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 30px;
+            color: #1D3557;
+        }
+
+        .top1-1-1,
+        .top-2-2-2,
+        .top3-3-3 {
+            font-size: 16px;
+            margin-top: 5px;
+            color: #457B9D;
+        }
+
+        .box-3:hover {
+            transform: translateY(-5px);
+            text-decoration: none;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .outline-animated {
+            padding: 10px;
+            outline: 4px solid;
+            outline-color: #ff6f61;
+
+            animation: pulseOutline 1s infinite;
+
+        }
+
+        @keyframes pulseOutline {
+            0% {
+                color: rgb(255, 21, 0);
+
+            }
+
+            50% {
+                color: #8c0096;
+
+            }
+
+            100% {
+                color: #0800e2;
+
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .box-3 {
+                width: 40%;
+                /* Adjust the width for tablets and smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .box-3 {
+                width: 80%;
+                /* Adjust the width for mobile devices */
+            }
+
+            .browse-button-3 {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .box-3 {
+                width: 90%;
+                /* Full width on very small screens */
+            }
+
+            .head-top-1 {
+                font-size: 30px;
+                /* Smaller font size for headings on small screens */
+            }
+
+            .browse-button-3 {
+                font-size: 14px;
+                padding: 10px 20px;
+                width: 90%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+        }
+
+        .button-container-3 {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            margin-top: -40px;
+            margin-bottom: 50px;
+        }
+       
+
+        .browse-button-3 {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #1D3557;
+            border: 2px solid #1D3557;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .browse-button-3:hover {
+            background-color: #457B9D;
+            color: #ffffff;
+            text-decoration: none;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .browse-button-3 {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .browse-button-3 {
+                font-size: 14px;
+                padding: 10px 20px;
+                width: 90%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+        }
+
+
+        /*this is for the join section which is above the footer section*/
+        /* Main Content Section Styles */
+/* Main Content Section Styles */
+.business-opportunity {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    margin-bottom:50px;
+}
+
+.business-opportunity .text {
+    flex: 1;
+    padding: 20px;
+    max-width: 600px;
+}
+
+.business-opportunity .text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 700;
+}
+
+.business-opportunity .text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.business-opportunity .text .button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.business-opportunity .text .button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.business-opportunity .image {
+    flex: 1;
+    max-width: 500px;
+    margin-left: 20px;
+    position: relative;
+}
+
+.business-opportunity .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .business-opportunity {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .business-opportunity .image {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .business-opportunity .text h1 {
+        font-size: 28px;
+    }
+
+    .business-opportunity .text p {
+        font-size: 16px;
+    }
+
+    .business-opportunity .text .button {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
+
+
     </style>
 </head>
 
@@ -1913,23 +2240,18 @@
         <div class="carousel-inner">
             <div class="carousel-item">
                 <img src="FOOD1 (1).jpeg" alt="Food 1">
-
             </div>
             <div class="carousel-item">
-                <img src="FOOD1 (2).jpeg" alt="Food 2">
-
+                <img src="FOOD1 (2).jpeg" alt="foodkipic">
             </div>
             <div class="carousel-item">
                 <img src="FOOD1 (3).jpeg" alt="Food 3">
-
             </div>
             <div class="carousel-item">
                 <img src="FOOD1 (4).jpeg" alt="Food 4">
-
             </div>
             <div class="carousel-item">
                 <img src="FOOD1 (5).jpeg" alt="Food 5">
-
             </div>
         </div>
     </div>
@@ -2113,7 +2435,9 @@
                     <p class="delivery-time">Delivery in 45-50 mins</p>
                     <p>Cuisine: North Indian, Chinese, South Indian, Pizzas, Beverages</p>
                     <p>Location: Chandigarh City</p>
+                    
                 </div>
+
             </div>
 
             <!-- Restaurant Card 2 -->
@@ -2850,7 +3174,7 @@
                     <p>Location: Chandigarh East</p>
                 </div>
             </div>
-            
+
 
             <div class="restaurant-card visible" data-index="56">
                 <a href="delivery.html">
@@ -3097,6 +3421,80 @@
 
         <label for="rest-toggle2" class="rest-toggle-label"></label>
     </div>
+    <div class="top-1">
+        <div class="head-top-1">How SPICYTASTE Works for Customers</div>
+        <div class="boxes-3">
+
+            <a href="find-a-business.html" class="box-3">
+                <img src="top1-1.jpeg" alt="Find a Business Image">
+                <div class="top1-1">Find A Business</div>
+                <div class="top1-1-1">Find Restaurants, Cafés, bars, and many other businesses which you’d like to visit
+                    or like to order from!</div>
+            </a>
+
+            <a href="connect.html" class="box-3">
+                <img src="top1-2.png" alt="Connect Image">
+                <br>
+                <br>
+                <div class="top-2-2">Connect</div>
+                <div class="top-2-2-2">We connect you with the business owners. You can place an order, book a table, or
+                    order a delivery directly.</div>
+            </a>
+
+            <a href="order-your-food.html" class="box-3">
+                <img src="top1-3.avif" alt="Order Your Food Image">
+                <div class="top3-3">Order Your Food</div>
+                <div class="top3-3-3">Order Online, Book A Table, Grab A Coupon, or order a delivery if the restaurant
+                    is offering.</div>
+            </a>
+        </div>
+    </div>
+    <div class="button-container-3">
+        <a href="rest.html" class="browse-button-3">BROWSE ALL RESTURANTS IN CHANDIGARH</a>
+    </div>
+    <div class="top-1">
+        <div class="head-top-1">How SPICYTASTE Works for Businesses</div>
+        <div class="boxes-3">
+
+            <a href="addbussiness.html" class="box-3">
+                <img src="top2-1.jpeg" alt="Find a Business Image">
+                <div class="top1-1">Add Your Business For Free</div>
+                <div class="top1-1-1">Grow Your Restaurant Business With Powerful Marketing and Ordering System by SPICYTASTE.</div>
+            </a>
+
+            <a href="activatebussiness.html" class="box-3">
+                <img src="top2-2.png" alt="Connect Image">
+                <div class="top-2-2">Activate & Setup</div>
+                <div class="top-2-2-2">Grow Your Restaurant Business With Powerful Marketing and Ordering System by SPICYTASTE.</div>
+            </a>
+
+            <a href="promotebussiness.html" class="box-3">
+                <img src="top2-3.jpg" alt="Order Your Food Image">
+                <div class="top3-3">Promote with Zero Cost
+                </div>
+                <div class="top3-3-3">Order Online,Book A Table, Grab A Coupon or order a delivery if restaurant is offering.</div>
+            </a>
+        </div>
+    </div>
+    <div class="button-container-3 bt-3">
+        <a href="browsebussiness.html" class="browse-button-3">ADD YOUR RESTURANT FOR FREE</a>
+    </div>
+
+    <!-- Main Content Section -->
+<div class="business-opportunity">
+    <div class="text">
+        <h1>Start Your Own Food Ordering Business in CHANDIGARH</h1>
+        <p>SPICYTASTE Online Business Opportunity in CHANDIGARH allows anyone to start a home-based internet business without any risk. Check our partners across the world who have benefited from SPICYTASTE's unique partner success program.</p>
+        <p>SPICYTASTE provides a white label software reseller program in CHANDIGARH, franchise opportunities in CHANDIGARH, and exclusive business opportunities in CHANDIGARH.</p>
+        <a href="started.html" class="button">Get Started</a>
+    </div>  
+    <div class="image">
+        <img src="promotion.jpeg" alt="Food Business Image">
+    </div>
+</div>
+
+
+
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-column">
@@ -3116,6 +3514,10 @@
                     <li><a href="help_support.html">Help & Support</a></li>
                     <li><a href="partener..html">Partner with us</a></li>
                     <li><a href="ride.html">Ride with us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="EMAILSUPPORT.HTML">Email support</a></li>
+
+                    <li><a href="leavereview.html">Leave a review</a></li>
                 </ul>
             </div>
             <div class="footer-column">
@@ -3218,7 +3620,7 @@
         let flagi = 0;
         const visible = document.querySelectorAll(".visible");
         const morerest = document.querySelector(".more-rest");
-        
+
         morerest.addEventListener('click', function () {
             if (flagi == 0) {
                 visible.forEach(el => {
@@ -3235,7 +3637,57 @@
                 flagi = 0;
             }
         });
+
+        //ye function add to cart me use hota hai
+
+        /*function saveRestaurantData(name, rating, cuisine, location) {
+             const restaurantData = {
+                 name: name,
+                 rating: rating,
+                 cuisine: cuisine,
+                 location: location
+                 //ye hamne object create kiya hai
+             };
+             
+ 
+             // Save the restaurant data as a JSON string in localStorage
+             localStorage.setItem('selectedRestaurant', JSON.stringify(restaurantData));
+             //json string se koi bhi object string me convert hota hai;
+         }
+         */
+
+        function addToCart() {
+            var flag1 = 0;
+            if (flag1 == 0) {
+                button.textContent = 'Added to Cart';
+                flag1++;
+
+            }
+            else {
+                button.textContent = "ADDED TO CART";
+                flag1 = 0;
+            }
+        }
+
+
+
+
+        // Use `event.target` to reference the clicked button
+        /* const button = event.target;
+     
+         // Change button text
         
+     
+         // Disable the button to prevent further clicks
+         button.disabled = true;
+     
+         // Add the 'added-to-cart' class to change button styling
+         button.classList.add('added-to-cart');
+     }
+     */
+
+
+
 
 
     </script>
