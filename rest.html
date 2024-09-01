@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Listings</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #004d40;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        .restaurant-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .restaurant-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 15px;
+            width: 280px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .restaurant-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        .restaurant-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .restaurant-info {
+            padding: 15px;
+        }
+        .restaurant-info h3 {
+            margin: 0 0 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+        .restaurant-info p {
+            color: #666;
+            margin: 0 0 10px;
+            font-size: 0.95em;
+        }
+        .restaurant-info .details {
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        .restaurant-info .rating {
+            color: #ff9800;
+            font-size: 1em;
+            margin: 5px 0;
+        }
+        .restaurant-info a {
+            text-decoration: none;
+            color: #00796b;
+            font-weight: bold;
+        }
+        .restaurant-info a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #004d40;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Featured Restaurants</h1>
+</header>
+
+<section class="restaurant-list">
+    <!-- Existing Restaurants -->
+    <div class="restaurant-card">
+        <a href="thank.html">
+        <img src="resti2.avif" alt="Bella Italia"></a>
+        <div class="restaurant-info">
+            <h3>Bella Italia</h3>
+            <p>Authentic Italian cuisine in a cozy setting. Enjoy handmade pasta, wood-fired pizzas, and exquisite wines.</p>
+            <div class="details">
+                <p>Price Range: $20 - $50</p>
+                <p>Location: Sector 53, Chandigarh</p>
+                <p>Distance: 1.5 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="bella-italia.html">View Details</a>
+        </div>
+    </div>
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti3.avif" alt="Sushi Haven"></a>
+        <div class="restaurant-info">
+            <h3>Sushi Haven</h3>
+            <p>Fresh sushi and sashimi, served with a selection of Japanese appetizers and sake. A favorite among sushi lovers.</p>
+            <div class="details">
+                <p>Price Range: $25 - $60</p>
+                <p>Location: Zirakpur</p>
+                <p>Distance: 5 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="sushi-haven.html">View Details</a>
+        </div>
+    </div>
+    <div class="restaurant-card">
+        <a href="thank.html">
+        <img src="resti4.avif" alt="Le Gourmet Bistro"></a>
+        <div class="restaurant-info">
+            <h3>Le Gourmet Bistro</h3>
+            <p>French-inspired bistro offering a range of gourmet dishes and an extensive wine list in an elegant atmosphere.</p>
+            <div class="details">
+                <p>Price Range: $30 - $70</p>
+                <p>Location: Patiala</p>
+                <p>Distance: 10 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="le-gourmet-bistro.html">View Details</a>
+        </div>
+    </div>
+    <div class="restaurant-card"> <a href="thank.html">
+        <img src="resti5.avif" alt="Spice Lounge"></a>
+        <div class="restaurant-info">
+            <h3>Spice Lounge</h3>
+            <p>Exotic Indian dishes with bold flavors and spices. Enjoy a variety of curries, tandoori specials, and naan breads.</p>
+            <div class="details">
+                <p>Price Range: $15 - $40</p>
+                <p>Location: Mohali</p>
+                <p>Distance: 3 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="spice-lounge.html">View Details</a>
+        </div>
+    </div>
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti6.avif" alt="Seafood Palace"></a>
+        <div class="restaurant-info">
+            <h3>Seafood Palace</h3>
+            <p>Fresh seafood dishes including crab, lobster, and shrimp. Ideal for seafood enthusiasts looking for a luxurious dining experience.</p>
+            <div class="details">
+                <p>Price Range: $40 - $90</p>
+                <p>Location: Sector 35, Chandigarh</p>
+                <p>Distance: 2 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="seafood-palace.html">View Details</a>
+        </div>
+    </div>
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti7.avif" alt="Burger Haven"></a>
+        <div class="restaurant-info">
+            <h3>Burger Haven</h3>
+            <p>Gourmet burgers with a variety of toppings, sides, and craft beers. A casual spot perfect for a hearty meal.</p>
+            <div class="details">
+                <p>Price Range: $10 - $30</p>
+                <p>Location: Sector 22, Chandigarh</p>
+                <p>Distance: 4 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="burger-haven.html">View Details</a>
+        </div>
+    </div>
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti8.avif" alt="Vegan Delights"></a>
+        <div class="restaurant-info">
+            <h3>Vegan Delights</h3>
+            <p>Innovative vegan dishes that are both healthy and delicious. Enjoy plant-based meals that everyone will love.</p>
+            <div class="details">
+                <p>Price Range: $20 - $45</p>
+                <p>Location: Zirakpur</p>
+                <p>Distance: 6 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="vegan-delights.html">View Details</a>
+        </div>
+    </div>
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti9.avif" alt="Taco Fiesta"></a>
+        <div class="restaurant-info">
+            <h3>Taco Fiesta</h3>
+            <p>Mexican street food with a twist. Fresh tacos, burritos, and quesadillas with vibrant flavors and toppings.</p>
+            <div class="details">
+                <p>Price Range: $15 - $35</p>
+                <p>Location: Sector 43, Chandigarh</p>
+                <p>Distance: 3 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="taco-fiesta.html">View Details</a>
+        </div>
+    </div>
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti10.avif" alt="Mediterranean Grill"></a>
+        <div class="restaurant-info">
+            <h3>Mediterranean Grill</h3>
+            <p>Delicious Mediterranean dishes featuring kebabs, gyros, and fresh salads. A perfect spot for healthy and flavorful meals.</p>
+            <div class="details">
+                <p>Price Range: $25 - $55</p>
+                <p>Location: Patiala</p>
+                <p>Distance: 8 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="mediterranean-grill.html">View Details</a>
+        </div>
+    </div>
+    <div class="restaurant-card">
+        <img src="resti20.avif" alt="Café Breeze"></a>
+        <div class="restaurant-info">
+            <h3>Café Breeze</h3>
+            <p>Relaxing café offering a variety of coffees, teas, and light snacks. Perfect for a casual meet-up or a quiet afternoon.</p>
+            <div class="details">
+                <p>Price Range: $10 - $20</p>
+                <p>Location: Sector 44, Chandigarh</p>
+                <p>Distance: 1 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="cafe-breeze.html">View Details</a>
+        </div>
+    </div>
+    
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti19.avif" alt="Royal Indian Restaurant"></a>
+        <div class="restaurant-info">
+            <h3>Royal Indian Restaurant</h3>
+            <p>Authentic Indian cuisine with a royal touch. Enjoy traditional dishes, rich curries, and flavorful biryanis.</p>
+            <div class="details">
+                <p>Price Range: $25 - $55</p>
+                <p>Location: Sector 21, Chandigarh</p>
+                <p>Distance: 2 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="royal-indian-restaurant.html">View Details</a>
+        </div>
+    </div>
+    
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti18.avif" alt="Green Leaf"></a>
+        <div class="restaurant-info">
+            <h3>Green Leaf</h3>
+            <p>Fresh, organic, and healthy meals. A great place for vegetarian and vegan options with a focus on sustainability.</p>
+            <div class="details">
+                <p>Price Range: $20 - $40</p>
+                <p>Location: Zirakpur</p>
+                <p>Distance: 5 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="green-leaf.html">View Details</a>
+        </div>
+    </div>
+    
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti15.avif" alt="Sizzle Grill"></a>
+        <div class="restaurant-info">
+            <h3>Sizzle Grill</h3>
+            <p>Grill and barbecue specialties with a variety of meats and sides. Enjoy a sizzling experience with every dish.</p>
+            <div class="details">
+                <p>Price Range: $30 - $60</p>
+                <p>Location: Mohali</p>
+                <p>Distance: 4 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="sizzle-grill.html">View Details</a>
+        </div>
+    </div>
+    
+    
+    
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti16.avif" alt="Tex-Mex Fiesta"></a>
+        <div class="restaurant-info">
+            <h3>Tex-Mex Fiesta</h3>
+            <p>Enjoy a blend of Mexican and Texan flavors with a variety of tacos, burritos, and nachos. A fun, casual dining experience.</p>
+            <div class="details">
+                <p>Price Range: $15 - $35</p>
+                <p>Location: Sector 17, Chandigarh</p>
+                <p>Distance: 3 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="tex-mex-fiesta.html">View Details</a>
+        </div>
+    </div>
+    
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti14.avif" alt="Gourmet Deli"></a>
+        <div class="restaurant-info">
+            <h3>Gourmet Deli</h3>
+            <p>Fine deli with an assortment of gourmet sandwiches, salads, and artisanal cheeses. Perfect for a quick and satisfying meal.</p>
+            <div class="details">
+                <p>Price Range: $15 - $30</p>
+                <p>Location: Sector 34, Chandigarh</p>
+                <p>Distance: 2 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="gourmet-deli.html">View Details</a>
+        </div>
+    </div>
+    
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti15.avif" alt="Fusion Eats"></a>
+        <div class="restaurant-info">
+            <h3>Fusion Eats</h3>
+            <p>Creative fusion cuisine that blends global flavors. Experience unique and inventive dishes in a vibrant atmosphere.</p>
+            <div class="details">
+                <p>Price Range: $30 - $60</p>
+                <p>Location: Mohali</p>
+                <p>Distance: 4.5 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="fusion-eats.html">View Details</a>
+        </div>
+    </div>
+    
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti13.avif" alt="The Seafood Bar"></a>
+        <div class="restaurant-info">
+            <h3>The Seafood Bar</h3>
+            <p>A relaxed bar and grill serving fresh seafood, including oysters, mussels, and grilled fish. Enjoy a casual dining experience by the water.</p>
+            <div class="details">
+                <p>Price Range: $35 - $75</p>
+                <p>Location: Sector 25, Chandigarh</p>
+                <p>Distance: 6 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="seafood-bar.html">View Details</a>
+        </div>
+    </div>
+    
+    <div class="restaurant-card">
+        <a href="thank.html"> <img src="resti12.avif" alt="Rustic Bistro"></a>
+        <div class="restaurant-info">
+            <h3>Rustic Bistro</h3>
+            <p>Cozy bistro offering comfort foods with a rustic charm. Enjoy hearty stews, casseroles, and homemade pies in a warm setting.</p>
+            <div class="details">
+                <p>Price Range: $20 - $45</p>
+                <p>Location: Patiala</p>
+                <p>Distance: 9 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="rustic-bistro.html">View Details</a>
+        </div>
+    </div>
+    
+    <div class="restaurant-card">
+        <a href="thank.html"> <img src="resti11.avif" alt="Asian Fusion"></a>
+        <div class="restaurant-info">
+            <h3>Asian Fusion</h3>
+            <p>A fusion restaurant offering a blend of Asian cuisines including Thai, Chinese, and Japanese dishes.</p>
+            <div class="details">
+                <p>Price Range: $25 - $55</p>
+                <p>Location: Zirakpur</p>
+                <p>Distance: 7 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="asian-fusion.html">View Details</a>
+        </div>
+    </div>
+    
+    <div class="restaurant-card">
+        <a href="thank.html"><img src="resti1.avif" alt="Sweet Tooth Café"></a>
+        <div class="restaurant-info">
+            <h3>Sweet Tooth Café</h3>
+            <p>Cozy café known for its delightful desserts, pastries, and coffee. A great place for a sweet treat or a casual meet-up.</p>
+            <div class="details">
+                <p>Price Range: $10 - $25</p>
+                <p>Location: Sector 17, Chandigarh</p>
+                <p>Distance: 2 km away</p>
+            </div>
+            <div class="rating">★★★★☆</div>
+            <a href="sweet-tooth-cafe.html">View Details</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Restaurant Listings. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
