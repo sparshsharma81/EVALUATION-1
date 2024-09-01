@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - SpicyTaste</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Get Started Page Styles */
+        .get-started {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .get-started .content {
+            flex: 1;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        .get-started .content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .get-started .content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .get-started .content ol {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #444;
+            padding-left: 20px;
+        }
+
+        .get-started .content li {
+            margin-bottom: 10px;
+        }
+
+        .get-started .content .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .get-started .content .button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .get-started .image {
+            flex: 1;
+            max-width: 500px;
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .get-started .image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .get-started {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .get-started .image {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .get-started .content h1 {
+                font-size: 28px;
+            }
+
+            .get-started .content p {
+                font-size: 16px;
+            }
+
+            .get-started .content ol {
+                font-size: 14px;
+            }
+
+            .get-started .content .button {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="get-started">
+        <div class="content">
+            <h1>Get Started with SpicyTaste</h1>
+            <p>Welcome to SpicyTaste! Follow these simple steps to get started with our food ordering service:</p>
+            <ol>
+                <li><strong>Sign Up:</strong> Create an account to access all the features of SpicyTaste. It's quick and easy.</li>
+                <li><strong>Browse Restaurants:</strong> Explore our extensive list of restaurants, cafés, and bars available in your area.</li>
+                <li><strong>Place an Order:</strong> Select your favorite dishes and place an order online. Enjoy a seamless and quick delivery.</li>
+                <li><strong>Book a Table:</strong> Reserve a table at your favorite restaurant directly through our platform.</li>
+                <li><strong>Grab Coupons:</strong> Check out our special offers and grab exclusive coupons for discounts and deals.</li>
+            </ol>
+            <a href="signin.html" class="button">Sign Up Now</a>
+        </div>
+        <div class="image">
+            <img src="promotion-1.jpg" alt="Get Started Image">
+        </div>
+    </div>
+</body>
+</html>
