@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spicy Taste - Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    body {
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+    header {
+        background-color: #df8d2f;
+        color: white;
+        padding: 2rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        transition: background-color 0.5s ease;
+    }
+    
+    .navbar {
+        
+        padding: 20px 20px;
+        
+       
+        
+        position: absolute;
+        right:100px;
+        top: 0;
+    }
+    
+    .navbar-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        gap:100px;
+
+        
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-link {
+        text-decoration: none;
+        color: #333;
+        color:white;
+        font-size: 16px;
+        gap:20px;
+        padding: 10px;
+        transition: color 0.2s ease-in-out;
+    }
+    
+    .nav-link:hover {
+        color: #ff5722; /* Spicy red color for hover effect */
+    }
+    
+    .signup-container {
+        margin-top: 80px; /* Adjust to account for fixed navbar */
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .signup-form {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        text-align: center;
+    }
+    
+    .form-title {
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .input-group {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: calc(50% - 5px);
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+    }
+    
+    .signup-btn {
+        background-color: #ff5722; /* Spicy red color */
+        color: #fff;
+        padding: 10px;
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.2s ease-in-out;
+    }
+    
+    .signup-btn:hover {
+        background-color: #e64a19; /* Darker shade for hover effect */
+    }
+    
+    .sign-in-link {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+    }
+    
+    .sign-in-link a {
+        color: #ff5722; /* Spicy red color */
+        text-decoration: none;
+    }
+    
+    .sign-in-link a:hover {
+        text-decoration: underline;
+    }
+    
+    
+</style>
+<body>
+    <!-- Navigation Bar in the header partt-->  
+    <header>
+        <div class="heading">SPICYTASTE</div>
+       <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="offers.html" class="nav-link">Offers</a>
+            <a href="help.html" class="nav-link">Help</a>
+            <a href="signin.html" class="nav-link">Sign In</a>
+            <a href="cart.html" class="nav-link">Cart</a>
+        </div>
+    </nav> 
+    </header>
+    
+
+    <!-- Sign Up Form  to sign up-->
+    <div class="signup-container">
+        <div class="signup-form">
+            <h1 class="form-title">Create your Spicy Taste Account</h1>
+            <form>
+                <div class="input-group">
+                    <input type="text" id="first-name" name="first-name" placeholder="First Name" required>
+                    <input type="text" id="last-name" name="last-name" placeholder="Last Name" required>
+                </div>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm Password" required>
+                <button type="submit" class="signup-btn">Sign Up</button>
+            </form>
+            <p class="sign-in-link">Already have an account? <a href="signin.html">Sign In</a></p>
+        </div>
+    </div>
+</body>
+</html>
