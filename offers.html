@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers - Spicytaste</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        header {
+            background-color: #ff862a;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #ff9131, #ffd700);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            margin-left: 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
+        }
+        nav a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #ffd700;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+        nav a:hover::before {
+            width: 100%;
+            left: 0;
+        }
+        nav a:hover {
+            color: #ffd700;
+            transform: translateY(-2px);
+        }
+        nav .icon {
+            margin-right: 0.5rem;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .offers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .offer-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-card h3 {
+            margin-top: 0;
+            color: #ff6347;
+        }
+
+        .offer-card p {
+            color: #666;
+        }
+
+        footer {
+            background-color: #df8d2f;
+            color: white;
+            text-align: center;
+            padding: 0.1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .toggle-mode {
+            position: fixed;
+            bottom: 4px;
+            right: 20px;
+            font-size: 20px;
+            padding: 0.5rem 1rem;
+            background-color: #df8d2f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-mode:hover {
+            background-color: #ffd700;
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: #fff;
+        }
+
+        .dark-mode .offer-card {
+            background-color: #333;
+            color: #fff;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+        }
+        .dark-mode .offer-card p{
+            color:white;
+
+        }
+
+        .dark-mode header {
+            background-color: #444;
+        }
+
+        .dark-mode footer {
+            background-color: #444;
+        }
+
+        .dark-mode nav a {
+            color: #fff;
+        }
+
+        .dark-mode nav a:hover {
+            color: #ffd700;
+        }
+
+        .dark-mode .offer-card h3 {
+            color: #ffcb00;
+        }
+        /* General styles for mobile devices */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+    }
+
+    nav a {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 215, 0, 0.2);
+        color: #ffd700;
+    }
+
+    .offers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offer-card {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .toggle-mode {
+        bottom: 20px;
+        right: 10px;
+        font-size: 18px;
+        padding: 0.4rem 0.8rem;
+    }
+
+    footer {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Styles for small mobile devices (phones) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        width: 100%; /* Make links full-width for easy tapping */
+        text-align: center; /* Center text for better presentation */
+    }
+
+    .offers {
+        padding: 1rem;
+    }
+
+    .toggle-mode {
+        font-size: 16px;
+        padding: 0.3rem 0.6rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablet styles (between 768px and 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; /* Ensure nav takes full width */
+        margin-top: 0; /* Reset margin */
+    }
+
+    nav a {
+        margin-left: 1rem;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 215, 0, 0.2);
+        color: #ffd700;
+    }
+
+    .offer-card {
+        width: 45%;
+    }
+
+    footer {
+        font-size: 1rem;
+    }
+}
+/* General styles for mobile devices */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+    }
+
+    nav a {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 215, 0, 0.2);
+        color: #ffd700;
+    }
+
+    .offers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .offer-card {
+        width: 100%;
+        max-width: 90%;
+    }
+
+    .toggle-mode {
+        bottom: 20px;
+        right: 10px;
+        font-size: 18px;
+        padding: 0.4rem 0.8rem;
+    }
+
+    footer {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Styles for small mobile devices (phones) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        width: 100%; /* Make links full-width for easy tapping */
+        text-align: center; /* Center text for better presentation */
+    }
+
+    .offers {
+        padding: 1rem;
+    }
+
+    .toggle-mode {
+        font-size: 16px;
+        padding: 0.3rem 0.6rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* Tablet styles (between 768px and 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header {
+        padding: 1.5rem;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%; /* Ensure nav takes full width */
+        margin-top: 0; /* Reset margin */
+    }
+
+    nav a {
+        margin-left: 1rem;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 215, 0, 0.2);
+        color: #ffd700;
+    }
+
+    .offer-card {
+        width: 45%;
+    }
+
+    footer {
+        font-size: 1rem;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Spicytaste Offers</h1>
+        <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="offers.html">🎁 Offers</a>
+            <a href="help.html">❓ Help</a>
+            <a href="signin.html">🔑 Sign In</a>
+            <a href="cart.html">🛒 Cart</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="offers">
+            <h2 class="special">Special Offers</h2>
+            <div class="offer-card">
+                <h3>Buy 1 Get 1 Free</h3>
+                <p>Available on selected items</p>
+            </div>
+            <div class="offer-card">
+                <h3>20% Off</h3>
+                <p>On your first order</p>
+            </div>
+            <div class="offer-card">
+                <h3>Free Dessert</h3>
+                <p>With orders over $50</p>
+            </div>
+            <div class="offer-card">
+                <h3>Weekend Special</h3>
+                <p>30% off on all items</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Spicytaste. All rights reserved.</p>
+    </footer>
+
+    <!-- Toggle Button -->
+    <button class="toggle-mode" id="toggleMode">Switch to Dark Mode</button>
+
+    <script>
+        const toggleButton = document.getElementById('toggleMode');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Switch to Light Mode';
+            } else {
+                toggleButton.textContent = 'Switch to Dark Mode';
+            }
+        });
+    </script>
+</body>
+
+</html>
