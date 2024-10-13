@@ -54,7 +54,7 @@
         .header-nav {
             display: flex;
             align-items: center;
-            gap: 80px;
+            gap: 28px;
         }
 
         .header-nav a {
@@ -105,15 +105,39 @@
 
         /* Header Styles */
         .header {
-            width: 100%;
-            color: #fff;
-            background-color: #df8d2f;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            /* padding: 0 20px; */
-            box-shadow: 0 4px 8px rgba(249, 105, 2, 0.1);
-        }
+    width: 100%;
+    color: #fff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Prevent overflow of the gradient */
+    background: linear-gradient(to top, rgb(237, 34, 255) 0%, rgba(211, 106, 0, 0)) 70%,
+                linear-gradient(270deg, rgb(0, 13, 255), rgb(247, 32, 200), rgb(14, 38, 255));
+    background-size: 200% 200%; /* Make the gradient larger for animation */
+    animation: gradient 2s linear infinite; /* Animate the gradient */
+    box-shadow: 0 4px 8px rgba(249, 105, 2, 0.1);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%; /* Start position */
+    }
+    20% {
+        background-position: 50% 0%; /* Move partially to the right */
+    }
+    50% {
+        background-position: 100% 0%; /* Move to the far right */
+    }
+    80% {
+        background-position: 50% 0%; /* Move back partially */
+    }
+    100% {
+        background-position: 0% 0%; /* Reset to the start */
+    }
+
+}
+
 
         .header-content {
             display: flex;
@@ -493,9 +517,9 @@
             font-size: 50px;
             left: 120px;
             text-decoration: wavy;
-            font-style: oblique;
+            /* font-style: oblique; */
             color: red;
-            top: 17px;
+            top: 9px;
             z-index: 1;
             text-shadow: -1px -1px 0 #4f0, 1px -1px 0 #ffe300, -1px 1px 0 #40f, 1px 1px 0 #fff;
         }
@@ -1941,7 +1965,6 @@
 
 
 
-
         /*final media queries*/
         /* {
             outline: 1px solid red; /* Outline around the element */
@@ -2279,12 +2302,13 @@
 
             <a href="SpicytasteCorporate.html"><img src="download.jpeg" class="logo" alt="Logo"></a>
             <div class="header-nav">
-                <a href="SpicytasteCorporate.html">Spicytaste Corporate</a>
-                <a href="search.html">Search</a>
-                <a href="offers.html">Offers</a>
-                <a href="help.html">Help</a>
-                <a href="signin.html">Sign In</a>
-                <a href="cart.html">Cart</a>
+                <a href="SpicytasteCorporate.html">🏢 SPICYTASTE CORPORATE</a>
+                <a href="search.html">🔍 SEARCH</a>
+                <a href="offers.html">🎉 OFFERS</a>
+                <a href="help.html">❓ HELP</a>
+                <a href="signin.html">🔑 SIGN IN</a>
+                <a href="cart.html">🛒 CART</a>
+                
 
             </div>
         </div>
@@ -2300,13 +2324,13 @@
                 <img src="FOOD1 (2).jpeg" alt="foodkipic">
             </div>
             <div class="carousel-item">
-                <img src="FOOD1 (3).jpeg" alt="Food 3">
+                <img src="FOOD1 (1).jpeg" alt="Food 3">
             </div>
             <div class="carousel-item">
-                <img src="FOOD1 (4).jpeg" alt="Food 4">
+                <img src="FOOD1 (2).jpeg" alt="Food 4">
             </div>
             <div class="carousel-item">
-                <img src="FOOD1 (5).jpeg" alt="Food 5">
+                <img src="FOOD1 (1).jpeg" alt="Food 5">
             </div>
         </div>
     </div>
