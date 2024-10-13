@@ -3,88 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help - FoodHub</title>
+    <title>Help - Spicytaste</title>
     <style>
+        /* General styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
-            color: #333;
+            background-color: #f4f4f9; /* Light mode background */
+            color: #333; /* Light mode text color */
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
         }
+
+        /* Dark mode styles */
+        body.dark {
+            background-color: #121212; /* Dark mode background */
+            color: #e0e0e0; /* Dark mode text color */
+        }
+
+        /* Header styles */
         header {
             background-color: #ff6347;
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         header h1 {
             margin: 0;
+            font-size: 1.8rem;
+            font-weight: 600;
         }
+
         nav a {
             color: white;
-            margin-left: 1rem;
+            margin-left: 1.5rem;
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
         }
+
         nav a:hover {
-            color: #ffd700;
+            background-color: #ffd700;
+            color: white;
         }
+
+        /* Main content styles */
         main {
-            padding: 2rem;
-            max-width: 1200px;
+            padding: 3rem 2rem;
+            max-width: 1100px;
             margin: 0 auto;
         }
+
         .help {
             text-align: center;
+            margin-bottom: 2rem;
         }
+
         .help h2 {
-            color: #ff6347;
+            color: #333; /* Light mode heading color */
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
+
+        /* Dark mode heading color */
+        .help.dark h2 {
+            color: #e0e0e0; 
+        }
+
+        .help p {
+            color: #555; /* Light mode paragraph color */
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        .help.dark p {
+            color: #ff0000; /* Light mode paragraph color */
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        .help.dark h2{
+            color:rgb(15, 215, 255);
+        }
+      
+        /* Dark mode paragraph color */
+        .help.dark p {
+            color: #f50000; 
+        }
+
+        /* FAQ Section */
         .faq {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1.5rem;
+            gap: 2rem;
         }
+
         .faq-item {
-            background-color: white;
+            background-color: white; /* Light mode background */
             border: 1px solid #ddd;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 1.5rem;
             width: 80%;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: left;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
+        /* Dark mode FAQ item background */
+        body.dark .faq-item {
+            background-color: #1e1e1e; /* Dark mode background for FAQ items */
+            border: 1px solid #333; /* Darker border */
+        }
+
         .faq-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-7px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
+
         .faq-item h3 {
             margin-top: 0;
-            color: #ff6347;
+            color: #ff6347; /* Heading color */
+            font-size: 1.5rem;
+            font-weight: 600;
         }
+
+        /* Dark mode heading color */
+        body.dark .faq-item h3 {
+            color: #ff7f50; /* Lighter color for dark mode */
+        }
+
         .faq-item p {
-            color: #666;
+            color: #555; /* Light mode paragraph color */
+            font-size: 1rem;
         }
+
+        /* Dark mode paragraph color */
+        body.dark .faq-item p {
+            color: #bbb; 
+        }
+
+        /* Footer styles */
         footer {
             background-color: #ff6347;
             color: white;
+            height: 60px;
             text-align: center;
-            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: fixed;
             bottom: 0;
             width: 100%;
+            font-size: 0.9rem;
+        }
+
+        /* Toggle button styles */
+        #theme-toggle-button {
+            font-size: 12px;
+            position: absolute;
+            top: 67px;
+            right: 2px;
+            display: inline-block;
+            width: 7em;
+            cursor: pointer;
+        }
+
+        /* Hide default HTML checkbox */
+        #toggle {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* Night sky background */
+        #toggle:checked + svg #container {
+            fill: #2b4360;
+        }
+
+        /* Move button to right when checked */
+        #toggle:checked + svg #button {
+            transform: translate(28px, 2.333px);
+        }
+
+        /* Show/hide sun and moon based on checkbox state */
+        #sun {
+            opacity: 1;
+        }
+
+        #toggle:checked + svg #sun {
+            opacity: 0;
+        }
+
+        #moon {
+            opacity: 0;
+        }
+
+        #toggle:checked + svg #moon {
+            opacity: 1;
+        }
+
+        /* Show or hide background items on checkbox state */
+        #cloud {
+            opacity: 1;
+        }
+
+        #toggle:checked + svg #cloud {
+            opacity: 0;
+        }
+
+        #stars {
+            opacity: 0;
+        }
+
+        #toggle:checked + svg #stars {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>FoodHub Help</h1>
+        <h1>Spicytaste Help</h1>
         <nav>
             <a href="index.html">Home</a>
             <a href="offers.html">Offers</a>
@@ -93,32 +237,99 @@
             <a href="cart.html">Cart</a>
         </nav>
     </header>
+    <label id="theme-toggle-button">
+        <input type="checkbox" id="toggle">
+        <svg viewBox="0 0 69.667 44" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(3.5 3.5)" data-name="Component 15 – 1" id="Component_15_1">
+                <g filter="url(#container)" transform="matrix(1, 0, 0, 1, -3.5, -3.5)">
+                    <rect fill="#83cbd8" transform="translate(3.5 3.5)" rx="17.5" height="35" width="60.667" data-name="container" id="container"></rect>
+                </g>
+                <g transform="translate(2.333 2.333)" id="button">
+                    <g data-name="sun" id="sun">
+                        <g filter="url(#sun-outer)" transform="matrix(1, 0, 0, 1, -5.83, -5.83)">
+                            <circle fill="#f8e664" transform="translate(5.83 5.83)" r="15.167" cy="15.167" cx="15.167" data-name="sun-outer" id="sun-outer-2"></circle>
+                        </g>
+                        <g filter="url(#sun)" transform="matrix(1, 0, 0, 1, -5.83, -5.83)">
+                            <path fill="rgba(246,254,247,0.29)" transform="translate(9.33 9.33)" d="M11.667,0A11.667,11.667,0,1,1,0,11.667,11.667,11.667,0,0,1,11.667,0Z" data-name="sun" id="sun-3"></path>
+                        </g>
+                        <circle fill="#fcf4b9" transform="translate(8.167 8.167)" r="7" cy="7" cx="7" id="sun-inner"></circle>
+                    </g>
+                    <g data-name="moon" id="moon">
+                        <g filter="url(#moon)" transform="matrix(1, 0, 0, 1, -31.5, -5.83)">
+                            <circle fill="#cce6ee" transform="translate(31.5 5.83)" r="15.167" cy="15.167" cx="15.167" data-name="moon" id="moon-3"></circle>
+                        </g>
+                        <g fill="#a6cad0" transform="translate(37.5 5.83)">
+                            <path d="M2.585,0C1.194,0,.071.494.071,1.099A2.85,2.85,0,0,0,2.4,3.611a4.68,4.68,0,0,0,1.27-.17,2.936,2.936,0,1,0,.576-3.9A4.678,4.678,0,0,0,2.585,0ZM3.427,2.625A1.5,1.5,0,1,1,2.515,3.54A1.5,1.5,0,0,1,3.427,2.625Z" transform="translate(-0.184)" data-name="moon-2" id="moon-2"></path>
+                        </g>
+                    </g>
+                </g>
+                <g fill="#ffdbd8" transform="translate(18 18)" data-name="cloud" id="cloud">
+                    <path d="M4.5,1.5A3.006,3.006,0,0,0,2.1,3.793A4.506,4.506,0,0,0,0,6.5a4.5,4.5,0,0,0,4.5,4.5h6a3.5,3.5,0,0,0,3.5-3.5A3.5,3.5,0,0,0,9.1,4.5,3.5,3.5,0,0,0,6,2.5A4.506,4.506,0,0,0,4.5,1.5Z" data-name="cloud-1" id="cloud-1"></path>
+                </g>
+                <g fill="#ffffff" transform="translate(25 25)" data-name="stars" id="stars">
+                    <g data-name="Star 1" id="star-1">
+                        <path d="M1.5,0l.458,1.389h1.455l-1.178.858.446,1.388-1.178-.858-.446,1.388Z" transform="translate(0 1.667)"></path>
+                    </g>
+                    <g transform="translate(0 2.333)" data-name="Star 2" id="star-2">
+                        <path d="M1.5,0l.458,1.389h1.455l-1.178.858.446,1.388-1.178-.858-.446,1.388Z" transform="translate(0 1.667)"></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </label>
+
     <main>
-        <section class="help">
+        <div class="help">
             <h2>How can we help you?</h2>
-            <p>Find answers to frequently asked questions and support for our services.</p>
-            <div class="faq">
-                <div class="faq-item">
-                    <h3>How do I place an order?</h3>
-                    <p>To place an order, browse our menu, add items to your cart, and proceed to checkout.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What payment methods are accepted?</h3>
-                    <p>We accept all major credit cards, debit cards, and digital wallets.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How can I track my order?</h3>
-                    <p>Once your order is placed, you can track it through the 'My Orders' section in your account.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What is the cancellation policy?</h3>
-                    <p>You can cancel your order within 5 minutes of placing it. After that, cancellations are not possible.</p>
-                </div>
+            <p>If you have questions, concerns, or need assistance, you’ve come to the right place!</p>
+        </div>
+
+        <div class="faq">
+            <div class="faq-item">
+                <h3>What is Spicytaste?</h3>
+                <p>Spicytaste is a platform for exploring and purchasing unique culinary experiences and ingredients.</p>
             </div>
-        </section>
+            <div class="faq-item">
+                <h3>How can I contact customer support?</h3>
+                <p>You can reach us via the contact form on our website, or email us at support@spicytaste.com.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What payment methods do you accept?</h3>
+                <p>We accept various payment methods, including credit cards, PayPal, and other secure options.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I track my order?</h3>
+                <p>Once your order has been shipped, you will receive a tracking number via email to monitor its progress.</p>
+            </div>
+        </div>
     </main>
+
     <footer>
-        <p>&copy; 2024 FoodHub. All rights reserved.</p>
+        &copy; 2024 Spicytaste. All rights reserved.
     </footer>
+
+    <script>
+        var body = document.querySelector("body");
+        var helpSection = document.querySelector(".help"); // Select help section
+        var toggle = document.getElementById("toggle");
+    
+        function dark() {
+            body.classList.add("dark");
+            helpSection.classList.add("dark"); // Add dark class to help section
+        }
+    
+        function light() {
+            body.classList.remove("dark");
+            helpSection.classList.remove("dark"); // Remove dark class from help section
+        }
+    
+        toggle.addEventListener('click', function() {
+            if (toggle.checked) {
+                dark();
+            } else {
+                light();
+            }
+        });
+    </script>
 </body>
 </html>
