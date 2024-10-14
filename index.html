@@ -63,7 +63,26 @@
             font-size: 16px;
             font-weight: bold;
         }
+        /* .header-nav a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 50%;
+                background-color: #ffd700;
+                transition: width 0.3s ease, left 0.3s ease;
+        }
 
+        .header-nav::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #ff9131, #ffd700);
+        } */
         .header-nav a:hover {
 
             text-decoration: nonep;
@@ -478,12 +497,17 @@
             .unique-carousel-arrow {
                 padding: 12px;
             }
-        }
+            #theme-toggle-button{
+                top:0px;
+                position:absolute;
+                right:0px;
+            }
+       
 
         .foodhub {
             padding-right: 25px;
         }
-
+    }
         @media(max-width:400px) {}
 
         /* Very small screens */
@@ -1336,12 +1360,14 @@
                 /* Larger font size */
             }
         }
+        
 
 
 
 
         /*responsive media query for app section of the website*/
         @media (max-width: 480px) {
+            
             .app-container {
                 flex-direction: column;
                 align-items: center;
@@ -2292,6 +2318,291 @@
             color: #ff6347;
 
         }
+
+
+
+
+        /*this is the code of the dark and night buttons*/
+        #theme-toggle-button {
+    font-size: 12px;
+    position: absolute;
+    top: 67px;
+    right: 2px;
+    display: inline-block;
+    width: 7em;
+    cursor: pointer;
+  }
+  
+  /* Hide default HTML checkbox */
+  #toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  #container,
+  #patches,
+  #stars,
+  #button,
+  #sun,
+  #moon,
+  #cloud {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.25s;
+  }
+  
+  /* night sky background */
+  #toggle:checked + svg #container {
+    fill: #2b4360;
+  }
+  
+  /* move button to right when checked */
+  #toggle:checked + svg #button {
+    transform: translate(28px, 2.333px);
+  }
+  
+  /* show/hide sun and moon based on checkbox state */
+  #sun {
+    opacity: 1;
+  }
+  
+  #toggle:checked + svg #sun {
+    opacity: 0;
+  }
+  
+  #moon {
+    opacity: 0;
+  }
+  
+  #toggle:checked + svg #moon {
+    opacity: 1;
+  }
+  
+  /* show or hide background items on checkbox state */
+  #cloud {
+    opacity: 1;
+  }
+  
+  #toggle:checked + svg #cloud {
+    opacity: 0;
+  }
+  
+  #stars {
+    opacity: 0;
+  }
+  
+  #toggle:checked + svg #stars {
+    opacity: 1;
+  }
+
+
+
+
+  /*NOW THIS IS THE CODE FOR DARK MODE*/
+  .dark{
+    background-color:black;
+    color:white;
+  }
+  .dark .spicytaste-container-1{
+    background-color: #1c1c1c;
+    box-shadow: 0 4px 8px rgba(241, 214, 214, 0.1);
+  
+  color: #dfff00;
+  
+  }
+  .dark .what{
+    color: #17ff17;
+  }
+  .dark .unique-carousel-track img{
+    filter: contrast(200%);
+  }
+  .dark .unique-carousel-container{
+    background-color: #000;
+  }
+  .dark .locality-box h1{
+    color: #00ffab;
+  }
+  .dark .locality-box{
+    background-color: #313131;
+  }
+  .dark .locality-box{
+    color: #ffffff;
+  }
+  .dark .locality-box:hover{
+    background-color:red;
+  }
+  .dark .container h1{
+    color:#00ff64
+  }
+  .dark .toggle-container label{
+    background-color: #f40067;
+  }
+  .dark .toggle-container label:hover{
+    background-color: #fd3a8b;
+  }
+  .dark .app-section{
+    background-color: #141414;
+    }
+  .dark .app-content p{
+    color:white;
+
+  }
+  .dark.app-form label{
+color:white;
+  }
+  .dark .app-content input{
+    background-color:black;
+    color:white;
+    border: 1px solid #585252;
+  }
+  .dark .app-content button{
+    background-color:rgb(219, 7, 173);
+  }
+  .dark .app-content button:hover{
+    background-color:rgb(243, 49, 201);
+  }
+  .dark .app-form label{
+    color:white;
+  }
+  .dark .filter-section div {
+    /* border: 3px solid blue;
+  border-radius: 25px; */
+}
+
+  
+  .dark .filter-section {
+    color:red;
+  
+  background-color: #f7ff00;
+  }
+
+  
+  .dark .filter-section div {
+    /* border: 3px solid blue; */
+  border-radius: 25px;
+  }
+
+  
+  .dark .search-bar input{
+    background-color:black;
+    color:white;
+  }
+  .dark .search-bar button{
+    border: 1px solid #6e6e6e;
+  background-color: #3d2fdf;
+  }
+  .dark .search-bar button:hover{
+    border: 1px solid #6e6e6e;
+  background-color: #5c4df9;
+  }
+  .dark .restaurant-card{
+    outline: 1px solid white;
+  }
+
+  .dark .restaurant-info h3{
+    color: #fff;
+
+  }
+  .dark .restaurant-info .offer{
+    color: #df2f2f;
+}
+.dark .restaurant-info .rating{
+    color: #000;
+}
+.dark .restaurant-info h3{
+    color: #fff;
+
+  }
+  .dark .restaurant-info p {
+  
+  color: #dfff00;
+  
+}
+
+.dark .more-rest{
+    background-color: #00b725;
+}
+.dark .more-rest:hover{
+    background-color: rgb(59, 255, 56);
+}
+.dark .rest-container{
+    background-color: #1e1e1e;
+}
+.dark .rest-h1, .rest-h2 {
+  
+  color: #fffdfd;
+}
+.dark .business-opportunity{
+    background-color: #1a1a1a;
+}
+.dark .business-opportunity .text h1{
+    color: #88ff5d;
+}
+.dark .business-opportunity .text p{
+    color:white;
+}
+.dark .business-opportunity .text .button{
+    outline:1px solid white;
+    background-color:red;
+    
+}
+.dark .business-opportunity .text .button:hover{
+    background-color:rgb(250, 61, 61);
+    outline:1px solid white;
+    
+}
+.dark .box-3{
+    background-color: #222;
+    border:1px solid white;
+}
+.dark .top1-1 {
+    color: #FFBF00;
+
+}
+.dark .top-2-2 {
+    color: #FFBF00;
+
+}
+.dark .top3-3 {
+    color: #FFBF00;
+
+}
+.dark .top1-1-1{
+    color: #00FFE7;
+}
+.dark .top-2-2-2{
+    color: #00FFE7;
+}
+.dark .top3-3-3{
+    color: #00FFE7;
+}
+.dark .browse-button-3{
+    background-color: #FF0048;
+    border: 2px solid #FFF;
+}
+.dark .browse-button-3{
+    background-color: #ff3e75;
+}
+
+.dark .rest-box p{
+    color: #000000;
+}
+.dark .rest-box{
+    background-color: #00e7ff;
+  border: 2px solid #fff;
+}
+.dark .rest-toggle-label{
+    background-color: #1bff14;
+  color: #000;
+}
+.dark .footer-column ul li a{
+    color: #ebff00;
+}
+.dark .footer {
+  background-color: #131313;
+  color: #f00;
+}
     </style>
 </head>
 
@@ -2334,6 +2645,64 @@
             </div>
         </div>
     </div>
+
+    <label id="theme-toggle-button">
+        <input type="checkbox" id="toggle">
+        <svg viewBox="0 0 69.667 44" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+          <g transform="translate(3.5 3.5)" data-name="Component 15 – 1" id="Component_15_1">
+            
+            
+            <g filter="url(#container)" transform="matrix(1, 0, 0, 1, -3.5, -3.5)">
+              <rect fill="#83cbd8" transform="translate(3.5 3.5)" rx="17.5" height="35" width="60.667" data-name="container" id="container"></rect>
+            </g>
+            
+            <g transform="translate(2.333 2.333)" id="button">
+              
+              <g data-name="sun" id="sun">
+                <g filter="url(#sun-outer)" transform="matrix(1, 0, 0, 1, -5.83, -5.83)">
+                  <circle fill="#f8e664" transform="translate(5.83 5.83)" r="15.167" cy="15.167" cx="15.167" data-name="sun-outer" id="sun-outer-2"></circle>
+                </g>
+                <g filter="url(#sun)" transform="matrix(1, 0, 0, 1, -5.83, -5.83)">
+                  <path fill="rgba(246,254,247,0.29)" transform="translate(9.33 9.33)" d="M11.667,0A11.667,11.667,0,1,1,0,11.667,11.667,11.667,0,0,1,11.667,0Z" data-name="sun" id="sun-3"></path>
+                </g>
+                <circle fill="#fcf4b9" transform="translate(8.167 8.167)" r="7" cy="7" cx="7" id="sun-inner"></circle>
+              </g>
+              
+                
+              <g data-name="moon" id="moon">
+                <g filter="url(#moon)" transform="matrix(1, 0, 0, 1, -31.5, -5.83)">
+                  <circle fill="#cce6ee" transform="translate(31.5 5.83)" r="15.167" cy="15.167" cx="15.167" data-name="moon" id="moon-3"></circle>
+                </g>
+                <g fill="#a6cad0" transform="translate(-24.415 -1.009)" id="patches">
+                  <circle transform="translate(43.009 4.496)" r="2" cy="2" cx="2"></circle>
+                  <circle transform="translate(39.366 17.952)" r="2" cy="2" cx="2" data-name="patch"></circle>
+                  <circle transform="translate(33.016 8.044)" r="1" cy="1" cx="1" data-name="patch"></circle>
+                  <circle transform="translate(51.081 18.888)" r="1" cy="1" cx="1" data-name="patch"></circle>
+                  <circle transform="translate(33.016 22.503)" r="1" cy="1" cx="1" data-name="patch"></circle>
+                  <circle transform="translate(50.081 10.53)" r="1.5" cy="1.5" cx="1.5" data-name="patch"></circle>
+                </g>
+              </g>
+            </g>
+            
+            
+            <g filter="url(#cloud)" transform="matrix(1, 0, 0, 1, -3.5, -3.5)">
+              <path fill="#fff" transform="translate(-3466.47 -160.94)" d="M3512.81,173.815a4.463,4.463,0,0,1,2.243.62.95.95,0,0,1,.72-1.281,4.852,4.852,0,0,1,2.623.519c.034.02-.5-1.968.281-2.716a2.117,2.117,0,0,1,2.829-.274,1.821,1.821,0,0,1,.854,1.858c.063.037,2.594-.049,3.285,1.273s-.865,2.544-.807,2.626a12.192,12.192,0,0,1,2.278.892c.553.448,1.106,1.992-1.62,2.927a7.742,7.742,0,0,1-3.762-.3c-1.28-.49-1.181-2.65-1.137-2.624s-1.417,2.2-2.623,2.2a4.172,4.172,0,0,1-2.394-1.206,3.825,3.825,0,0,1-2.771.774c-3.429-.46-2.333-3.267-2.2-3.55A3.721,3.721,0,0,1,3512.81,173.815Z" data-name="cloud" id="cloud"></path>
+            </g>
+      
+            
+            <g fill="#def8ff" transform="translate(3.585 1.325)" id="stars">
+              <path transform="matrix(-1, 0.017, -0.017, -1, 24.231, 3.055)" d="M.774,0,.566.559,0,.539.458.933.25,1.492l.485-.361.458.394L1.024.953,1.509.592.943.572Z"></path>
+              <path transform="matrix(-0.777, 0.629, -0.629, -0.777, 23.185, 12.358)" d="M1.341.529.836.472.736,0,.505.46,0,.4.4.729l-.231.46L.605.932l.4.326L.9.786Z" data-name="star"></path>
+              <path transform="matrix(0.438, 0.899, -0.899, 0.438, 23.177, 29.735)" d="M.015,1.065.475.9l.285.365L.766.772l.46-.164L.745.494.751,0,.481.407,0,.293.285.658Z" data-name="star"></path>
+              <path transform="translate(12.677 0.388) rotate(104)" d="M1.161,1.6,1.059,1,1.574.722.962.607.86,0,.613.572,0,.457.446.881.2,1.454l.516-.274Z" data-name="star"></path>
+              <path transform="matrix(-0.07, 0.998, -0.998, -0.07, 11.066, 15.457)" d="M.873,1.648l.114-.62L1.579.945,1.03.62,1.144,0,.706.464.157.139.438.7,0,1.167l.592-.083Z" data-name="star"></path>
+              <path transform="translate(8.326 28.061) rotate(11)" d="M.593,0,.638.724,0,.982l.7.211.045.724.36-.64.7.211L1.342.935,1.7.294,1.063.552Z" data-name="star"></path>
+              <path transform="translate(5.012 5.962) rotate(172)" d="M.816,0,.5.455,0,.311.323.767l-.312.455.516-.215.323.456L.827.911,1.343.7.839.552Z" data-name="star"></path>
+              <path transform="translate(2.218 14.616) rotate(169)" d="M1.261,0,.774.571.114.3.487.967,0,1.538.728,1.32l.372.662.047-.749.728-.218L1.215.749Z" data-name="star"></path>
+            </g>
+          </g>
+        </svg>
+      </label>
 
     <div class="search-container">
         <div class="search-box">
@@ -3820,6 +4189,74 @@
 
 
 
+
+
+
+     var body = document.querySelector("body");
+        var corporateSection = document.querySelector(".corporate");
+        var formInputs = document.querySelectorAll(".corporate-form input, .corporate-form textarea");
+        // var darktext = document.getElementById("toggle");
+        // var lighttext = document.getElementById("toggle");
+        var toggle = document.getElementById("toggle");
+
+        
+
+        function dark() {
+            body.classList.add("dark");
+            corporateSection.classList.add("corporate-dark");
+            formInputs.forEach(input => input.classList.add("dark"));
+            // darktext.style.display = "none";
+            // lighttext.style.display = "block";
+            // flag = 1;
+        }
+
+        function light() {
+            body.classList.remove("dark");
+            corporateSection.classList.remove("corporate-dark");
+            formInputs.forEach(input => input.classList.remove("dark"));
+            // lighttext.style.display = "none";
+            // darktext.style.display = "block";
+            // flag = 0;
+        }
+
+        // body.addEventListener("keydown", function (event) {
+        //     if (eve
+        // nt.key === '1') {
+        //         if (flag === 0) {
+        //             dark();
+        //         }
+        //     }
+        //     else if (event.key === '2') {
+        //         if (flag === 1) {
+        //             light();
+        //         }
+        //     }
+        // });
+
+        // darktext.addEventListener('click', function () {
+        //     if (flag === 0) {
+        //         dark();
+        //     }
+        // });
+
+        // lighttext.addEventListener('click', function () {
+        //     if (flag === 1) {
+        //         light();
+        //     }
+        // });
+        // let flag = 0;
+        toggle.addEventListener('click', function(){
+            if(toggle.checked){
+                //ISS CHECK YE HOGA KI TOGGLE SELECT HONE NA HONE PAR FUNCTION KAREGA
+                //MATLAB KI TOGGLE CHECK HONE PR CONDITION LAGEGI YE
+                dark();
+            }
+            else{
+                light();
+                
+            }
+
+        });
 
 
     </script>
