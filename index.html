@@ -2625,15 +2625,25 @@ color:white;
   color: #f00;
 }
 
+/* Default size for large devices */
 #theme-toggle-button {
     font-size: 12px;
     position: absolute;
     top: 99px;
-  right: -1px;
+    right: -1px;
     display: inline-block;
     width: 7em;
     cursor: pointer;
-  }
+}
+
+/* Adjust font-size for mobile devices */
+@media only screen and (max-width: 428px) {
+    #theme-toggle-button {
+        font-size: 9px; /* Reduced font size for smaller screens */
+        top:0px;
+    }
+}
+
     </style>
 </head>
 
@@ -4224,7 +4234,7 @@ color:white;
 
 
      var body = document.querySelector("body");
-        var corporateSection = document.querySelector(".corporate");
+       
         var formInputs = document.querySelectorAll(".corporate-form input, .corporate-form textarea");
         // var darktext = document.getElementById("toggle");
         // var lighttext = document.getElementById("toggle");
@@ -4234,7 +4244,7 @@ color:white;
 
         function dark() {
             body.classList.add("dark");
-            corporateSection.classList.add("corporate-dark");
+           
             formInputs.forEach(input => input.classList.add("dark"));
             // darktext.style.display = "none";
             // lighttext.style.display = "block";
@@ -4243,7 +4253,7 @@ color:white;
 
         function light() {
             body.classList.remove("dark");
-            corporateSection.classList.remove("corporate-dark");
+           
             formInputs.forEach(input => input.classList.remove("dark"));
             // lighttext.style.display = "none";
             // darktext.style.display = "block";
