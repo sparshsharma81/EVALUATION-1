@@ -2624,6 +2624,12 @@ color:white;
   background-color: #131313;
   color: #f00;
 }
+.dark .foodhub h1{
+    color: #00ffcf;
+}
+.dark .foodhub h2{
+    color: #80ff00;
+}
 
 /* Default size for large devices */
 #theme-toggle-button {
@@ -4286,18 +4292,15 @@ color:white;
         //     }
         // });
         // let flag = 0;
-        toggle.addEventListener('click', function(){
-            if(toggle.checked){
-                //ISS CHECK YE HOGA KI TOGGLE SELECT HONE NA HONE PAR FUNCTION KAREGA
-                //MATLAB KI TOGGLE CHECK HONE PR CONDITION LAGEGI YE
-                dark();
-            }
-            else{
-                light();
-                
-            }
-
-        });
+        toggle.addEventListener('change', function() {
+    if (toggle.checked) {
+        // When the toggle is checked, apply dark mode
+        dark();
+    } else {
+        // When the toggle is unchecked, apply light mode
+        light();
+    }
+});
 
 
     </script>
