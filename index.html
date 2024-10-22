@@ -7,6 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* General Styles */
+        
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
@@ -14,7 +15,24 @@
             background-color: #f9f9f9;
             /* overflow: hidden; */
             overflow-x: hidden;
+            
         }
+        /* body {
+    opacity: 0; /* Start invisible */
+    /* transform: translateY(20px); Start slightly below the normal position */
+    /* animation: slideUp 0.2s ease-out forwards; Slide-up animation */
+/* } */
+
+/* @keyframes slideUp { */
+    /* to { */
+        /* opacity: 1; Make the body visible */
+        /* transform: translateY(0); Move to the original position */
+    /* } */
+/* } */
+
+
+
+        
 
         .header {
             width: 96%;
@@ -51,7 +69,7 @@
 
         }
 
-        .header-nav {
+        /* .header-nav {
             display: flex;
             align-items: center;
             gap: 28px;
@@ -62,7 +80,7 @@
             text-decoration: none;
             font-size: 16px;
             font-weight: bold;
-        }
+        } */
         /* .header-nav a::before {
             content: '';
             position: absolute;
@@ -83,12 +101,42 @@
             height: 3px;
             background: linear-gradient(to right, #ff9131, #ffd700);
         } */
-        .header-nav a:hover {
+        /* .header-nav a:hover {
 
             text-decoration: nonep;
             transform: scale(1.2);
 
-        }
+        } */
+        .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.header-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative; /* Required for the pseudo-element positioning */
+}
+
+.header-nav a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #eeb405; /* Line color */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.header-nav a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
 
         .search-container {
             display: flex;
@@ -480,6 +528,11 @@
             .unique-carousel-arrow {
                 padding: 6px;
             }
+            /* #theme-toggle-button{
+                font-size: 10px;
+                position: absolute;
+                top: 11px;    
+            } */
         }
 
         /* Extra small screens */
@@ -502,9 +555,9 @@
                 position:absolute;
                 right:0px;
                 display: inline-block;
-    width: 7em;
-    cursor: pointer;
-    font-size:10px;
+                width: 7em;
+                cursor: pointer;
+                font-size:10px;
             }
        
 
@@ -2013,10 +2066,10 @@
 
 
         /*final media queries*/
-        /* {
+        /* * {
             outline: 1px solid red; /* Outline around the element */
-        /*  outline-offset: -5px;   Adjust this to visualize the margin 
-        }*/
+       /*  outline-offset: -5px;   /* Adjust this to visualize the margin  */
+     /*   } */
         .top-1 {
             display: flex;
             flex-direction: column;
@@ -2543,7 +2596,7 @@
 }
 
 .dark .more-rest:hover {
-    background-color: #cbff70;
+    background-color: green;
 }
 
 .dark .rest-container {
@@ -2708,7 +2761,7 @@
     border-radius: 25px;
 }
 .dark1 .filter-section {
-    color: orange;
+    color: rgb(255, 0, 0);
     background-color: #f2ff00;
 }
 .dark1 .filter-section div {
@@ -3750,35 +3803,35 @@
 
 
 .dark7 {
-    background-color: #1a1a1a;
-    color: #d3d3d3; /* LightGray */
+    background-color: #191919;
+    color: #e0ffff; /* LightCyan */
 }
 
 .dark7 .spicytaste-container-1 {
-    background-color: #35373a;
-    box-shadow: 0 4px 8px rgba(255, 69, 0, 0.2); /* OrangeRed */
-    color: #fff8dc; /* Cornsilk */
+    background-color: #404040;
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2); /* HotPink */
+    color: #ffe4c4; /* Bisque */
 }
 
 .dark7 .what {
-    color: #ff7f50; /* Coral */
+    color: #ff4500; /* OrangeRed */
 }
 
 .dark7 .unique-carousel-track img {
-    filter: contrast(180%);
+    filter: contrast(200%);
 }
 
 .dark7 .unique-carousel-container {
-    background-color: #3e4146;
+    background-color: #52575d;
 }
 
 .dark7 .locality-box h1 {
-    color: #ba55d3; /* MediumOrchid */
+    color: #40e0d0; /* Turquoise */
 }
 
 .dark7 .locality-box {
-    background-color: #484b4f;
-    color: #f5f5dc; /* Beige */
+    background-color: #5b5f63;
+    color: #ffe4b5; /* Moccasin */
 }
 
 .dark7 .locality-box:hover {
@@ -3786,23 +3839,23 @@
 }
 
 .dark7 .container h1 {
-    color: #ffa07a; /* LightSalmon */
+    color: #ffdead; /* NavajoWhite */
 }
 
 .dark7 .toggle-container label {
-    background-color: #2e8b57; /* SeaGreen */
+    background-color: #4682b4; /* SteelBlue */
 }
 
 .dark7 .toggle-container label:hover {
-    background-color: #3cb371; /* MediumSeaGreen */
+    background-color: #5f9ea0; /* CadetBlue */
 }
 
 .dark7 .app-section {
-    background-color: #202024;
+    background-color: #262626;
 }
 
 .dark7 .app-content p {
-    color: #fff0f5; /* LavenderBlush */
+    color: #fafad2; /* LightGoldenRodYellow */
 }
 
 .dark7 .app-form label {
@@ -3810,59 +3863,64 @@
 }
 
 .dark7 .app-content input {
-    background-color: #2f3236;
-    color: #ffebcd; /* BlanchedAlmond */
-    border: 1px solid #696969; /* DimGray */
+    background-color: #383838;
+    color: #fdf5e6; /* OldLace */
+    border: 1px solid #c0c0c0; /* Silver */
 }
 
 .dark7 .app-content button {
-    background-color: #ff4500; /* OrangeRed */
+    background-color: #cd5c5c; /* IndianRed */
 }
 
 .dark7 .app-content button:hover {
-    background-color: #e9967a; /* DarkSalmon */
+    background-color: #bc8f8f; /* RosyBrown */
 }
 
 .dark7 .filter-section {
-    color: #ffd700; /* Gold */
+    color: #dda0dd; /* Plum */
     background-color: #f0fff0; /* HoneyDew */
 }
 
 .dark7 .search-bar input {
     background-color: #483d8b; /* DarkSlateBlue */
-    color: #ffefd5; /* PapayaWhip */
+    color: #f5fffa; /* MintCream */
+}
+
+.dark7 .search-bar button {
+    border: 1px solid #ff6347; /* Tomato */
+    background-color: #8b0000; /* DarkRed */
 }
 
 .dark7 .restaurant-card {
-    outline: 1px solid #ff6347; /* Tomato */
+    outline: 1px solid #ff4500; /* OrangeRed */
 }
 
 .dark7 .restaurant-info h3 {
-    color: #ffffe0; /* LightYellow */
+    color: #e6e6fa; /* Lavender */
 }
 
 .dark7 .restaurant-info .offer {
-    color: #ff69b4; /* HotPink */
+    color: #ffd700; /* Gold */
 }
 
 .dark7 .restaurant-info .rating {
-    color: #98fb98; /* PaleGreen */
+    color: #00ff7f; /* SpringGreen */
 }
 
 .dark7 .more-rest {
-    background-color: #4682b4; /* SteelBlue */
+    background-color: #8a2be2; /* BlueViolet */
 }
 
 .dark7 .more-rest:hover {
-    background-color: #5f9ea0; /* CadetBlue */
+    background-color: #9400d3; /* DarkViolet */
 }
 
 .dark7 .rest-container {
-    background-color: #303339;
+    background-color: #2f2f31;
 }
 
 .dark7 .rest-h1, .rest-h2 {
-    color: #fafad2; /* LightGoldenRodYellow */
+    color: #fffacd; /* LemonChiffon */
 }
 
 .dark7 .business-opportunity {
@@ -3870,21 +3928,21 @@
 }
 
 .dark7 .business-opportunity .text h1 {
-    color: #7cfc00; /* LawnGreen */
+    color: #adff2f; /* GreenYellow */
 }
 
 .dark7 .business-opportunity .text p {
-    color: #add8e6; /* LightBlue */
+    color: #f0e68c; /* Khaki */
 }
 
 .dark7 .business-opportunity .text .button {
-    background-color: #dc143c; /* Crimson */
-    outline: 1px solid #f5f5f5; /* WhiteSmoke */
+    background-color: #f08080; /* LightCoral */
+    outline: 1px solid #fffafa; /* Snow */
 }
 
 .dark7 .box-3 {
-    background-color: #8a2be2; /* BlueViolet */
-    border: 1px solid #ffffff; /* White */
+    background-color: #4682b4; /* SteelBlue */
+    border: 1px solid #f5f5f5; /* WhiteSmoke */
 }
 
 .dark7 .top1-1 {
@@ -3892,29 +3950,29 @@
 }
 
 .dark7 .top-2-2 {
-    color: #ff6347; /* Tomato */
+    color: #ff4500; /* OrangeRed */
 }
 
 .dark7 .top3-3 {
-    color: #b0c4de; /* LightSteelBlue */
+    color: #b0e0e6; /* PowderBlue */
 }
 
 .dark7 .browse-button-3 {
-    background-color: #9932cc; /* DarkOrchid */
-    border: 2px solid #ffffe0; /* LightYellow */
+    background-color: #ff69b4; /* HotPink */
+    border: 2px solid #f0e68c; /* Khaki */
 }
 
 .dark7 .rest-box p {
-    color: #ff69b4; /* HotPink */
+    color: #32cd32; /* LimeGreen */
 }
 
 .dark7 .rest-box {
-    background-color: #2f4f4f; /* DarkSlateGray */
+    background-color: #556b2f; /* DarkOliveGreen */
     border: 2px solid #ffffff; /* White */
 }
 
 .dark7 .footer {
-    background-color: #101010;
+    background-color: #181818;
     color: #7fffd4; /* Aquamarine */
 }
 
@@ -4512,7 +4570,7 @@
 
 /* Default size for large devices */
 #theme-toggle-button {
-    font-size: 12px;
+    font-size: 10px;
     position: absolute;
     top: 99px;
     right: -1px;
@@ -4524,10 +4582,41 @@
 /* Adjust font-size for mobile devices */
 @media only screen and (max-width: 428px) {
     #theme-toggle-button {
-        font-size: 9px; /* Reduced font size for smaller screens */
-        top:0px;
+        font-size: 7px; /* Reduced font size for smaller screens */
+        top:200px;
     }
 }
+@media only screen and (max-width:360px){
+    body{
+        overflow-x:hidden;
+
+    }
+    .foodhub h1{
+    font-size: 31px;
+    padding-top: 10px;
+    max-width: 20px;
+    left: -59px;
+    top: -33px;
+    position: relative;
+  }
+  .foodhub h2{
+    font-size: 15px;
+    position: absolute;
+    top: 147px;
+    transform: scale(1.8);
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-right: 60px;
+    left: -6px;
+    max-width: 87px;
+  }
+  #theme-toggle-button {
+    font-size: 7px;
+    top: 207px;
+  }
+}
+  
+
 
     </style>
 </head>
