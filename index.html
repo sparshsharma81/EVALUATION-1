@@ -6,30 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* General Styles */
+      
         
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
             color: #333;
             background-color: #f9f9f9;
-            /* overflow: hidden; */
+            /* overflow: hidden; ---isse jo excess of horizontal content hoga vo nahi show hoga---baaki outline ka use bhi karna chahiye*/
             overflow-x: hidden;
             
         }
-        /* body {
-    opacity: 0; /* Start invisible */
-    /* transform: translateY(20px); Start slightly below the normal position */
-    /* animation: slideUp 0.2s ease-out forwards; Slide-up animation */
-/* } */
-
-/* @keyframes slideUp { */
-    /* to { */
-        /* opacity: 1; Make the body visible */
-        /* transform: translateY(0); Move to the original position */
-    /* } */
-/* } */
-
+ 
 
 
         
@@ -41,7 +29,7 @@
             height: 80px;
             display: flex;
             align-items: center;
-            /* padding: 0 20px; */
+            
             box-shadow: 0 4px 8px rgba(249, 105, 2, 0.1);
             position: relative;
             justify-content: space-between;
@@ -118,7 +106,7 @@
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
-    position: relative; /* Required for the pseudo-element positioning */
+    position: relative; 
 }
 
 .header-nav a::before {
@@ -128,7 +116,7 @@
     height: 3px;
     bottom: -5px;
     left: 50%;
-    background-color: #eeb405; /* Line color */
+    background-color: #eeb405; /*iss chij se Line ka color aayega */
     transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -170,7 +158,7 @@
         }
 
 
-        /* Header Styles */
+        /* Header ki Styles */
         .header {
     width: 100%;
     color: #fff;
@@ -178,29 +166,29 @@
     display: flex;
     align-items: center;
     position: relative;
-    overflow: hidden; /* Prevent overflow of the gradient */
+    overflow: hidden; /* ye gradient ka overflow nahi hone dega */
     background: linear-gradient(to top, rgb(237, 34, 255) 0%, rgba(211, 106, 0, 0)) 70%,
                 linear-gradient(270deg, rgb(0, 13, 255), rgb(247, 32, 200), rgb(14, 38, 255));
-    background-size: 200% 200%; /* Make the gradient larger for animation */
-    animation: gradient 2s linear infinite; /* Animate the gradient */
+    background-size: 200% 200%; 
+    animation: gradient 2s linear infinite; /* Animation ke liye gradient k */
     box-shadow: 0 4px 8px rgba(249, 105, 2, 0.1);
 }
 
 @keyframes gradient {
     0% {
-        background-position: 0% 0%; /* Start position */
+        background-position: 0% 0%; 
     }
     20% {
-        background-position: 50% 0%; /* Move partially to the right */
+        background-position: 50% 0%; 
     }
     50% {
-        background-position: 100% 0%; /* Move to the far right */
+        background-position: 100% 0%; 
     }
     80% {
-        background-position: 50% 0%; /* Move back partially */
+        background-position: 50% 0%;
     }
     100% {
-        background-position: 0% 0%; /* Reset to the start */
+        background-position: 0% 0%; 
     }
 
 }
@@ -458,7 +446,7 @@
             }
         }
 
-        /* Large screens (Desktops, etc.) */
+        /* Large screens---isse badi screen me acha dikhega (Desktops, etc.) */
         @media (max-width: 1440px) {
             .unique-carousel-track a {
                 flex: 0 0 25%;
@@ -606,7 +594,7 @@
             font-size: 50px;
             left: 120px;
             text-decoration: wavy;
-            /* font-style: oblique; */
+            /* font-style: oblique; ---thoda sa styling different ho jayega isse*/
             color: red;
             top: 9px;
             z-index: 1;
@@ -995,13 +983,13 @@
         .restaurant-list {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: flex-start;
             transition: opacity 0.5s ease;
         }
 
         .restaurant-card {
             width: 22%;
-            url("delivery.html;") margin-bottom: 1px;
+            margin: 0 1% 20px;
             border-radius: 8px;
 
             overflow: hidden;
@@ -1255,9 +1243,9 @@
                 top: 121px;
                 /*transform:scale(1.8);*/
                 max-width: 100%;
-                /* Ensure the width doesn't exceed the viewport */
+                /* Ensure the width doesn't exceed the viewport---100% hi acha hai---98% is also the best */
                 box-sizing: border-box;
-                /*this styling is use to prevent the horizontal scroll*/
+                /*this styling is use to prevent the horizontal scroll----and we can apply the javascript code here......*/
                 padding-right: 60px;
                 left: -39px;
                 max-width: 161px;
@@ -1317,12 +1305,12 @@
 
             .footer-column h4 {
                 font-size: 16px;
-                /* Adjusted font size */
+                
             }
 
             .footer-column ul li {
                 font-size: 13px;
-                /* Adjusted font size */
+               
             }
 
             .foodhub h1 {
@@ -1350,12 +1338,12 @@
 
             .footer-column h4 {
                 font-size: 16px;
-                /* Adjusted font size */
+               
             }
 
             .footer-column ul li {
                 font-size: 13px;
-                /* Adjusted font size */
+               
             }
         }
 
@@ -1374,30 +1362,30 @@
             .footer-column {
                 margin: 10px;
                 width: auto;
-                /* Adjust width to fit layout */
+                
             }
 
             .footer-column h4 {
                 font-size: 18px;
-                /* Default font size */
+               
             }
 
             .footer-column ul li {
                 font-size: 14px;
-                /* Default font size */
+                
             }
         }
 
         /* Extra Large Devices (Large Screens) */
         @media (min-width: 1441px) {
             #theme-toggle-button {
-    font-size: 12px;
-    position: absolute;
-    top: 67px;
-    right: 2px;
-    display: inline-block;
-    width: 7em;
-    cursor: pointer;
+            font-size: 12px;
+            position: absolute;
+            top: 67px;
+            right: 2px;
+            display: inline-block;
+            width: 7em;
+            cursor: pointer;
   }
             .footer-container {
                 flex-direction: row;
@@ -1410,28 +1398,29 @@
 
             /* .top {
                 font-size: 29px;
+
             } */
 
 
             .footer-column {
                 margin: 10px;
                 width: auto;
-                /* Adjust width to fit layout */
+               
             }
 
             .footer-column h4 {
                 font-size: 20px;
-                /* Larger font size */
+                
             }
 
             .footer-column ul li {
                 font-size: 16px;
-                /* Larger font size */
+               
             }
 
             .footer-bottom {
                 font-size: 16px;
-                /* Larger font size */
+                
             }
         }
         
@@ -1439,7 +1428,7 @@
 
 
 
-        /*responsive media query for app section of the website*/
+        /*responsive media query for app section of the website----(made by sparsh)*/
         @media (max-width: 480px) {
             
             .app-container {
@@ -2006,18 +1995,18 @@
         .locality-box,
         .rest-box a {
             text-decoration: none;
-            /* Remove underline from links */
+            /* text decoration none se underline haatth jayegi */
             color: inherit;
-            /* Inherit the color from the parent element */
+            /* apne bapu ka colour virasat me le lega yoo */
             display: block;
-            /* Make the entire div clickable */
+            /* pura ka pura div clickable ho jata hai */
         }
 
         .locality-container a {
             text-decoration: none;
-            /* Remove underline from links */
+            
             color: inherit;
-            /* Inherit the color from the parent element */
+            
 
         }
 
@@ -2033,9 +2022,9 @@
         /* Active effect for the button */
         .orange-button:active {
             background-color: #FF7F50;
-            /* Even darker orange when clicked */
+            
             transform: scale(0.95);
-            /* Slightly shrink button when clicked */
+           
         }
 
         .more-rest {
@@ -4927,7 +4916,7 @@
 
         <!-- Search Bar -->
         <div class="search-bar">
-            <input type="text" placeholder="Search for restaurant and food">
+            <input type="text" placeholder="Search for restaurant and food" class="search-bar-1">
             <a href="rest.html"><button type="button">Search</button></a>
         </div>
 
@@ -4969,17 +4958,18 @@
             <!-- Restaurant Card 3 -->
             <div class="restaurant-card" data-index="3">
                 <a href="delivery.html">
-                    <img src="rest3.avif" alt="Mr. Gurung Momo & Chinese Corner" class="restaurant-image">
+                    <img src="rest3.avif" alt="Wok & Roll" class="restaurant-image">
                 </a>
                 <div class="restaurant-info">
-                    <h3>Mr. Gurung Momo & Chinese Corner</h3>
-                    <p class="offer">20% OFF UPTO ₹50</p>
-                    <p class="rating">4.1</p>
-                    <p class="delivery-time">Delivery in 45-50 mins</p>
-                    <p>Cuisine: Momos, Chinese, Fast Food</p>
-                    <p>Location: Mohan Nagar</p>
+                    <h3>Wok & Roll</h3>
+                    <p class="offer">15% OFF ON ORDERS ABOVE ₹300</p>
+                    <p class="rating">4.2</p>
+                    <p class="delivery-time">Delivery in 30-40 mins</p>
+                    <p>Cuisine: Asian Fusion, Noodles, Stir Fry</p>
+                    <p>Location: Sector 17, Chandigarh</p>
                 </div>
             </div>
+            
 
             <!-- Restaurant Card 4 -->
             <div class="restaurant-card" data-index="4">
@@ -5113,17 +5103,18 @@
             <!-- Restaurant Card 1 -->
             <div class="restaurant-card" data-index="13">
                 <a href="delivery.html">
-                    <img src="rest13.avif" alt="Shree Naivedyam" class="restaurant-image">
+                    <img src="rest13.avif" alt="Spice Junction" class="restaurant-image">
                 </a>
                 <div class="restaurant-info">
-                    <h3>Shree Naivedyam</h3>
-                    <p class="offer">10% OFF UPTO ₹40</p>
-                    <p class="rating">4.3</p>
-                    <p class="delivery-time">Delivery in 45-50 mins</p>
-                    <p>Cuisine: North Indian, Chinese, South Indian, Pizzas, Beverages</p>
-                    <p>Location: Chandigarh City</p>
+                    <h3>Spice Junction</h3>
+                    <p class="offer">15% OFF ON FIRST ORDER</p>
+                    <p class="rating">4.6</p>
+                    <p class="delivery-time">Delivery in 40-45 mins</p>
+                    <p>Cuisine: Authentic North Indian, Dosas, Biryani</p>
+                    <p>Location: Sector 17, Chandigarh</p>
                 </div>
             </div>
+            
 
             <!-- Restaurant Card 2 -->
             <div class="restaurant-card" data-index="14">
@@ -5143,31 +5134,34 @@
             <!-- Restaurant Card 3 -->
             <div class="restaurant-card" data-index="15">
                 <a href="delivery.html">
-                    <img src="rest15.avif" alt="Mr. Gurung Momo & Chinese Corner" class="restaurant-image">
+                    <img src="rest15.avif" alt="Spice Route" class="restaurant-image">
                 </a>
                 <div class="restaurant-info">
-                    <h3>Mr. Gurung Momo & Chinese Corner</h3>
-                    <p class="offer">20% OFF UPTO ₹50</p>
-                    <p class="rating">4.1</p>
-                    <p class="delivery-time">Delivery in 45-50 mins</p>
-                    <p>Cuisine: Momos, Chinese, Fast Food</p>
-                    <p>Location: Mohan Nagar</p>
+                    <h3>Spice Route</h3>
+                    <p class="offer">25% OFF ON FIRST ORDER</p>
+                    <p class="rating">4.5</p>
+                    <p class="delivery-time">Delivery in 30-35 mins</p>
+                    <p>Cuisine: Indian, Thai, Fusion</p>
+                    <p>Location: Sector 22, Chandigarh</p>
                 </div>
             </div>
+            
 
             <!-- Restaurant Card 4 -->
             <div class="restaurant-card" data-index="16">
                 <a href="delivery.html">
-                    <img src="rest16.avif" alt="Magic Momo" class="restaurant-image">
+                    <img src="rest16.avif" alt="Momo Delight" class="restaurant-image">
                 </a>
                 <div class="restaurant-info">
-                    <h3>Magic Momo</h3>
-                    <p class="rating">4.1</p>
-                    <p class="delivery-time">Delivery in 45-50 mins</p>
-                    <p>Cuisine: Momos, Chinese</p>
-                    <p>Location: Prasia Road</p>
+                    <h3>Momo Delight</h3>
+                    <p class="offer">10% OFF ON YOUR FIRST ORDER</p>
+                    <p class="rating">4.5</p>
+                    <p class="delivery-time">Delivery in 30-40 mins</p>
+                    <p>Cuisine: Tibetan Momos, Noodles, Soups</p>
+                    <p>Location: Sector 22, Chandigarh</p>
                 </div>
             </div>
+            
 
             <!-- Restaurant Card 5 -->
             <div class="restaurant-card" data-index="17">
@@ -6064,251 +6058,286 @@
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const slider = document.querySelector('.unique-carousel-track');
-            const slides = document.querySelectorAll('.unique-carousel-item-pic');
-            const totalImages = slides.length;
-            let visibleImages = getVisibleImages();
-            let index = 0;
+    const slider = document.querySelector('.unique-carousel-track');
+    const slides = document.querySelectorAll('.unique-carousel-item-pic');
+    const totalImages = slides.length;
+    let visibleImages = getVisibleImages();
+    let index = 0;
 
-            function getVisibleImages() {
-                if (window.innerWidth <= 480) {
-                    return 1;
-                } else if (window.innerWidth <= 768) {
-                    return 3;
-                } else {
-                    return 4;
-                }
-            }
-
-            function updateArrows() {
-                document.querySelector('.unique-carousel-arrow-left').disabled = index === 0;
-                document.querySelector('.unique-carousel-arrow-right').disabled = index >= totalImages - visibleImages;
-            }
-
-            function moveSlide(step) {
-                index = (index + step + totalImages) % totalImages;
-                if (index >= totalImages - visibleImages) {
-                    index = totalImages - visibleImages;
-                }
-                if (index < 0) {
-                    index = 0;
-                }
-                slider.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
-                updateArrows();
-                console.log('Current Index:', index);
-            }
-
-            document.querySelector('.unique-carousel-arrow-right').onclick = () => moveSlide(1);
-            document.querySelector('.unique-carousel-arrow-left').onclick = () => moveSlide(-1);
-
-            updateArrows();
-
-            // Recalculate visible images on window resize
-            window.addEventListener('resize', () => {
-                visibleImages = getVisibleImages();
-                slider.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
-                updateArrows();
-            });
-        });
-        function filter(number) {
-            let card = document.getElementsByClassName("restaurant-card");
+    function getVisibleImages() {
+        if (window.innerWidth <= 480) {
+            return 1;
 
 
-            for (let i = 0; i < card.length; i++) {
-                let index = parseInt(card[i].getAttribute('data-index'));
-
-                if (index % number === 0) {
-
-                    card[i].style.display = ""; // Show the card
-                    card.style.display = "";
-
-
-
-                } else {
-                    card[i].style.display = "none"; // Hide the card
-
-                }
-
-
-            }
-
+        } else if (window.innerWidth <= 768) {
+            return 3;
+        } else {
+            return 4;
         }
-        let flagi = 0;
-        const visible = document.querySelectorAll(".visible");
-        const morerest = document.querySelector(".more-rest");
+    }
 
-        morerest.addEventListener('click', function () {
-            if (flagi == 0) {
-                visible.forEach(el => {
-                    el.style.display = "flex"; // Show the element
-                    el.style.flexWrap = "wrap";
-                });
-                morerest.innerHTML = "SHOW LESS";
-                flagi = 1;
+    function updateArrows() {
+        document.querySelector('.unique-carousel-arrow-left').disabled = index === 0;
+        document.querySelector('.unique-carousel-arrow-right').disabled = index >= totalImages - visibleImages;
+    }
+
+    function moveSlide(step) {
+        index = (index + step + totalImages) % totalImages;
+        if (index >= totalImages - visibleImages) {
+            index = totalImages - visibleImages;
+        }
+        if (index < 0) {
+            index = 0;
+        }
+        slider.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
+        updateArrows();
+        console.log('Current Index:', index);
+    }
+
+    document.querySelector('.unique-carousel-arrow-right').onclick = () => moveSlide(1);
+    document.querySelector('.unique-carousel-arrow-left').onclick = () => moveSlide(-1);
+
+    updateArrows();
+
+    // Recalculate visible images on window resize---and then use transform
+    window.addEventListener('resize', () => {
+        visibleImages = getVisibleImages();
+        slider.style.transform = `translateX(-${index * (100 / visibleImages)}%)`;
+        updateArrows();
+    });
+});
+
+// Select the input and restaurant cards
+const searchInput = document.querySelector(".search-bar-1");
+const restaurantCards = document.getElementsByClassName("restaurant-card");
+
+// Add event listener for input
+searchInput.addEventListener('input', function() {
+    const inputValue = searchInput.value.toLowerCase(); // Get the input value and convert to lowercase
+    // console.log("Input Value:", inputValue); // Debugging: check the input value
+
+    // Loop through all the restaurant cards
+    for (let i = 0; i < restaurantCards.length; i++) {
+        let h3Element = restaurantCards[i].querySelector("h3"); // Select the h3 within the card
+
+        if (h3Element) {
+            const restaurantName = h3Element.textContent.toLowerCase(); // Get the restaurant name and convert to lowercase
+            // console.log("Restaurant Name:", restaurantName); // Debugging: check the restaurant name
+
+            // Check if the input value is a substring of the restaurant name
+            if (restaurantName.includes(inputValue)) {
+                restaurantCards[i].style.display = ""; // Show the card if it matches
             } else {
-                visible.forEach(el => {
-                    el.style.display = "none"; // Hide the element
-                });
-                morerest.innerHTML = "SHOW MORE";
-                flagi = 0;
+                restaurantCards[i].style.display = "none"; // Hide the card if it doesn't match
             }
-        });
+        }
+    }
+});
 
-        //ye function add to cart me use hota hai
 
-        /*function saveRestaurantData(name, rating, cuisine, location) {
-             const restaurantData = {
-                 name: name,
-                 rating: rating,
-                 cuisine: cuisine,
-                 location: location
-                 //ye hamne object create kiya hai
-             };
-             
- 
-             // Save the restaurant data as a JSON string in localStorage
-             localStorage.setItem('selectedRestaurant', JSON.stringify(restaurantData));
-             //json string se koi bhi object string me convert hota hai;
-         }
-         */
+function filter(number) {
+    let card = document.getElementsByClassName("restaurant-card");
 
-        function addToCart() {
-            var flag1 = 0;
-            if (flag1 == 0) {
-                button.textContent = 'Added to Cart';
-                flag1++;
 
-            }
-            else {
-                button.textContent = "ADDED TO CART";
-                flag1 = 0;
-            }
+    for (let i = 0; i < card.length; i++) {
+        let index = parseInt(card[i].getAttribute('data-index'));
+
+        if (index % number === 0) {
+
+            card[i].style.display = ""; // Show the card
+            card.style.display = "";
+
+
+
+        } else {
+            card[i].style.display = "none"; // Hide the card
+
         }
 
 
+    }
 
+}
+let flagi = 0;
+const visible = document.querySelectorAll(".visible");
+const morerest = document.querySelector(".more-rest");
 
-        // Use `event.target` to reference the clicked button
-        /* const button = event.target;
+morerest.addEventListener('click', function () {
+    if (flagi == 0) {
+        visible.forEach(el => {
+            el.style.display = "flex"; // Show the element
+            el.style.flexWrap = "wrap";
+        });
+        morerest.innerHTML = "SHOW LESS";
+        flagi = 1;
+    } else {
+        visible.forEach(el => {
+            el.style.display = "none"; // Hide the element
+        });
+        morerest.innerHTML = "SHOW MORE";
+        flagi = 0;
+    }
+});
+
+//ye function add to cart me use hota hai
+
+/*function saveRestaurantData(name, rating, cuisine, location) {
+     const restaurantData = {
+         name: name,
+         rating: rating,
+         cuisine: cuisine,
+         location: location
+         //ye hamne object create kiya hai
+     };
      
-         // Change button text
-        
-     
-         // Disable the button to prevent further clicks
-         button.disabled = true;
-     
-         // Add the 'added-to-cart' class to change button styling
-         button.classList.add('added-to-cart');
-     }
-     */
+
+     // Save the restaurant data as a JSON string in localStorage
+     localStorage.setItem('selectedRestaurant', JSON.stringify(restaurantData));
+     //json string se koi bhi object string me convert hota hai;
+ }
+ */
+
+function addToCart() {
+    var flag1 = 0;
+    if (flag1 == 0) {
+        button.textContent = 'Added to Cart';
+        flag1++;
+
+    }
+    else {
+        button.textContent = "ADDED TO CART";
+        flag1 = 0;
+    }
+}
 
 
 
 
 
 
-     var body = document.querySelector("body");
+
+// Use `event.target` to reference the clicked button
+/* const button = event.target;
+
+ // Change button text
+
+
+ // Disable the button to prevent further clicks
+ button.disabled = true;
+
+ // Add the 'added-to-cart' class to change button styling
+ button.classList.add('added-to-cart');
+}
+*/
+
+
+
+
+
+
+var body = document.querySelector("body");
 var toggle = document.getElementById("toggle");
-var inputFields = document.querySelectorAll("input[type='text'] input[type='email']");
+var inputFields = document.querySelectorAll("input[type='text'], input[type='email']");
 let isInputFocused = false; 
 
 // Function to apply a specific dark mode class
 function applyDarkMode(modeClass) {
-    // Remove all dark classes
-    body.classList.remove("dark");
-    body.classList.remove("dark1");
-    body.classList.remove("dark2");
-    body.classList.remove("dark3");
-    body.classList.remove("dark4");
-    body.classList.remove("dark5");
-    body.classList.remove("dark6");
-    body.classList.remove("dark7"); // Added for dark7
-    body.classList.remove("dark8"); // Added for dark8
-    body.classList.remove("dark9"); // Added for dark9
-    body.classList.remove("dark0"); // Added for dark0
-    
-    // Add the selected dark mode class
-    body.classList.add(modeClass);
+// Remove all dark classes
+body.classList.remove("dark");
+body.classList.remove("dark1");
+body.classList.remove("dark2");
+body.classList.remove("dark3");
+body.classList.remove("dark4");
+body.classList.remove("dark5");
+body.classList.remove("dark6");
+body.classList.remove("dark7"); // Added for dark7
+body.classList.remove("dark8"); // Added for dark8
+body.classList.remove("dark9"); // Added for dark9
+body.classList.remove("dark0"); // Added for dark0
+
+// Add the selected dark mode class
+body.classList.add(modeClass);
 }
 
 // Function to apply light mode styles
 function light() {
-    body.classList.remove("dark");
-    body.classList.remove("dark1");
-    body.classList.remove("dark2");
-    body.classList.remove("dark3");
-    body.classList.remove("dark4");
-    body.classList.remove("dark5");
-    body.classList.remove("dark6");
-    body.classList.remove("dark7"); // Added for light mode
-    body.classList.remove("dark8"); // Added for light mode
-    body.classList.remove("dark9"); // Added for light mode
-    body.classList.remove("dark0"); // Added for light mode
-    // Optionally add light mode styles here
+body.classList.remove("dark");
+body.classList.remove("dark1");
+body.classList.remove("dark2");
+body.classList.remove("dark3");
+body.classList.remove("dark4");
+body.classList.remove("dark5");
+body.classList.remove("dark6");
+body.classList.remove("dark7"); // Added for light mode
+body.classList.remove("dark8"); // Added for light mode
+body.classList.remove("dark9"); // Added for light mode
+body.classList.remove("dark0"); // Added for light mode
+// Optionally add light mode styles here
 }
 inputFields.forEach(function(inputField) {
-            inputField.addEventListener('focus', function() {
-                isInputFocused = true; // Set flag to true when focused
-            });
+    inputField.addEventListener('focus', function() {
+        isInputFocused = true; // Set flag to true when focused
+    });
 
-            // Reset flag when input loses focus
-            inputField.addEventListener('blur', function() {
-                isInputFocused = false; // Set flag to false when not focused
-            });
-        });
+    // Reset flag when input loses focus
+    inputField.addEventListener('blur', function() {
+        isInputFocused = false; // Set flag to false when not focused
+    });
+});
 
 // Event listener for the toggle switch
 toggle.addEventListener('change', function() {
-    if (toggle.checked) {
-        // When the toggle is checked, apply dark mode
-        applyDarkMode("dark"); // Change this to your desired default dark mode
+if (toggle.checked) {
+// When the toggle is checked, apply dark mode
+applyDarkMode("dark"); // Change this to your desired default dark mode
 
-        document.addEventListener('keydown', function(event) {
-            if (toggle.checked && !isInputFocused) { // Only switch if dark mode is on and no input is focused
-                switch (event.key) {
-                    case '1':
-                        applyDarkMode("dark1");
-                        break;
-                    case '2':
-                        applyDarkMode("dark2");
-                        break;
-                    case '3':
-                        applyDarkMode("dark3");
-                        break;
-                    case '4':
-                        applyDarkMode("dark4");
-                        break;
-                    case '5':
-                        applyDarkMode("dark5");
-                        break;
-                    case '6':
-                        applyDarkMode("dark6");
-                        break;
-                    case '7':
-                        applyDarkMode("dark7");
-                        break;
-                    case '8':
-                        applyDarkMode("dark8");
-                        break;
-                    case '9':
-                        applyDarkMode("dark9");
-                        break;
-                    case '0':
-                        applyDarkMode("dark0");
-                        break;
-                }
-            }
-        });
-    } else {
-        // When the toggle is unchecked, apply light mode
-        light();
+document.addEventListener('keydown', function(event) {
+    if (toggle.checked && !isInputFocused) { // Only switch if dark mode is on and no input is focused
+        switch (event.key) {
+            case '1':
+                applyDarkMode("dark1");
+                break;
+            case '2':
+                applyDarkMode("dark2");
+                break;
+            case '3':
+                applyDarkMode("dark3");
+                break;
+            case '4':
+                applyDarkMode("dark4");
+                break;
+            case '5':
+                applyDarkMode("dark5");
+                break;
+            case '6':
+                applyDarkMode("dark6");
+                break;
+            case '7':
+                applyDarkMode("dark7");
+                break;
+            case '8':
+                applyDarkMode("dark8");
+                break;
+            case '9':
+                applyDarkMode("dark9");
+                break;
+            case '0':
+                applyDarkMode("dark0");
+                break;
+        }
     }
+});
+} else {
+// When the toggle is unchecked, apply light mode
+light();
+}
 });
 
 
 // Event listener for key presses to switch between dark modes
 
 
+      
 
 
     </script>
