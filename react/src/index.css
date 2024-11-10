@@ -1,0 +1,4603 @@
+<style>
+      
+        
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            /* overflow: hidden; ---isse jo excess of horizontal content hoga vo nahi show hoga---baaki outline ka use bhi karna chahiye*/
+            overflow-x: hidden;
+            
+        }
+ 
+
+
+        
+
+        .header {
+            width: 96%;
+            color: #fff;
+            background-color: #df8d2f;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            
+            box-shadow: 0 4px 8px rgba(249, 105, 2, 0.1);
+            position: relative;
+            justify-content: space-between;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .logo {
+            height: 60px;
+            width: 60px;
+            transform: scale(1.4);
+            clip-path: circle(50% at 50% 50%);
+            object-fit: cover;
+        }
+
+        .logo:hover {
+            transform: scale(1.6);
+            z-index: 1;
+            animation: glow 1s linear;
+
+        }
+
+        /* .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .header-nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        } */
+        /* .header-nav a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 50%;
+                background-color: #ffd700;
+                transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        .header-nav::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #ff9131, #ffd700);
+        } */
+        /* .header-nav a:hover {
+
+            text-decoration: nonep;
+            transform: scale(1.2);
+
+        } */
+        .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.header-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative; 
+}
+
+.header-nav a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #eeb405; /*iss chij se Line ka color aayega */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.header-nav a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+
+        .search-container {
+            display: flex;
+            position: absolute;
+            top: 500px;
+            left: 30%;
+            transform: scale(1.1);
+            align-items: center;
+        }
+
+        .search-container input[type="text"] {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .search-container button {
+            padding: 5px 10px;
+            background-color: #d07b1e;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .search-container button:hover {
+            background-color: #b0651b;
+        }
+
+
+        /* Header ki Styles */
+        .header {
+    width: 100%;
+    color: #fff;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* ye gradient ka overflow nahi hone dega */
+    background: linear-gradient(to top, rgb(237, 34, 255) 0%, rgba(211, 106, 0, 0)) 70%,
+                linear-gradient(270deg, rgb(0, 13, 255), rgb(247, 32, 200), rgb(14, 38, 255));
+    background-size: 200% 200%; 
+    animation: gradient 2s linear infinite; /* Animation ke liye gradient k */
+    box-shadow: 0 4px 8px rgba(249, 105, 2, 0.1);
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%; 
+    }
+    20% {
+        background-position: 50% 0%; 
+    }
+    50% {
+        background-position: 100% 0%; 
+    }
+    80% {
+        background-position: 50% 0%;
+    }
+    100% {
+        background-position: 0% 0%; 
+    }
+
+}
+
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 70px;
+            width: 70px;
+            clip-path: circle(40% at 50% 50%);
+            object-fit: cover;
+            margin-right: 20px;
+            position: relative;
+            left: -90px;
+            margin-left: 10px;
+        }
+
+        .slogan {
+            font-size: 34px;
+            color: #fff;
+            margin: 0;
+            position: absolute;
+            left: 40px;
+            text-align: left;
+        }
+
+        /* Carousel Styles */
+        .carousel-wrapper {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            height: 550px;
+            box-shadow: 0 4px 8px rgba(197, 235, 8, 0.1);
+        }
+
+        .carousel-inner {
+            display: flex;
+            width: 500%;
+            animation: slide 20s infinite linear;
+        }
+
+        .carousel-item {
+            margin-right: 0px;
+            opacity:85%;
+            flex: 0 0 28%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .carousel-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .carousel-text h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .carousel-text p {
+            font-size: 36px;
+            margin: 10px 0 0;
+        }
+
+        /* Search Box Styles */
+        .search-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 40px auto;
+            max-width: 1200px;
+        }
+
+        .search-box {
+            display: flex;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .search-box select,
+        .search-box input[type="text"] {
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-box select {
+            flex: 1;
+        }
+
+        .search-box input[type="text"] {
+            flex: 3;
+        }
+
+        .search-box button {
+            padding: 10px;
+            background-color: #df8d2f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-box button:hover {
+            background-color: #d07b1e;
+        }
+
+        /* FoodHub Section Styles */
+        .foodhub {
+            text-align: center;
+            position: absolute;
+            top: 170px;
+            left: 35%;
+
+            padding: 40px 20px;
+            transform: scale(2);
+        }
+
+        .foodhub h1 {
+            font-size: 48px;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #030202, 1px 1px 0 #fff;
+  color: #f80;
+            margin-bottom: 10px;
+            
+            
+        }
+
+        .foodhub h2 {
+            font-size: 34px;
+           
+            color: #ff0000;
+            margin: 0;
+            text-shadow: 
+        -1px -1px 0 #000000,  /* Top left shadow */
+        1px -1px 0 rgb(0, 0, 0),   /* Top right shadow */
+        -1px 1px 0 rgb(0, 0, 0),   /* Bottom left shadow */
+        1px 1px 0 rgb(0, 0, 0);   
+        }
+
+        /*css for mind section start*/
+        .unique-carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: scroll;
+            background-color: #f4f4f4;
+            padding: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .unique-carousel-track {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .unique-carousel-track a {
+            flex: 0 0 25%;
+            max-width: 25%;
+            text-align: center;
+        }
+
+        .unique-carousel-track img {
+            width: 87%;
+            height: auto;
+            border-radius: 214px 227px 165px 171px;
+            transition: transform 0.3s ease;
+        }
+
+        .unique-carousel-track img:hover {
+            transform: scale(1.05);
+        }
+
+        .unique-carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+            border-radius: 50%;
+        }
+
+        .unique-carousel-arrow-left {
+            left: 0;
+            transform: scale(1.2);
+        }
+
+        .unique-carousel-arrow-right {
+            right: 0;
+            transform: scale(1.2);
+        }
+
+        .what {
+            font-size: 70px;
+            font-style: unset;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #5c3434;
+        }
+
+        @media(max-width:1400px) {
+            .logo {}
+
+        }
+
+        @media(min-width:1441px) {
+            .logo {
+                height: 66px;
+                width: 66px;
+                left: 30px;
+                position: absolute;
+                top: 30px;
+            }
+
+            .header-nav {
+                gap: 82px;
+            }
+        }
+
+        /* Large screens---isse badi screen me acha dikhega (Desktops, etc.) */
+        @media (max-width: 1440px) {
+            .unique-carousel-track a {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+
+            .unique-carousel-arrow {
+                padding: 10px;
+            }
+
+            .header-content {
+                padding-left: 10px;
+            }
+
+            .top {
+                font-size: 2px;
+            }
+        }
+
+        /* Medium-Large screens (Laptops, etc.) */
+        @media (max-width: 1280px) {
+            .unique-carousel-track a {
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+            }
+
+            .logo {
+                left: -25px;
+            }
+
+            .unique-carousel-arrow {
+                padding: 9px;
+            }
+        }
+
+        /* Medium screens (Tablets, etc.) */
+        @media (max-width: 1024px) {
+            .unique-carousel-track a {
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+            }
+
+            .unique-carousel-arrow {
+                padding: 8px;
+            }
+        }
+
+        /* Medium-Small screens */
+        @media (max-width: 900px) {
+            .unique-carousel-track a {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .unique-carousel-arrow {
+                padding: 7px;
+            }
+        }
+
+        /* Small screens (Mobile phones, etc.) */
+        @media (max-width: 768px) {
+            .unique-carousel-track a {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .unique-carousel-arrow {
+                padding: 6px;
+            }
+            /* #theme-toggle-button{
+                font-size: 10px;
+                position: absolute;
+                top: 11px;    
+            } */
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+
+            .header {
+                width: 99%;
+            }
+
+            .unique-carousel-track a {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .unique-carousel-arrow {
+                padding: 12px;
+            }
+            #theme-toggle-button{
+                top:0px;
+                position:absolute;
+                right:0px;
+                display: inline-block;
+                width: 7em;
+                cursor: pointer;
+                font-size:10px;
+            }
+       
+
+        .foodhub {
+            padding-right: 25px;
+        }
+    }
+    @media only screen and (max-width:428px){
+    nav{
+        font-size:2px;
+        gap:17px;
+    }
+    #theme-toggle-button{
+        font-size:9px;
+    }
+}
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            .unique-carousel-track a {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .top {
+                color: blue;
+            }
+
+            .unique-carousel-arrow {
+                padding: 4px;
+            }
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-30%);
+            }
+
+            100% {
+                transform: translateX(-80%);
+            }
+        }
+
+        .top {
+            position: absolute;
+            font-size: 44px;
+            left: 120px;
+            text-decoration: wavy;
+            /* font-style: oblique; ---thoda sa styling different ho jayega isse*/
+            color: red;
+            top: -27px;
+            z-index: 1;
+            text-shadow: -1px -1px 0 #4f0, 1px -1px 0 #ffe300, -1px 1px 0 #40f, 1px 1px 0 #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .locality-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .locality-box {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33% - 30px);
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .locality-box:hover {
+            background-color: #f9f9f9;
+            transform: scale(1.1);
+
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .more-content {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .more-content .locality-box {
+            flex: 1 1 calc(25% - 30px);
+        }
+
+        #toggle-checkbox {
+            display: none;
+        }
+
+        #toggle-checkbox:checked~.more-content {
+            display: flex;
+        }
+
+        #toggle-checkbox:checked~.toggle-container label::after {
+            content: " See Less";
+        }
+
+        .toggle-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .toggle-container label {
+            background-color: #df8d2f;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-container label:hover {
+            background-color: #d07b1e;
+        }
+
+        #toggle-checkbox:not(:checked)~.toggle-container label::before {
+            content: "See More";
+        }
+
+        #toggle-checkbox:checked~.toggle-container label::after {
+            content: "See Less";
+        }
+
+
+        .app-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            margin: 20px auto;
+        }
+
+        /* Container for Image and Content */
+        .app-container {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        /* Image Styles */
+        .app-image {
+            width: 500px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 15px;
+
+            transition: transform 0.15s;
+
+        }
+
+        .app-image:hover {
+            transform: rotateX(25deg);
+            /* ye 3d rotation laga dega */
+        }
+
+        /* Content Styles */
+        .app-content {
+            flex: 1;
+
+            padding-right: 150px;
+            padding-left: 160px;
+        }
+
+        .app-content h2 {
+            color: #df8d2f;
+            margin-bottom: 40px;
+            font-size: 50px;
+
+        }
+
+        .app-content p {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .app-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .app-form label {
+            font-size: 24px;
+            letter-spacing: 3px;
+            color: #333;
+        }
+
+        .app-form input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+
+        .app-form button {
+            padding: 10px;
+            background-color: #c00808;
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .app-form button:hover {
+            background-color: #d07b1e;
+        }
+
+        .download-links {
+            margin-top: 27px;
+        }
+
+        .download-links p {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .app-link {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .app-link img {
+            width: 150px;
+            height: auto;
+            transition: opacity 0.3s ease;
+        }
+
+        .app-link img:hover {
+            opacity: 0.8;
+        }
+
+        .play {
+            transform: scale(1);
+            padding-right: 30px;
+            padding-top: 20px;
+            padding-left: 10px;
+        }
+
+        .footer {
+            padding-top: 30px;
+            background-color: #333;
+            color: #fff;
+            /* padding: 20px; */
+            width: 100%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px 20px;
+        }
+
+        .footer-column h4 {
+            border-bottom: 2px solid #df8d2f;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #444;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .foodhub {
+            top: 220px;
+
+        }
+
+        .search-container {
+            top: 525px;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 700;
+            font-size: 32px;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-section div {
+            margin: 5px 10px;
+            padding: 10px;
+        }
+
+        .search-bar {
+            height: 38px;
+            margin-bottom: 20px;
+        }
+
+        .filter-section div a {
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .filter-section div a:hover {
+            background-color: #df8d2f;
+            color: #fff;
+            border-color: #df8d2f;
+        }
+
+        /* Search Bar */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+            font-size: 16px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: #df8d2f;
+        }
+
+        .search-bar button {
+            padding: 6.4px 20px;
+            border: 1px solid #df8d2f;
+            background-color: #df8d2f;
+            color: #fff;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .search-bar button:hover {
+            background-color: #c97720;
+        }
+
+        /* Restaurant List */
+        .restaurant-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centers cards within container */
+            gap: 20px; /* Adds consistent spacing */
+            
+        }
+
+        .restaurant-card {
+            width: calc(22% - 2%); /* Adjust width to fit within the container */
+            margin: 0 1%; /* Retain spacing */
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .restaurant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .visible:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .restaurant-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .restaurant-info {
+            padding: 20px;
+        }
+
+        .restaurant-info h3 {
+            margin: 0;
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .restaurant-info p {
+            margin: 10px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .restaurant-info .rating,
+        .restaurant-info .delivery-time,
+        .restaurant-info .offer {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .restaurant-info .rating {
+            color: #fff;
+            background-color: #4caf50;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        .restaurant-info .delivery-time {
+            color: #888;
+        }
+
+        .restaurant-info .offer {
+            color: #df8d2f;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .search-container {}
+
+            .restaurant-card {
+                width: 100%;
+                box-shadow: #333;
+            }
+
+            .visible {
+                width: 100%;
+                box-shadow: #333;
+            }
+
+            .filter-section {
+                flex-direction: column;
+            }
+
+            .filter-section div {
+                width: 100%;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+        }
+
+        /* Media Queries */
+
+        /* For tablets and small desktops */
+        @media (max-width: 1200px) {
+            .carousel-item {
+                flex: 0 0 33%;
+                display: flex;
+            }
+
+            .logo {
+                left: 20px;
+
+            }
+
+            .carousel-wrapper {
+                height: 700px;
+            }
+
+            .search-box {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .search-box input[type="text"] {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .search-box select {
+                margin-bottom: 10px;
+            }
+        }
+
+        /* For medium-sized screens like small tablets */
+        @media (max-width: 992px) {
+            .carousel-item {
+                flex: 0 0 130%;
+            }
+
+            .header {
+                height: 214px;
+            }
+
+            .carousel-wrapper {
+                height: 800px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .slogan {
+                font-size: 28px;
+                left: 20px;
+            }
+
+            .search-box {
+                flex-direction: column;
+                width: 100%;
+                padding-top: 100px;
+            }
+
+            .search-box input[type="text"] {
+                margin-right: 0;
+            }
+
+            .foodhub {
+                padding-right: 3px;
+            }
+        }
+
+        /* For mobile devices in landscape mode */
+        @media (max-width: 768px) {
+
+            .foodhub h1 {
+                margin-top: 50px;
+                font-size: 50px;
+            }
+
+            .header {}
+
+            .foodhub h2 {
+                font-size: 32px;
+                max-width: 200px;
+            }
+
+            .search-bar input {
+                width: 60%;
+            }
+
+            .search-bar button {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .restaurant-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .visible {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .carousel-text h1 {
+                font-size: 36px;
+            }
+
+            .carousel-text p {
+                font-size: 24px;
+            }
+        }
+
+        /* For mobile devices in portrait mode */
+        @media (max-width: 576px) {
+            .header {
+                height: auto;
+                padding: 10px;
+                padding-right: 4px;
+            }
+
+            .foodhub {
+                padding-right: 0px;
+            }
+
+            .header-content {
+                flex-direction: column;
+            }
+
+
+            .logo {
+                height: 60px;
+                width: 62px;
+            }
+
+            .slogan {
+                font-size: 22px;
+                left: 10px;
+            }
+
+            .carousel-text h1 {
+                font-size: 28px;
+            }
+
+            .carousel-text p {
+                font-size: 18px;
+            }
+
+            .foodhub h1 {
+                font-size: 40px;
+                padding-right: 45px;
+                max-width: 100%;
+                /* Ensure the width doesn't exceed the viewport */
+                box-sizing: border-box;
+            }
+
+            .foodhub h2 {
+                font-size: 30px;
+                position: absolute;
+                top: 121px;
+                /*transform:scale(1.8);*/
+                max-width: 100%;
+                /* Ensure the width doesn't exceed the viewport---100% hi acha hai---98% is also the best */
+                box-sizing: border-box;
+                /*this styling is use to prevent the horizontal scroll----and we can apply the javascript code here......*/
+                padding-right: 60px;
+                left: -39px;
+                max-width: 161px;
+
+            }
+
+            .search-bar input {
+                width: 80%;
+            }
+
+            .search-bar button {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width:577px) {
+            .foodhub h1 {
+                font-size: 42px;
+                position: absolute;
+                top: -26px;
+                left: -52px;
+
+
+            }
+
+            .header {
+                height: 180px;
+            }
+
+            .foodhub h2 {
+                font-size: 32px;
+                position: absolute;
+                top: 80px;
+                left: -25px;
+            }
+
+            .search-container {
+                padding-top: 48px;
+            }
+        }
+
+
+
+        /*responsive media querey for footer only*/
+        @media (min-width: 481px) and (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-column {
+                text-align: center;
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .footer-column h4 {
+                font-size: 16px;
+                
+            }
+
+            .footer-column ul li {
+                font-size: 13px;
+               
+            }
+
+            .foodhub h1 {
+                padding-right: 4px;
+            }
+        }
+
+        /* Medium Devices (Tablets) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .foodhub h2 {
+                font-size: 25px;
+            }
+
+
+            .footer-column {
+                text-align: center;
+                margin: 10px 0;
+                width: 100%;
+            }
+
+            .footer-column h4 {
+                font-size: 16px;
+               
+            }
+
+            .footer-column ul li {
+                font-size: 13px;
+               
+            }
+        }
+
+        /* Large Devices (Laptops/Desktops) */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .footer-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .header-nav {
+                padding-left: 20px;
+
+            }
+
+            .footer-column {
+                margin: 10px;
+                width: auto;
+                
+            }
+
+            .footer-column h4 {
+                font-size: 18px;
+               
+            }
+
+            .footer-column ul li {
+                font-size: 14px;
+                
+            }
+        }
+
+        /* Extra Large Devices (Large Screens) */
+        @media (min-width: 1441px) {
+            #theme-toggle-button {
+            font-size: 12px;
+            position: absolute;
+            top: 67px;
+            right: 2px;
+            display: inline-block;
+            width: 7em;
+            cursor: pointer;
+  }
+            .footer-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .logo {
+                left: 30px;
+            }
+
+            /* .top {
+                font-size: 29px;
+
+            } */
+
+
+            .footer-column {
+                margin: 10px;
+                width: auto;
+               
+            }
+
+            .footer-column h4 {
+                font-size: 20px;
+                
+            }
+
+            .footer-column ul li {
+                font-size: 16px;
+               
+            }
+
+            .footer-bottom {
+                font-size: 16px;
+                
+            }
+        }
+        
+
+
+
+
+        /*responsive media query for app section of the website----(made by sparsh)*/
+        @media (max-width: 480px) {
+            
+            .app-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .app-image {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .app-content {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .app-content h2 {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            .app-content p {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .app-form label {
+                font-size: 18px;
+            }
+
+            .app-form input {
+                font-size: 16px;
+            }
+
+            .app-form button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .download-links {
+                margin-top: 20px;
+            }
+
+            .app-link img {
+                width: 120px;
+                height: auto;
+            }
+
+            .header-nav {
+                transform: translateY(20px);
+
+                z-index: 1;
+                gap: 50px;
+                row-gap: 20px;
+                padding-bottom: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                padding-left: 10px;
+            }
+
+            .header {
+                padding-bottom: 20px;
+            }
+
+            .carousel-wrapper {
+                position: relative;
+                top: 0px;
+            }
+        }
+
+        /* Small Devices (Phones) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            header {}
+
+            .header-nav {
+                padding-left: 50px;
+                padding-top: 30px;
+                padding-right: 10px;
+                word-spacing: 0px;
+                gap: 30px;
+                column-gap: 70px;
+                line-height: 4px;
+
+                display: flex;
+                flex-wrap: wrap;
+
+            }
+
+            .top {
+                position: absolute;
+
+                left: 133px;
+                font-size: 60px;
+
+
+            }
+
+            .app-image {
+                width: 80%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .app-content {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+
+            .app-content h2 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
+
+            .app-content p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+
+            .app-form label {
+                font-size: 20px;
+            }
+
+            .app-form input {
+                font-size: 16px;
+            }
+
+            .app-form button {
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            .download-links {
+                margin-top: 20px;
+            }
+
+            .app-link img {
+                width: 130px;
+                height: auto;
+            }
+        }
+
+        /* Medium Devices (Tablets) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .app-container {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .header {
+                height: 150px;
+            }
+
+            .app-image {
+                width: 40%;
+                margin-right: 20px;
+            }
+
+            .app-content {
+                padding-right: 40px;
+                padding-left: 40px;
+            }
+
+            .app-content h2 {
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+
+            .app-content p {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+            .app-form label {
+                font-size: 22px;
+            }
+
+            .app-form input {
+                font-size: 18px;
+            }
+
+            .app-form button {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .download-links {
+                margin-top: 25px;
+            }
+
+            .app-link img {
+                width: 140px;
+                height: auto;
+            }
+        }
+
+        /* Large Devices (Laptops/Desktops) */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .app-container {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .app-image {
+                width: 45%;
+                margin-right: 20px;
+            }
+
+            .app-content {
+                padding-right: 50px;
+                padding-left: 50px;
+            }
+
+            .app-content h2 {
+                font-size: 50px;
+                margin-bottom: 40px;
+            }
+
+            .app-content p {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            .app-form label {
+                font-size: 24px;
+            }
+
+            .app-form input {
+                font-size: 18px;
+            }
+
+            .app-form button {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            .download-links {
+                margin-top: 30px;
+            }
+
+            .app-link img {
+                width: 227px;
+                height: auto;
+            }
+
+            .logo {}
+        }
+
+        /* Extra Large Devices (Large Screens) */
+        @media (min-width: 1441px) {
+
+            .app-container {
+                flex-direction: row;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .app-image {
+                width: 50%;
+                margin-right: 30px;
+            }
+
+            .app-content {
+                padding-right: 60px;
+                padding-left: 60px;
+            }
+
+            .app-content h2 {
+                font-size: 60px;
+                margin-bottom: 50px;
+            }
+
+            .app-content p {
+                font-size: 22px;
+                margin-bottom: 40px;
+            }
+
+            .app-form label {
+                font-size: 26px;
+            }
+
+            .app-form input {
+                font-size: 20px;
+            }
+
+            .app-form button {
+                font-size: 18px;
+                padding: 14px;
+            }
+
+            .download-links {
+                margin-top: 35px;
+            }
+
+            .app-link img {
+                width: 160px;
+                height: auto;
+            }
+        }
+
+        /*responsive design for mind*/
+        /* Media queries for responsiveness */
+        @media (max-width: 1200px) {
+            .what {
+                font-size: 45px;
+                margin-left: 60px;
+            }
+
+            .food-box {
+                flex-wrap: wrap;
+            }
+
+            .food-pic {
+                flex: 1 1 33.33%;
+                width: 33.33%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .what {
+                font-size: 40px;
+                margin-left: 40px;
+            }
+
+            .food-pic {
+                flex: 0 0 50%;
+                width: 50%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .what {
+                font-size: 35px;
+                margin-left: 20px;
+            }
+
+            .food-pic {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+
+            .arrow-left,
+            .arrow-right {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header {
+                width: 100%;
+            }
+
+            .what {
+                font-size: 30px;
+                margin-left: 10px;
+            }
+
+            .search-box {
+                padding-top: 60px;
+
+            }
+
+            .header {}
+
+            .food-box {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .food-pic {
+                flex: 0 0 100%;
+                width: 100%;
+            }
+
+            .arrow-left,
+            .arrow-right {
+                padding: 5px;
+            }
+        }
+
+
+
+        /*rest class css styling*/
+        .rest-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .rest-h1,
+        .rest-h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .rest-h2 {
+            margin-top: 40px;
+            font-size: 24px;
+            color: #080808;
+        }
+
+        .rest-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .rest-box {
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .rest-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .rest-box p {
+            color: #333;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .rest-hidden {
+            display: none;
+        }
+
+        .rest-toggle-input {
+            display: none;
+        }
+
+        .rest-toggle-label {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            width: 200px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .rest-toggle-label:hover {
+            background-color: #004999;
+        }
+
+        .rest-toggle-input:checked~.rest-grid .rest-hidden {
+            display: block;
+        }
+
+        .rest-toggle-input:checked~.rest-toggle-label::after {
+            content: 'See Less';
+        }
+
+        .rest-toggle-label::after {
+            content: 'See More';
+        }
+
+        @media (max-width: 768px) {
+
+            .rest-h1,
+            .rest-h2 {
+                font-size: 18px;
+            }
+
+            .rest-box p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .search-container {
+                max-width: 182px;
+            }
+
+            .rest-h1,
+            .rest-h2 {
+                font-size: 16px;
+            }
+
+            .rest-box p {
+                font-size: 12px;
+            }
+
+            .rest-container {
+                padding: 10px;
+            }
+
+            .top {
+                font-size: 42px;
+                top: 10px;
+                left: 115px;
+            }
+
+            .header {
+                width: 100%;
+            }
+
+            .logo {
+                left: 0px;
+            }
+
+            .foodhub h1 {
+                font-size: 36px;
+                padding-top: 10px;
+                max-width: 20px;
+                left: -73px;
+                top: -42px;
+                position: relative;
+
+            }
+
+            .foodhub h2 {}
+
+            .foodhub {
+                max-width: 10px;
+            }
+
+            .search-box {
+                position: relative;
+                top: 65px;
+                transform: scale(0.9);
+                left: -20px;
+            }
+
+            .carousel-item {
+                transform: scaleY(1.2);
+                flex-direction: column;
+                flex: 0 0 105%;
+                width: 500%;
+                margin-right: -10px;
+                box-sizing: border-box;
+            }
+
+        }
+
+        @media (min-width:480px) and (max-width:581px) {
+            .header-nav {}
+        }
+
+        .locality-box,
+        .rest-box a {
+            text-decoration: none;
+            /* text decoration none se underline haatth jayegi */
+            color: inherit;
+            /* apne bapu ka colour virasat me le lega yoo */
+            display: block;
+            /* pura ka pura div clickable ho jata hai */
+        }
+
+        .locality-container a {
+            text-decoration: none;
+            
+            color: inherit;
+            
+
+        }
+
+        .orange-button:hover {
+            background-color: #FF8C00;
+            color: white;
+            /* Darker orange on hover */
+            transform: scale(1.05);
+            cursor: pointer;
+            /* Slightly enlarge button on hover */
+        }
+
+        /* Active effect for the button */
+        .orange-button:active {
+            background-color: #FF7F50;
+            
+            transform: scale(0.95);
+           
+        }
+
+        .more-rest {
+            display: inline-block; /* Keeps button from stretching */
+            margin: 20px auto; /* Center button */
+            padding: 10px 20px;
+            background-color: #0066cc;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            width: auto; /* Ensures button only takes as much width as needed */
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .visible {
+            display: none;
+
+        }
+
+        .vi {
+            display: none
+        }
+
+
+
+
+        /*final media queries*/
+        /* * {
+            outline: 1px solid red; /* Outline around the element */
+       /*  outline-offset: -5px;   /* Adjust this to visualize the margin  */
+     /*   } */
+        .top-1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            margin-bottom: 10px;
+        }
+
+        .head-top-1 {
+            font-size: 40px;
+            text-align: center;
+            margin-bottom: 30px;
+
+            animation: pulseOutline 1s infinite;
+        }
+
+        .boxes-3 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 80%;
+            width: 100%;
+            padding-bottom: 100px;
+        }
+
+        .box-3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 27%;
+            padding: 20px;
+            border: 1px solid #000000;
+            border-radius: 8px;
+            text-align: center;
+            background-color: #fdfdfd;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .box-3 img {
+            width: 90%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .top1-1,
+        .top-2-2,
+        .top3-3 {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 30px;
+            color: #1D3557;
+        }
+
+        .top1-1-1,
+        .top-2-2-2,
+        .top3-3-3 {
+            font-size: 16px;
+            margin-top: 5px;
+            color: #457B9D;
+        }
+
+        .box-3:hover {
+            transform: translateY(-5px);
+            text-decoration: none;
+            box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .outline-animated {
+            padding: 10px;
+            outline: 4px solid;
+            outline-color: #ff6f61;
+
+            animation: pulseOutline 1s infinite;
+
+        }
+
+        @keyframes pulseOutline {
+            0% {
+                color: rgb(255, 21, 0);
+
+            }
+
+            50% {
+                color: #8c0096;
+
+            }
+
+            100% {
+                color: #0800e2;
+
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .box-3 {
+                width: 40%;
+                /* Adjust the width for tablets and smaller screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .box-3 {
+                width: 80%;
+                /* Adjust the width for mobile devices */
+            }
+
+            .browse-button-3 {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .box-3 {
+                width: 90%;
+                /* Full width on very small screens */
+            }
+
+            .head-top-1 {
+                font-size: 30px;
+                /* Smaller font size for headings on small screens */
+            }
+
+            .browse-button-3 {
+                font-size: 14px;
+                padding: 10px 20px;
+                width: 90%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+        }
+
+        .button-container-3 {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            margin-top: -40px;
+            margin-bottom: 50px;
+        }
+
+
+        .browse-button-3 {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #1D3557;
+            border: 2px solid #1D3557;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .browse-button-3:hover {
+            background-color: #457B9D;
+            color: #ffffff;
+            text-decoration: none;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .browse-button-3 {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .browse-button-3 {
+                font-size: 14px;
+                padding: 10px 20px;
+                width: 90%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+        }
+
+
+        /*this is for the join section which is above the footer section*/
+        /* Main Content Section Styles */
+        /* Main Content Section Styles */
+        .business-opportunity {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+
+        .business-opportunity .text {
+            flex: 1;
+            padding: 20px;
+            max-width: 600px;
+        }
+
+        .business-opportunity .text h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .business-opportunity .text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .business-opportunity .text .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .business-opportunity .text .button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .business-opportunity .image {
+            flex: 1;
+            max-width: 500px;
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .business-opportunity .image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .business-opportunity {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .business-opportunity .image {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .business-opportunity .text h1 {
+                font-size: 28px;
+            }
+
+            .business-opportunity .text p {
+                font-size: 16px;
+            }
+
+            .business-opportunity .text .button {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+        }
+
+        /*now this is for the style of the welcome to the spicytaste section*/
+        .spicytaste-container-1 {
+            max-width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .spicytaste-container-1 h1 {
+            color: #ff6347;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .spicytaste-container-1 p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-align: center;
+
+        }
+
+        .spicytaste-container-1 strong {
+            color: #ff6347;
+
+        }
+
+
+
+
+        /*this is the code of the dark and night buttons*/
+        /* #theme-toggle-button {
+    font-size: 12px;
+    position: absolute;
+    top: 67px;
+    right: 2px;
+    display: inline-block;
+    width: 7em;
+    cursor: pointer;
+  }
+   */
+  /* Hide default HTML checkbox */
+  #toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  #container,
+  #patches,
+  #stars,
+  #button,
+  #sun,
+  #moon,
+  #cloud {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.25s;
+  }
+  
+  /* night sky background */
+  #toggle:checked + svg #container {
+    fill: #2b4360;
+  }
+  
+  /* move button to right when checked */
+  #toggle:checked + svg #button {
+    transform: translate(28px, 2.333px);
+  }
+  
+  /* show/hide sun and moon based on checkbox state */
+  #sun {
+    opacity: 1;
+  }
+  
+  #toggle:checked + svg #sun {
+    opacity: 0;
+  }
+  
+  #moon {
+    opacity: 0;
+  }
+  
+  #toggle:checked + svg #moon {
+    opacity: 1;
+  }
+  
+  /* show or hide background items on checkbox state */
+  #cloud {
+    opacity: 1;
+  }
+  
+  #toggle:checked + svg #cloud {
+    opacity: 0;
+  }
+  
+  #stars {
+    opacity: 0;
+  }
+  
+  #toggle:checked + svg #stars {
+    opacity: 1;
+  }
+
+
+
+
+  /*NOW THIS IS THE CODE FOR DARK MODE*/
+  .dark {
+    background-color: black;
+    color: white;
+}
+
+.dark .spicytaste-container-1 {
+    background-color: #1a1c20;
+    box-shadow: 0 4px 8px rgba(255, 138, 0, 0.2);
+    color: #ffd700;
+}
+
+.dark .what {
+    color: #4caf50;
+}
+
+.dark .unique-carousel-track img {
+    filter: contrast(190%);
+}
+
+.dark .unique-carousel-container {
+    background-color: #1e2b34;
+}
+
+.dark .locality-box h1 {
+    color: #ff4081;
+}
+
+.dark .locality-box {
+    background-color: #2a2e38;
+    color: #f0e68c;
+}
+
+.dark .locality-box:hover {
+    background-color: #ff6347;
+}
+
+.dark .container h1 {
+    color: #7fffd4;
+}
+
+.dark .toggle-container label {
+    background-color: #ff4500;
+}
+
+.dark .toggle-container label:hover {
+    background-color: #ff6f61;
+}
+
+.dark .app-section {
+    background-color: #1c1c28;
+}
+
+.dark .app-content p {
+    color: #e0ffff;
+}
+
+.dark .app-form label {
+    color: #ff69b4;
+}
+
+.dark .app-content input {
+    background-color: #222831;
+    color: #d8bfd8;
+    border: 1px solid #696969;
+}
+
+.dark .app-content button {
+    background-color: #ff8c00;
+}
+
+.dark .app-content button:hover {
+    background-color: #ffa07a;
+}
+
+.dark .filter-section {
+    color: #b22222;
+    background-color: #f0fff0;
+}
+
+.dark .filter-section div {
+    border-radius: 25px;
+}
+
+.dark .search-bar input {
+    background-color: #2f4f4f;
+    color: #ffdead;
+}
+
+.dark .search-bar button {
+    border: 1px solid #8b008b;
+    background-color: #4682b4;
+}
+
+.dark .search-bar button:hover {
+    background-color: #5f9ea0;
+}
+
+.dark .restaurant-card {
+    outline: 1px solid #00b7ff;
+}
+
+.dark .restaurant-info h3 {
+    color: #fafad2;
+}
+
+.dark .restaurant-info .offer {
+    color: #8a2be2;
+}
+
+.dark .restaurant-info .rating {
+    color: #98fb98;
+}
+
+.dark .restaurant-info p {
+    color: #ffa500;
+}
+
+.dark .more-rest {
+    background-color: #ff1493;
+}
+
+.dark .more-rest:hover {
+    background-color: green;
+}
+
+.dark .rest-container {
+    background-color: #191970;
+}
+
+.dark .rest-h1, .rest-h2 {
+    color: #f5deb3;
+}
+
+.dark .business-opportunity {
+    background-color: #696969;
+}
+
+.dark .business-opportunity .text h1 {
+    color: #7cfc00;
+}
+
+.dark .business-opportunity .text p {
+    color: #0dffff;
+}
+
+.dark .business-opportunity .text .button {
+    background-color: #ff0000;
+    outline: 1px solid #f5f5dc;
+}
+
+.dark .business-opportunity .text .button:hover {
+    background-color: #ff4500;
+    outline: 1px solid #ffffff;
+}
+
+.dark .box-3 {
+    background-color: #483d8b;
+    border: 1px solid #ffffff;
+}
+
+.dark .top1-1 {
+    color: #00ffff;
+}
+
+.dark .top-2-2 {
+    color: #8b0000;
+}
+
+.dark .top3-3 {
+    color: #ff00ff;
+}
+
+.dark .top1-1-1 {
+    color: #1e90ff;
+}
+
+.dark .top-2-2-2 {
+    color: #e5ff21;
+}
+
+
+.dark .top3-3-3 {
+    color: #00d32b;
+}
+
+.dark .browse-button-3 {
+    background-color: #ff69b4;
+    border: 2px solid #ffffe0;
+}
+
+.dark .rest-box p {
+    color: #00ff7f;
+}
+
+.dark .rest-box {
+    background-color: #2f4f4f;
+    border: 2px solid #ffffff;
+}
+
+.dark .rest-toggle-label {
+    background-color: #00fa9a;
+    color: #000080;
+}
+
+.dark .footer-column ul li a {
+    color: #00bfff;
+}
+
+.dark .footer {
+    background-color: #131313;
+    color: #7fffd4;
+}
+
+.dark .foodhub h1 {
+    color: #ff2323;
+}
+.dark .foodhub h2 {
+    color: orange;
+}
+
+/*now using different trends*/
+.dark1 {
+    background-color: black;
+    color: white;
+}
+.dark1 .spicytaste-container-1 {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(241, 214, 214, 0.1);
+    color: #a8d000;
+}
+.dark1 .what {
+    color: #28d745;
+}
+.dark1 .unique-carousel-track img {
+    filter: contrast(150%);
+}
+.dark1 .unique-carousel-container {
+    background-color: #111;
+}
+.dark1 .locality-box h1 {
+    color: #00ff8f;
+}
+.dark1 .locality-box {
+    background-color: #2c2c2c;
+}
+.dark1 .locality-box {
+    color: #ffffff;
+}
+.dark1 .locality-box:hover {
+    background-color: #ff4040;
+}
+.dark1 .container h1 {
+    color: #00ff99;
+}
+.dark1 .toggle-container label {
+    background-color: #f7005a;
+}
+.dark1 .toggle-container label:hover {
+    background-color: #fd4a8b;
+}
+.dark1 .app-section {
+    background-color: #141414;
+}
+.dark1 .app-content p {
+    color: white;
+}
+.dark1 .app-form label {
+    color: white;
+}
+.dark1 .app-content input {
+    background-color: black;
+    color: white;
+    border: 1px solid #686868;
+}
+.dark1 .app-content button {
+    background-color: rgb(219, 7, 173);
+}
+.dark1 .app-content button:hover {
+    background-color: rgb(243, 49, 201);
+}
+.dark1 .app-form label {
+    color: white;
+}
+.dark1 .filter-section div {
+    border-radius: 25px;
+}
+.dark1 .filter-section {
+    color: rgb(255, 0, 0);
+    background-color: #f2ff00;
+}
+.dark1 .filter-section div {
+    border-radius: 25px;
+}
+.dark1 .search-bar input {
+    background-color: black;
+    color: white;
+}
+.dark1 .search-bar button {
+    border: 1px solid #6e6e6e;
+    background-color: #3d2fdf;
+}
+.dark1 .search-bar button:hover {
+    border: 1px solid #6e6e6e;
+    background-color: #5c4df9;
+}
+.dark1 .restaurant-card {
+    outline: 1px solid white;
+}
+.dark1 .restaurant-info h3 {
+    color: #fff;
+}
+.dark1 .restaurant-info .offer {
+    color: #df2f2f;
+}
+.dark1 .restaurant-info .rating {
+    color: #f8d5d5;
+}
+.dark1 .restaurant-info h3 {
+    color: #fff;
+}
+.dark1 .restaurant-info p {
+    color: #dfff00;
+}
+.dark1 .more-rest {
+    background-color: #00c030;
+}
+.dark1 .more-rest:hover {
+    background-color: rgb(59, 255, 56);
+}
+.dark1 .rest-container {
+    background-color: #1e1e1e;
+}
+.dark1 .rest-h1,
+.dark1 .rest-h2 {
+    color: #f1f1f1;
+}
+.dark1 .business-opportunity {
+    background-color: #1a1a1a;
+}
+.dark1 .business-opportunity .text h1 {
+    color: #88ff5d;
+}
+.dark1 .business-opportunity .text p {
+    color: white;
+}
+.dark1 .business-opportunity .text .button {
+    outline: 1px solid white;
+    background-color: #ff0000;
+}
+.dark1 .business-opportunity .text .button:hover {
+    background-color: rgb(250, 61, 61);
+    outline: 1px solid white;
+}
+.dark1 .box-3 {
+    background-color: #222;
+    border: 1px solid white;
+}
+.dark1 .top1-1 {
+    color: #ff7f00;
+}
+.dark1 .top-2-2 {
+    color: #ff7f00;
+}
+.dark1 .top3-3 {
+    color: #ff7f00;
+}
+.dark1 .top1-1-1 {
+    color: #00ffe7;
+}
+.dark1 .top-2-2-2 {
+    color: #00ffe7;
+}
+.dark1 .top3-3-3 {
+    color: #00ffe7;
+}
+.dark1 .browse-button-3 {
+    background-color: #ff0048;
+    border: 2px solid #fff;
+}
+.dark1 .rest-box p {
+    color: #000;
+}
+.dark1 .rest-box {
+    background-color: #00e7ff;
+    border: 2px solid #fff;
+}
+.dark1 .rest-toggle-label {
+    background-color: #1bff14;
+    color: #000;
+}
+.dark1 .footer-column ul li a {
+    color: #ebff00;
+}
+.dark1 .footer {
+    background-color: #131313;
+    color: #f00;
+}
+.dark1 .foodhub h1 {
+    color: #00cfff;
+}
+.dark1 .foodhub h2 {
+    color: #ffb300;
+}
+
+/*dark-2 */
+
+.dark2 {
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light gray text */
+}
+.dark2 .spicytaste-container-1 {
+    background-color: #292929; /* Slightly lighter dark */
+    box-shadow: 0 4px 8px rgba(200, 200, 200, 0.1);
+    color: #ffbb00; /* Bright yellow */
+}
+.dark2 .what {
+    color: #6be5ff; /* Light cyan */
+}
+.dark2 .unique-carousel-track img {
+    filter: contrast(120%);
+}
+.dark2 .unique-carousel-container {
+    background-color: #151515; /* Very dark gray */
+}
+.dark2 .locality-box h1 {
+    color: #ff6f00; /* Bright orange */
+}
+.dark2 .locality-box {
+    background-color: #2b2b2b; /* Medium gray */
+}
+.dark2 .locality-box {
+    color: #ffffff; /* White */
+}
+.dark2 .locality-box:hover {
+    background-color: #e60000; /* Bright red */
+}
+.dark2 .container h1 {
+    color: #00bfff; /* Sky blue */
+}
+.dark2 .toggle-container label {
+    background-color: #f40000; /* Red */
+}
+.dark2 .toggle-container label:hover {
+    background-color: #ff4a00; /* Lighter red */
+}
+.dark2 .app-section {
+    background-color: #1c1c1c; /* Darker gray */
+}
+.dark2 .app-content p {
+    color: #f5f5f5; /* Very light gray */
+}
+.dark2 .app-form label {
+    color: #ffffff; /* White */
+}
+.dark2 .app-content input {
+    background-color: #333; /* Dark gray */
+    color: #ffffff; /* White */
+    border: 1px solid #777; /* Medium gray border */
+}
+.dark2 .app-content button {
+    background-color: #ff007f; /* Bright pink */
+}
+.dark2 .app-content button:hover {
+    background-color: #ff33aa; /* Lighter pink */
+}
+.dark2 .app-form label {
+    color: #ffffff; /* White */
+}
+.dark2 .filter-section div {
+    border-radius: 25px; /* Rounded corners */
+}
+.dark2 .filter-section {
+    color: #ffcc00; /* Bright yellow */
+    background-color: #f0f0f0; /* Light gray */
+}
+.dark2 .search-bar input {
+    background-color: #1a1a1a; /* Dark background */
+    color: #e0e0e0; /* Light gray text */
+}
+.dark2 .search-bar button {
+    border: 1px solid #6e6e6e; /* Medium gray border */
+    background-color: #007acc; /* Bright blue */
+}
+.dark2 .search-bar button:hover {
+    border: 1px solid #6e6e6e; /* Medium gray border */
+    background-color: #3399ff; /* Lighter blue */
+}
+.dark2 .restaurant-card {
+    outline: 1px solid #ffffff; /* White outline */
+}
+.dark2 .restaurant-info h3 {
+    color: #e0e0e0; /* Light gray */
+}
+.dark2 .restaurant-info .offer {
+    color: #ff6666; /* Light red */
+}
+.dark2 .restaurant-info .rating {
+    color: #ffff00; /* Yellow */
+}
+.dark2 .restaurant-info h3 {
+    color: #e0e0e0; /* Light gray */
+}
+.dark2 .restaurant-info p {
+    color: #b3ff00; /* Light green */
+}
+.dark2 .more-rest {
+    background-color: #66ff33; /* Light green */
+}
+.dark2 .more-rest:hover {
+    background-color: #99ff66; /* Lighter green */
+}
+.dark2 .rest-container {
+    background-color: #2a2a2a; /* Dark gray */
+}
+.dark2 .rest-h1,
+.dark2 .rest-h2 {
+    color: #ffffff; /* White */
+}
+.dark2 .business-opportunity {
+    background-color: #222; /* Dark background */
+}
+.dark2 .business-opportunity .text h1 {
+    color: #99ff99; /* Light green */
+}
+.dark2 .business-opportunity .text p {
+    color: #ffffff; /* White */
+}
+.dark2 .business-opportunity .text .button {
+    outline: 1px solid white; /* White outline */
+    background-color: #cc0000; /* Red */
+}
+.dark2 .business-opportunity .text .button:hover {
+    background-color: #ff3333; /* Lighter red */
+    outline: 1px solid white; /* White outline */
+}
+.dark2 .box-3 {
+    background-color: #333; /* Dark background */
+    border: 1px solid white; /* White border */
+}
+.dark2 .top1-1 {
+    color: #ffcc00; /* Bright yellow */
+}
+.dark2 .top-2-2 {
+    color: #ffcc00; /* Bright yellow */
+}
+.dark2 .top3-3 {
+    color: #ffcc00; /* Bright yellow */
+}
+.dark2 .top1-1-1 {
+    color: #00e6e6; /* Cyan */
+}
+.dark2 .top-2-2-2 {
+    color: #00e6e6; /* Cyan */
+}
+.dark2 .top3-3-3 {
+    color: #00e6e6; /* Cyan */
+}
+.dark2 .browse-button-3 {
+    background-color: #ff3366; /* Bright pink */
+    border: 2px solid #fff; /* White border */
+}
+.dark2 .rest-box p {
+    color: #ffffff; /* White */
+}
+.dark2 .rest-box {
+    background-color: #00b2ff; /* Light blue */
+    border: 2px solid #fff; /* White border */
+}
+.dark2 .rest-toggle-label {
+    background-color: #00ff66; /* Light green */
+    color: #000; /* Black */
+}
+.dark2 .footer-column ul li a {
+    color: #ffff00; /* Yellow */
+}
+.dark2 .footer {
+    background-color: #1c1c1c; /* Dark gray */
+    color: #ffcc00; /* Bright yellow */
+}
+.dark2 .foodhub h1 {
+    color: #ff3333; /* Bright red */
+}
+.dark2 .foodhub h2 {
+    color: #ffc107; /* Amber */
+}
+
+
+
+/*ab ye hai dark3 ke liye*/
+.dark3 {
+    background-color: #1a1a1a;
+    color: #f8f8ff;
+}
+
+.dark3 .spicytaste-container-1 {
+    background-color: #252525;
+    box-shadow: 0 4px 8px rgba(255, 0, 255, 0.2);
+    color: #ffcc00;
+}
+
+.dark3 .what {
+    color: #ff4500;
+}
+
+.dark3 .unique-carousel-track img {
+    filter: contrast(160%);
+}
+
+.dark3 .unique-carousel-container {
+    background-color: #2f2f2f;
+}
+
+.dark3 .locality-box h1 {
+    color: #ff6347;
+}
+
+.dark3 .locality-box {
+    background-color: #333;
+    color: #ffffe0;
+}
+
+.dark3 .locality-box:hover {
+    background-color: #ff1493;
+}
+
+.dark3 .container h1 {
+    color: #7fff00;
+}
+
+.dark3 .toggle-container label {
+    background-color: #ffa07a;
+}
+
+.dark3 .toggle-container label:hover {
+    background-color: #ff7f50;
+}
+
+.dark3 .app-section {
+    background-color: #262626;
+}
+
+.dark3 .app-content p {
+    color: #98fb98;
+}
+
+.dark3 .app-form label {
+    color: #ff4500;
+}
+
+.dark3 .app-content input {
+    background-color: #282828;
+    color: #fff;
+    border: 1px solid #d3d3d3;
+}
+
+.dark3 .app-content button {
+    background-color: #ff8c00;
+}
+
+.dark3 .app-content button:hover {
+    background-color: #ffa07a;
+}
+
+.dark3 .filter-section {
+    color: #b22222;
+    background-color: #f0fff0;
+}
+
+.dark3 .search-bar input {
+    background-color: #343a40;
+    color: #ffe4e1;
+}
+
+.dark3 .search-bar button {
+    border: 1px solid #8a2be2;
+    background-color: #4682b4;
+}
+
+.dark3 .restaurant-card {
+    outline: 1px solid #ff4500;
+}
+
+.dark3 .restaurant-info h3 {
+    color: #fafad2;
+}
+
+.dark3 .restaurant-info .offer {
+    color: #00bfff;
+}
+
+.dark3 .restaurant-info .rating {
+    color: #d2b48c;
+}
+
+.dark3 .more-rest {
+    background-color: #ff69b4;
+}
+
+.dark3 .more-rest:hover {
+    background-color: #db7093;
+}
+
+.dark3 .rest-container {
+    background-color: #191970;
+}
+
+.dark3 .rest-h1, .rest-h2 {
+    color: #f5deb3;
+}
+
+.dark3 .business-opportunity {
+    background-color: #696969;
+}
+
+.dark3 .business-opportunity .text h1 {
+    color: #7cfc00;
+}
+
+.dark3 .business-opportunity .text p {
+    color: #b0e0e6;
+}
+
+.dark3 .business-opportunity .text .button {
+    background-color: #ff0000;
+    outline: 1px solid #f5f5dc;
+}
+
+.dark3 .box-3 {
+    background-color: #4682b4;
+    border: 1px solid #ffffff;
+}
+
+.dark3 .top1-1 {
+    color: #00ffff;
+}
+
+.dark3 .top-2-2 {
+    color: #8b0000;
+}
+
+.dark3 .top3-3 {
+    color: #ff00ff;
+}
+
+.dark3 .browse-button-3 {
+    background-color: #ff69b4;
+    border: 2px solid #ffffe0;
+}
+
+.dark3 .rest-box p {
+    color: #00ff7f;
+}
+
+.dark3 .rest-box {
+    background-color: #2f4f4f;
+    border: 2px solid #ffffff;
+}
+
+.dark3 .rest-toggle-label {
+    background-color: #00fa9a;
+    color: #000080;
+}
+
+.dark3 .footer-column ul li a {
+    color: #00bfff;
+}
+
+.dark3 .footer {
+    background-color: #131313;
+    color: #7fffd4;
+}
+
+
+
+/*ab ye hai dark4 ke liye*/
+.dark4 {
+    background-color: #121212; /* Dark background for the entire section */
+    color: #e0e0e0; /* Light text for better contrast */
+}
+
+.dark4 .spicytaste-container-1 {
+    background-color: #1e1e1e; /* Slightly lighter background */
+    box-shadow: 0 4px 8px rgba(255, 99, 71, 0.5); /* Tomato shadow for contrast */
+    color: #ffcc00; /* Bright yellow text */
+}
+
+.dark4 .what {
+    color: #ff6347; /* Tomato for the 'what' section */
+}
+
+.dark4 .unique-carousel-track img {
+    filter: contrast(120%); /* Keep images sharp */
+}
+
+.dark4 .unique-carousel-container {
+    background-color: #252525; /* Dark background for carousel */
+}
+
+.dark4 .locality-box h1 {
+    color: #32cd32; /* Lime green for locality box title */
+}
+
+.dark4 .locality-box {
+    background-color: #373737; /* Slightly lighter grey */
+    color: #f0e68c; /* Khaki for text */
+}
+
+.dark4 .locality-box:hover {
+    background-color: #ff69b4; /* Hot pink on hover */
+}
+
+.dark4 .container h1 {
+    color: #00bfff; /* Deep sky blue for headings */
+}
+
+.dark4 .toggle-container label {
+    background-color: #ff4500; /* Orange red for toggle */
+}
+
+.dark4 .toggle-container label:hover {
+    background-color: #ff6347; /* Hover color change */
+}
+
+.dark4 .app-section {
+    background-color: #282828; /* Dark section background */
+}
+
+.dark4 .app-content p {
+    color: #dcdcdc; /* Light grey for paragraph text */
+}
+
+.dark4 .app-form label {
+    color: #ff1493; /* Deep pink for labels */
+}
+
+.dark4 .app-content input {
+    background-color: #3c3c3c; /* Darker input background */
+    color: #ffffff; /* White text */
+    border: 1px solid #b0c4de; /* Light steel blue border */
+}
+
+.dark4 .app-content button {
+    background-color: #ffa500; /* Orange for buttons */
+}
+
+.dark4 .app-content button:hover {
+    background-color: #ff8c00; /* Darker orange on hover */
+}
+
+.dark4 .filter-section {
+    color: #d2691e; /* Chocolate color for text */
+    background-color: #f0fff0; /* Honeydew for background */
+}
+
+.dark4 .search-bar input {
+    background-color: #34495e; /* Dark blue-grey */
+    color: #ffebcd; /* Blanched almond for input text */
+}
+
+.dark4 .search-bar button {
+    border: 1px solid #8b008b; /* Dark magenta border */
+    background-color: #4682b4; /* Steel blue for button */
+}
+
+.dark4 .restaurant-card {
+    outline: 1px solid #ff6347; /* Tomato outline */
+}
+
+.dark4 .restaurant-info h3 {
+    color: #ffd700; /* Gold for restaurant titles */
+}
+
+.dark4 .restaurant-info .offer {
+    color: #add8e6; /* Light blue for offers */
+}
+
+.dark4 .restaurant-info .rating {
+    color: #98fb98; /* Pale green for ratings */
+}
+
+.dark4 .more-rest {
+    background-color: #ff1493; /* Bright pink for more restaurant section */
+}
+
+.dark4 .more-rest:hover {
+    background-color: #db7093; /* Pale violet red on hover */
+}
+
+.dark4 .rest-container {
+    background-color: #191970; /* Midnight blue for containers */
+}
+
+.dark4 .rest-h1, .rest-h2 {
+    color: #f5deb3; /* Wheat for headers */
+}
+
+.dark4 .business-opportunity {
+    background-color: #696969; /* Dim grey for business opportunities */
+}
+
+.dark4 .business-opportunity .text h1 {
+    color: #7cfc00; /* Lawn green for titles */
+}
+
+.dark4 .business-opportunity .text p {
+    color: #b0e0e6; /* Powder blue for paragraph */
+}
+
+.dark4 .business-opportunity .text .button {
+    background-color: #ff4500; /* Orange red for buttons */
+    outline: 1px solid #f5f5dc; /* Light beige outline */
+}
+
+.dark4 .box-3 {
+    background-color: #4682b4; /* Steel blue for boxes */
+    border: 1px solid #ffffff; /* White border */
+}
+
+.dark4 .top1-1 {
+    color: #00fa9a; /* Medium spring green */
+}
+
+.dark4 .top-2-2 {
+    color: #8b0000; /* Dark red */
+}
+
+.dark4 .top3-3 {
+    color: #ff00ff; /* Magenta */
+}
+
+.dark4 .browse-button-3 {
+    background-color: #ff69b4; /* Hot pink for browse button */
+    border: 2px solid #ffffe0; /* Light beige border */
+}
+
+.dark4 .rest-box p {
+    color: #00ff7f; /* Spring green for paragraph */
+}
+
+.dark4 .rest-box {
+    background-color: #2f4f4f; /* Dark slate grey */
+    border: 2px solid #ffffff; /* White border */
+}
+
+.dark4 .rest-toggle-label {
+    background-color: #00fa9a; /* Medium spring green for label */
+    color: #000080; /* Navy text */
+}
+
+.dark4 .footer-column ul li a {
+    color: #00bfff; /* Deep sky blue for links */
+}
+
+.dark4 .footer {
+    background-color: #131313; /* Very dark background for footer */
+    color: #7fffd4; /* Light cyan for footer text */
+}
+
+
+
+/*ab ye hai dark 5 ke liye*/
+.dark5 {
+    background-color: #121212;
+    color: #f8f8ff; /* GhostWhite */
+}
+
+.dark5 .spicytaste-container-1 {
+    background-color: #2b2d33;
+    box-shadow: 0 4px 8px rgba(0, 128, 0, 0.2); /* Green */
+    color: #ffebcd; /* BlanchedAlmond */
+}
+
+.dark5 .what {
+    color: #b8860b; /* DarkGoldenRod */
+}
+
+.dark5 .unique-carousel-track img {
+    filter: contrast(160%);
+}
+
+.dark5 .unique-carousel-container {
+    background-color: #32383f;
+}
+
+.dark5 .locality-box h1 {
+    color: #8b008b; /* DarkMagenta */
+}
+
+.dark5 .locality-box {
+    background-color: #4b5156;
+    color: #ffefd5; /* PapayaWhip */
+}
+
+.dark5 .locality-box:hover {
+    background-color: #ff4500; /* OrangeRed */
+}
+
+.dark5 .container h1 {
+    color: #adff2f; /* GreenYellow */
+}
+
+.dark5 .toggle-container label {
+    background-color: #00008b; /* DarkBlue */
+}
+
+.dark5 .toggle-container label:hover {
+    background-color: #4169e1; /* RoyalBlue */
+}
+
+.dark5 .app-section {
+    background-color: #1b1b1f;
+}
+
+.dark5 .app-content p {
+    color: #faf0e6; /* Linen */
+}
+
+.dark5 .app-form label {
+    color: #8fbc8f; /* DarkSeaGreen */
+}
+
+.dark5 .app-content input {
+    background-color: #25282c;
+    color: #fdf5e6; /* OldLace */
+    border: 1px solid #a9a9a9; /* DarkGray */
+}
+
+.dark5 .app-content button {
+    background-color: #ff6347; /* Tomato */
+}
+
+.dark5 .app-content button:hover {
+    background-color: #cd853f; /* Peru */
+}
+
+.dark5 .filter-section {
+    color: #ff69b4; /* HotPink */
+    background-color: #f8f8ff; /* GhostWhite */
+}
+
+.dark5 .search-bar input {
+    background-color: #4b0082; /* Indigo */
+    color: #fff8dc; /* Cornsilk */
+}
+
+.dark5 .search-bar button {
+    border: 1px solid #ff4500; /* OrangeRed */
+    background-color: #4682b4; /* SteelBlue */
+}
+
+.dark5 .restaurant-card {
+    outline: 1px solid #f4a460; /* SandyBrown */
+}
+
+.dark5 .restaurant-info h3 {
+    color: #fffacd; /* LemonChiffon */
+}
+
+.dark5 .restaurant-info .offer {
+    color: #daa520; /* GoldenRod */
+}
+
+.dark5 .restaurant-info .rating {
+    color: #32cd32; /* LimeGreen */
+}
+
+.dark5 .more-rest {
+    background-color: #db7093; /* PaleVioletRed */
+}
+
+.dark5 .more-rest:hover {
+    background-color: #ff1493; /* DeepPink */
+}
+
+.dark5 .rest-container {
+    background-color: #2c3539; /* Gunmetal */
+}
+
+.dark5 .rest-h1, .rest-h2 {
+    color: #ffdead; /* NavajoWhite */
+}
+
+.dark5 .business-opportunity {
+    background-color: #696969; /* DimGray */
+}
+
+.dark5 .business-opportunity .text h1 {
+    color: #7fff00; /* Chartreuse */
+}
+
+.dark5 .business-opportunity .text p {
+    color: #afeeee; /* PaleTurquoise */
+}
+
+.dark5 .business-opportunity .text .button {
+    background-color: #e9967a; /* DarkSalmon */
+    outline: 1px solid #f5f5dc; /* Beige */
+}
+
+.dark5 .box-3 {
+    background-color: #556b2f; /* DarkOliveGreen */
+    border: 1px solid #fff5ee; /* Seashell */
+}
+
+.dark5 .top1-1 {
+    color: #ff4500; /* OrangeRed */
+}
+
+.dark5 .top-2-2 {
+    color: #ff6347; /* Tomato */
+}
+
+.dark5 .top3-3 {
+    color: #bdb76b; /* DarkKhaki */
+}
+
+.dark5 .browse-button-3 {
+    background-color: #ff1493; /* DeepPink */
+    border: 2px solid #f0e68c; /* Khaki */
+}
+
+.dark5 .rest-box p {
+    color: #00ced1; /* DarkTurquoise */
+}
+
+.dark5 .rest-box {
+    background-color: #2e8b57; /* SeaGreen */
+    border: 2px solid #ffffff; /* White */
+}
+
+.dark5 .footer {
+    background-color: #101010;
+    color: #adff2f; /* GreenYellow */
+}
+
+.dark5 .foodhub h1 {
+    color: #8b0000; /* DarkRed */
+}
+
+.dark5 .foodhub h2 {
+    color: #ff7f50; /* Coral */
+}
+
+
+/*ab ye hai dark-6 ke liye*/
+.dark6 {
+    background-color: #141414;
+    color: #ffdab9; /* PeachPuff */
+}
+
+.dark6 .spicytaste-container-1 {
+    background-color: #232428;
+    box-shadow: 0 4px 8px rgba(70, 130, 180, 0.2); /* SteelBlue */
+    color: #ff4500; /* OrangeRed */
+}
+
+.dark6 .what {
+    color: #228b22; /* ForestGreen */
+}
+
+.dark6 .unique-carousel-track img {
+    filter: contrast(170%);
+}
+
+.dark6 .unique-carousel-container {
+    background-color: #3b3e43;
+}
+
+.dark6 .locality-box h1 {
+    color: #8a2be2; /* BlueViolet */
+}
+
+.dark6 .locality-box {
+    background-color: #41474d;
+    color: #fffaf0; /* FloralWhite */
+}
+
+.dark6 .locality-box:hover {
+    background-color: #4682b4; /* SteelBlue */
+}
+
+.dark6 .container h1 {
+    color: #f0e68c; /* Khaki */
+}
+
+.dark6 .toggle-container label {
+    background-color: #7b68ee; /* MediumSlateBlue */
+}
+
+.dark6 .toggle-container label:hover {
+    background-color: #9370db; /* MediumPurple */
+}
+
+.dark6 .app-section {
+    background-color: #1d1d25;
+}
+
+.dark6 .app-content p {
+    color: #e6e6fa; /* Lavender */
+}
+
+.dark6 .app-form label {
+    color: #00ff7f; /* SpringGreen */
+}
+
+.dark6 .app-content input {
+    background-color: #292a30;
+    color: #ffefd5; /* PapayaWhip */
+    border: 1px solid #808080; /* Gray */
+}
+
+.dark6 .app-content button {
+    background-color: #ff7f50; /* Coral */
+}
+
+.dark6 .app-content button:hover {
+    background-color: #fa8072; /* Salmon */
+}
+
+.dark6 .filter-section {
+    color: #d2691e; /* Chocolate */
+    background-color: #f5fffa; /* MintCream */
+}
+
+.dark6 .search-bar input {
+    background-color: #483d8b; /* DarkSlateBlue */
+    color: #fdf5e6; /* OldLace */
+}
+
+.dark6 .search-bar button {
+    border: 1px solid #daa520; /* GoldenRod */
+    background-color: #5f9ea0; /* CadetBlue */
+}
+
+.dark6 .restaurant-card {
+    outline: 1px solid #b22222; /* FireBrick */
+}
+
+.dark6 .restaurant-info h3 {
+    color: #fff8dc; /* Cornsilk */
+}
+
+.dark6 .restaurant-info .offer {
+    color: #ff8c00; /* DarkOrange */
+}
+
+.dark6 .restaurant-info .rating {
+    color: #3cb371; /* MediumSeaGreen */
+}
+
+.dark6 .more-rest {
+    background-color: #00ced1; /* DarkTurquoise */
+}
+
+.dark6 .more-rest:hover {
+    background-color: #20b2aa; /* LightSeaGreen */
+}
+
+.dark6 .rest-container {
+    background-color: #2c2c36;
+}
+
+.dark6 .rest-h1, .rest-h2 {
+    color: #fafad2; /* LightGoldenRodYellow */
+}
+
+.dark6 .business-opportunity {
+    background-color: #808080; /* Gray */
+}
+
+.dark6 .business-opportunity .text h1 {
+    color: #98fb98; /* PaleGreen */
+}
+
+.dark6 .business-opportunity .text p {
+    color: #87cefa; /* LightSkyBlue */
+}
+
+.dark6 .business-opportunity .text .button {
+    background-color: #dc143c; /* Crimson */
+    outline: 1px solid #fff5ee; /* Seashell */
+}
+
+.dark6 .box-3 {
+    background-color: #4682b4; /* SteelBlue */
+    border: 1px solid #f5f5f5; /* WhiteSmoke */
+}
+
+.dark6 .top1-1 {
+    color: #ffd700; /* Gold */
+}
+
+.dark6 .top-2-2 {
+    color: #ff6347; /* Tomato */
+}
+
+.dark6 .top3-3 {
+    color: #dda0dd; /* Plum */
+}
+
+.dark6 .browse-button-3 {
+    background-color: #9932cc; /* DarkOrchid */
+    border: 2px solid #f0e68c; /* Khaki */
+}
+
+.dark6 .rest-box p {
+    color: #00ff00; /* Lime */
+}
+
+.dark6 .rest-box {
+    background-color: #778899; /* LightSlateGray */
+    border: 2px solid #ffffff; /* White */
+}
+
+.dark6 .footer {
+    background-color: #101010;
+    color: #fffacd; /* LemonChiffon */
+}
+
+.dark6 .foodhub h1 {
+    color: #7fffd4; /* Aquamarine */
+}
+
+.dark6 .foodhub h2 {
+    color: #ff4500; /* OrangeRed */
+}
+
+
+.dark7 {
+    background-color: #191919;
+    color: #e0ffff; /* LightCyan */
+}
+
+.dark7 .spicytaste-container-1 {
+    background-color: #404040;
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2); /* HotPink */
+    color: #ffe4c4; /* Bisque */
+}
+
+.dark7 .what {
+    color: #ff4500; /* OrangeRed */
+}
+
+.dark7 .unique-carousel-track img {
+    filter: contrast(200%);
+}
+
+.dark7 .unique-carousel-container {
+    background-color: #52575d;
+}
+
+.dark7 .locality-box h1 {
+    color: #40e0d0; /* Turquoise */
+}
+
+.dark7 .locality-box {
+    background-color: #5b5f63;
+    color: #ffe4b5; /* Moccasin */
+}
+
+.dark7 .locality-box:hover {
+    background-color: #32cd32; /* LimeGreen */
+}
+
+.dark7 .container h1 {
+    color: #ffdead; /* NavajoWhite */
+}
+
+.dark7 .toggle-container label {
+    background-color: #4682b4; /* SteelBlue */
+}
+
+.dark7 .toggle-container label:hover {
+    background-color: #5f9ea0; /* CadetBlue */
+}
+
+.dark7 .app-section {
+    background-color: #262626;
+}
+
+.dark7 .app-content p {
+    color: #fafad2; /* LightGoldenRodYellow */
+}
+
+.dark7 .app-form label {
+    color: #ff4500; /* OrangeRed */
+}
+
+.dark7 .app-content input {
+    background-color: #383838;
+    color: #fdf5e6; /* OldLace */
+    border: 1px solid #c0c0c0; /* Silver */
+}
+
+.dark7 .app-content button {
+    background-color: #cd5c5c; /* IndianRed */
+}
+
+.dark7 .app-content button:hover {
+    background-color: #bc8f8f; /* RosyBrown */
+}
+
+.dark7 .filter-section {
+    color: #dda0dd; /* Plum */
+    background-color: #f0fff0; /* HoneyDew */
+}
+
+.dark7 .search-bar input {
+    background-color: #483d8b; /* DarkSlateBlue */
+    color: #f5fffa; /* MintCream */
+}
+
+.dark7 .search-bar button {
+    border: 1px solid #ff6347; /* Tomato */
+    background-color: #8b0000; /* DarkRed */
+}
+
+.dark7 .restaurant-card {
+    outline: 1px solid #ff4500; /* OrangeRed */
+}
+
+.dark7 .restaurant-info h3 {
+    color: #e6e6fa; /* Lavender */
+}
+
+.dark7 .restaurant-info .offer {
+    color: #ffd700; /* Gold */
+}
+
+.dark7 .restaurant-info .rating {
+    color: #00ff7f; /* SpringGreen */
+}
+
+.dark7 .more-rest {
+    background-color: #8a2be2; /* BlueViolet */
+}
+
+.dark7 .more-rest:hover {
+    background-color: #9400d3; /* DarkViolet */
+}
+
+.dark7 .rest-container {
+    background-color: #2f2f31;
+}
+
+.dark7 .rest-h1, .rest-h2 {
+    color: #fffacd; /* LemonChiffon */
+}
+
+.dark7 .business-opportunity {
+    background-color: #696969; /* DimGray */
+}
+
+.dark7 .business-opportunity .text h1 {
+    color: #adff2f; /* GreenYellow */
+}
+
+.dark7 .business-opportunity .text p {
+    color: #f0e68c; /* Khaki */
+}
+
+.dark7 .business-opportunity .text .button {
+    background-color: #f08080; /* LightCoral */
+    outline: 1px solid #fffafa; /* Snow */
+}
+
+.dark7 .box-3 {
+    background-color: #4682b4; /* SteelBlue */
+    border: 1px solid #f5f5f5; /* WhiteSmoke */
+}
+
+.dark7 .top1-1 {
+    color: #00ffff; /* Cyan */
+}
+
+.dark7 .top-2-2 {
+    color: #ff4500; /* OrangeRed */
+}
+
+.dark7 .top3-3 {
+    color: #b0e0e6; /* PowderBlue */
+}
+
+.dark7 .browse-button-3 {
+    background-color: #ff69b4; /* HotPink */
+    border: 2px solid #f0e68c; /* Khaki */
+}
+
+.dark7 .rest-box p {
+    color: #32cd32; /* LimeGreen */
+}
+
+.dark7 .rest-box {
+    background-color: #556b2f; /* DarkOliveGreen */
+    border: 2px solid #ffffff; /* White */
+}
+
+.dark7 .footer {
+    background-color: #181818;
+    color: #7fffd4; /* Aquamarine */
+}
+
+.dark7 .foodhub h1 {
+    color: #ff1493; /* DeepPink */
+}
+
+.dark7 .foodhub h2 {
+    color: #ff4500; /* OrangeRed */
+}
+
+
+
+
+.dark8 {
+    background-color: #121212;
+    color: #f8f8ff; /* GhostWhite */
+}
+
+.dark8 .spicytaste-container-1 {
+    background-color: #292b2f;
+    box-shadow: 0 4px 8px rgba(72, 61, 139, 0.2); /* DarkSlateBlue */
+    color: #ff4500; /* OrangeRed */
+}
+
+.dark8 .what {
+    color: #00fa9a; /* MediumSpringGreen */
+}
+
+.dark8 .unique-carousel-track img {
+    filter: contrast(185%);
+}
+
+.dark8 .unique-carousel-container {
+    background-color: #2f3236;
+}
+
+.dark8 .locality-box h1 {
+    color: #ff6347; /* Tomato */
+}
+
+.dark8 .locality-box {
+    background-color: #3a3d43;
+    color: #fff0f5; /* LavenderBlush */
+}
+
+.dark8 .locality-box:hover {
+    background-color: #7fffd4; /* Aquamarine */
+}
+
+.dark8 .container h1 {
+    color: #ffdead; /* NavajoWhite */
+}
+
+.dark8 .toggle-container label {
+    background-color: #ba55d3; /* Orchid */
+}
+
+.dark8 .toggle-container label:hover {
+    background-color: #dda0dd; /* Plum */
+}
+
+.dark8 .app-section {
+    background-color: #1b1b1e;
+}
+
+.dark8 .app-content p {
+    color: #f5f5f5; /* WhiteSmoke */
+}
+
+.dark8 .app-form label {
+    color: #ff1493; /* DeepPink */
+}
+
+.dark8 .app-content input {
+    background-color: #2d2f34;
+    color: #ffffe0; /* LightYellow */
+    border: 1px solid #708090; /* SlateGray */
+}
+
+.dark8 .app-content button {
+    background-color: #cd5c5c; /* IndianRed */
+}
+
+.dark8 .app-content button:hover {
+    background-color: #f08080; /* LightCoral */
+}
+
+.dark8 .filter-section {
+    color: #ff4500; /* OrangeRed */
+    background-color: #faf0e6; /* Linen */
+}
+
+.dark8 .search-bar input {
+    background-color: #6a5acd; /* SlateBlue */
+    color: #fffff0; /* Ivory */
+}
+
+.dark8 .restaurant-card {
+    outline: 1px solid #d2691e; /* Chocolate */
+}
+
+.dark8 .restaurant-info h3 {
+    color: #ffffe0; /* LightYellow */
+}
+
+.dark8 .restaurant-info .offer {
+    color: #00ced1; /* DarkTurquoise */
+}
+
+.dark8 .restaurant-info .rating {
+    color: #32cd32; /* LimeGreen */
+}
+
+.dark8 .more-rest {
+    background-color: #87ceeb; /* SkyBlue */
+}
+
+.dark8 .more-rest:hover {
+    background-color: #00bfff; /* DeepSkyBlue */
+}
+
+.dark8 .rest-container {
+    background-color: #26282c;
+}
+
+.dark8 .rest-h1, .rest-h2 {
+    color: #fffacd; /* LemonChiffon */
+}
+
+.dark8 .business-opportunity {
+    background-color: #808080; /* Gray */
+}
+
+.dark8 .business-opportunity .text h1 {
+    color: #adff2f; /* GreenYellow */
+}
+
+.dark8 .business-opportunity .text p {
+    color: #afeeee; /* PaleTurquoise */
+}
+
+.dark8 .business-opportunity .text .button {
+    background-color: #ff0000; /* Red */
+    outline: 1px solid #f5f5dc; /* Beige */
+}
+
+.dark8 .box-3 {
+    background-color: #ff69b4; /* HotPink */
+    border: 1px solid #ffffff; /* White */
+}
+
+.dark8 .top1-1 {
+    color: #ffb6c1; /* LightPink */
+}
+
+.dark8 .top-2-2 {
+    color: #8b008b; /* DarkMagenta */
+}
+
+.dark8 .top3-3 {
+    color: #32cd32; /* LimeGreen */
+}
+
+.dark8 .browse-button-3 {
+    background-color: #ff6347; /* Tomato */
+    border: 2px solid #ffffe0; /* LightYellow */
+}
+
+.dark8 .rest-box p {
+    color: #00ff7f; /* SpringGreen */
+}
+
+.dark8 .rest-box {
+    background-color: #3b3d41;
+    border: 2px solid #ffffff; /* White */
+}
+
+.dark8 .footer {
+    background-color: #151515;
+    color: #fffaf0; /* FloralWhite */
+}
+
+.dark8 .foodhub h1 {
+    color: #ff4500; /* OrangeRed */
+}
+
+.dark8 .foodhub h2 {
+    color: #1e90ff; /* DodgerBlue */
+}
+
+
+.dark9 {
+    background-color: #121212; /* Darker background */
+    color: #f5f5f5; /* Very light gray text */
+}
+
+.dark9 .spicytaste-container-1 {
+    background-color: #2b2d30; /* Darker shade */
+    box-shadow: 0 4px 8px rgba(255, 140, 0, 0.3);
+    color: #ffd700; /* Gold */
+}
+
+.dark9 .what {
+    color: #81c784; /* Light Green */
+}
+
+.dark9 .unique-carousel-track img {
+    filter: contrast(180%);
+}
+
+.dark9 .unique-carousel-container {
+    background-color: #333b44; /* Dark gray */
+}
+
+.dark9 .locality-box h1 {
+    color: #ff6f61; /* Coral */
+}
+
+.dark9 .locality-box {
+    background-color: #292b2f; /* Dark gray */
+    color: #f0e68c; /* Khaki */
+}
+
+.dark9 .locality-box:hover {
+    background-color: #ff6347; /* Tomato */
+}
+
+.dark9 .container h1 {
+    color: #8ce3b2; /* Light Sea Green */
+}
+
+.dark9 .toggle-container label {
+    background-color: #ff5722; /* Deep Orange */
+}
+
+.dark9 .toggle-container label:hover {
+    background-color: #ff9e80; /* Light Coral */
+}
+
+.dark9 .app-section {
+    background-color: #222428; /* Slightly darker gray */
+}
+
+.dark9 .app-content p {
+    color: #e0ffff; /* Light Cyan */
+}
+
+.dark9 .app-form label {
+    color: #ff69b4; /* Hot Pink */
+}
+
+.dark9 .app-content input {
+    background-color: #212b30; /* Darker background */
+    color: #d8bfd8; /* Thistle */
+    border: 1px solid #696969; /* DimGray */
+}
+
+.dark9 .app-content button {
+    background-color: #ff8c00; /* Dark Orange */
+}
+
+.dark9 .app-content button:hover {
+    background-color: #ffa07a; /* Light Salmon */
+}
+
+.dark9 .filter-section {
+    color: #b22222; /* FireBrick */
+    background-color: #f0fff0; /* HoneyDew */
+}
+
+.dark9 .filter-section div {
+    border-radius: 25px;
+}
+
+.dark9 .search-bar input {
+    background-color: #2f4f4f; /* Dark Slate Gray */
+    color: #ffdead; /* Navajo White */
+}
+
+.dark9 .search-bar button {
+    border: 1px solid #8b008b; /* Dark Violet */
+    background-color: #4682b4; /* Steel Blue */
+}
+
+.dark9 .search-bar button:hover {
+    background-color: #5f9ea0; /* Cadet Blue */
+}
+
+.dark9 .restaurant-card {
+    outline: 1px solid #d2691e; /* Chocolate */
+}
+
+.dark9 .restaurant-info h3 {
+    color: #fafad2; /* Light Goldenrod Yellow */
+}
+
+.dark9 .restaurant-info .offer {
+    color: #8a2be2; /* BlueViolet */
+}
+
+.dark9 .restaurant-info .rating {
+    color: #98fb98; /* Pale Green */
+}
+
+.dark9 .restaurant-info p {
+    color: #ffae42; /* Golden Yellow */
+}
+
+.dark9 .more-rest {
+    background-color: #ff1493; /* Deep Pink */
+}
+
+.dark9 .more-rest:hover {
+    background-color: #db7093; /* Medium Violet Red */
+}
+
+.dark9 .rest-container {
+    background-color: #2c2f38; /* Darker shade */
+}
+
+.dark9 .rest-h1, .rest-h2 {
+    color: #f5deb3; /* Wheat */
+}
+
+.dark9 .business-opportunity {
+    background-color: #6b6b6b; /* Gray */
+}
+
+.dark9 .business-opportunity .text h1 {
+    color: #7cfc00; /* Lawn Green */
+}
+
+.dark9 .business-opportunity .text p {
+    color: #b0e0e6; /* Powder Blue */
+}
+
+.dark9 .business-opportunity .text .button {
+    background-color: #ff0000; /* Red */
+    outline: 1px solid #f5f5dc; /* Light Beige */
+}
+
+.dark9 .business-opportunity .text .button:hover {
+    background-color: #ff4500; /* OrangeRed */
+    outline: 1px solid #ffffff; /* White */
+}
+
+.dark9 .box-3 {
+    background-color: #4b0082; /* Indigo */
+    border: 1px solid #ffffff; /* White */
+}
+
+.dark9 .top1-1 {
+    color: #00ffff; /* Cyan */
+}
+
+.dark9 .top-2-2 {
+    color: #8b0000; /* Dark Red */
+}
+
+.dark9 .top3-3 {
+    color: #ff00ff; /* Magenta */
+}
+
+.dark9 .top1-1-1 {
+    color: #1e90ff; /* Dodger Blue */
+}
+
+.dark9 .top-2-2-2 {
+    color: #ff4500; /* OrangeRed */
+}
+
+.dark9 .top3-3-3 {
+    color: #9400d3; /* Dark Violet */
+}
+
+.dark9 .browse-button-3 {
+    background-color: #ff69b4; /* Hot Pink */
+    border: 2px solid #ffffe0; /* Light Beige */
+}
+
+.dark9 .rest-box p {
+    color: #00ff7f; /* Spring Green */
+}
+
+.dark9 .rest-box {
+    background-color: #2f4f4f; /* Dark Slate Gray */
+    border: 2px solid #ffffff; /* White */
+}
+
+.dark9 .rest-toggle-label {
+    background-color: #00fa9a; /* Medium Spring Green */
+    color: #000080; /* Navy */
+}
+
+.dark9 .footer-column ul li a {
+    color: #00bfff; /* Deep Sky Blue */
+}
+
+.dark9 .footer {
+    background-color: #131313; /* Almost Black */
+    color: #7fffd4; /* Aquamarine */
+}
+
+.dark9 .foodhub h1 {
+    color: #ff2323; /* Crimson */
+}
+
+.dark9 .foodhub h2 {
+    color: orange; /* Orange */
+}
+
+
+.dark0 {
+    background-color: #080808;
+    color: #e6e6fa; /* Lavender */
+}
+
+.dark0 .spicytaste-container-1 {
+    background-color: #1a1a1d;
+    box-shadow: 0 4px 8px rgba(218, 165, 32, 0.2); /* GoldenRod */
+    color: #dc143c; /* Crimson */
+}
+
+.dark0 .what {
+    color: #4682b4; /* SteelBlue */
+}
+
+.dark0 .unique-carousel-track img {
+    filter: contrast(175%);
+}
+
+.dark0 .unique-carousel-container {
+    background-color: #2b2d30;
+}
+
+.dark0 .locality-box h1 {
+    color: #ff69b4; /* HotPink */
+}
+
+.dark0 .locality-box {
+    background-color: #40444a;
+    color: #fffaf0; /* FloralWhite */
+}
+
+.dark0 .locality-box:hover {
+    background-color: #7fffd4; /* Aquamarine */
+}
+
+.dark0 .container h1 {
+    color: #dcdcdc; /* Gainsboro */
+}
+
+.dark0 .toggle-container label {
+    background-color: #ff4500; /* OrangeRed */
+}
+
+.dark0 .toggle-container label:hover {
+    background-color: #ffa07a; /* LightSalmon */
+}
+
+.dark0 .app-section {
+    background-color: #16171b;
+}
+
+.dark0 .app-content p {
+    color: #f5f5f5; /* WhiteSmoke */
+}
+
+.dark0 .app-form label {
+    color: #ff1493; /* DeepPink */
+}
+
+.dark0 .app-content input {
+    background-color: #292b2f;
+    color: #fffacd; /* LemonChiffon */
+    border: 1px solid #696969; /* DimGray */
+}
+
+.dark0 .app-content button {
+    background-color: #ff7f50; /* Coral */
+}
+
+.dark0 .app-content button:hover {
+    background-color: #ffa07a; /* LightSalmon */
+}
+
+.dark0 .filter-section {
+    color: #cd5c5c; /* IndianRed */
+    background-color: #f5f5f5; /* WhiteSmoke */
+}
+
+.dark0 .search-bar input {
+    background-color: #483d8b; /* DarkSlateBlue */
+    color: #fafad2; /* LightGoldenRodYellow */
+}
+
+.dark0 .restaurant-card {
+    outline: 1px solid #b8860b; /* DarkGoldenRod */
+}
+.dark .restaurant-info p{
+    color:#ff852c;
+}
+
+.dark0 .restaurant-info h3 {
+    color: #fffaf0; /* FloralWhite */
+}
+.dark0 .top1-1-1{
+    color: #FFF;
+}
+
+.dark0 .restaurant-info .offer {
+    color: #00ff7f; /* SpringGreen */
+}
+
+.dark0 .restaurant-info .rating {
+    color: #ff4500; /* OrangeRed */
+}
+
+.dark0 .more-rest {
+    background-color: #6495ed; /* CornflowerBlue */
+}
+
+.dark0 .more-rest:hover {
+    background-color: #00bfff; /* DeepSkyBlue */
+}
+
+.dark0 .rest-container {
+    background-color: #26282b;
+}
+
+.dark0 .rest-h1, .rest-h2 {
+    color: #f8f8ff; /* GhostWhite */
+}
+
+.dark0 .business-opportunity {
+    background-color: #696969; /* DimGray */
+}
+
+.dark0 .business-opportunity .text h1 {
+    color: #7fffd4; /* Aquamarine */
+}
+
+.dark0 .business-opportunity .text p {
+    color: #00ced1; /* DarkTurquoise */
+}
+
+.dark0 .box-3 {
+    background-color: #9932cc; /* DarkOrchid */
+    border: 1px solid #ffffff; /* White */
+}
+
+.dark0 .top1-1 {
+    color: #ff69b4; /* HotPink */
+}
+
+.dark0 .top-2-2 {
+    color: #ffd700; /* Gold */
+}
+
+.dark0 .top3-3 {
+    color: #ff00ff; /* Magenta */
+}
+
+.dark0 .browse-button-3 {
+    background-color: #ff4500; /* OrangeRed */
+    border: 2px solid #ffffe0; /* LightYellow */
+}
+
+.dark0 .rest-box p {
+    color: #00fa9a; /* MediumSpringGreen */
+}
+
+.dark0 .rest-box {
+    background-color: #2f4f4f; /* DarkSlateGray */
+    border: 2px solid #ffffff; /* White */
+}
+
+.dark0 .footer {
+    background-color: #141414;
+    color: #f0f8ff; /* AliceBlue */
+}
+
+.dark0 .foodhub h1 {
+    color: #ff4500; /* OrangeRed */
+}
+
+.dark0 .foodhub h2 {
+    color: #ff00ff; /* Magenta */
+}
+
+
+
+
+
+/* Default size for large devices */
+#theme-toggle-button {
+    font-size: 10px;
+    position: absolute;
+    top: 99px;
+    right: -1px;
+    display: inline-block;
+    width: 7em;
+    cursor: pointer;
+}
+
+/* Adjust font-size for mobile devices */
+@media only screen and (max-width: 428px) {
+    #theme-toggle-button {
+        font-size: 7px; /* Reduced font size for smaller screens */
+        top:200px;
+    }
+}
+@media only screen and (max-width:360px){
+    body{
+        overflow-x:hidden;
+
+    }
+    .foodhub h1{
+    font-size: 31px;
+    padding-top: 10px;
+    max-width: 20px;
+    left: -59px;
+    top: -33px;
+    position: relative;
+  }
+  .foodhub h2{
+    font-size: 15px;
+    position: absolute;
+    top: 147px;
+    transform: scale(1.8);
+    max-width: 100%;
+    box-sizing: border-box;
+    padding-right: 60px;
+    left: -6px;
+    max-width: 87px;
+  }
+  #theme-toggle-button {
+    font-size: 7px;
+    top: 207px;
+  }
+}
+  
+
+
+    </style>
