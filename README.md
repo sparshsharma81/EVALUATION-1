@@ -1,5 +1,6 @@
 THIS IS MY FOOD ORDERING WEBSITE ---- SPICYTASTE
-YOU CAN CHECKOUT THIS WEBSITE     https://evaluation-1-eta.vercel.app/help.html  
+
+YOU CAN CHECKOUT THIS WEBSITE     https://evaluation-1-eta.vercel.app/index.html 
 
 WHICH IS BUILD USING HTML CSS JAVASCRIPT 
 ONLY FRONTEND IS HANDLED
